@@ -1,0 +1,24 @@
+.button__container,
+.button__container__secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    height: 40px;
+    width: fit-content;
+    background-color: var(--primary-800);
+    cursor: pointer;
+}
+
+.button__container a,
+.button__container p,
+.button__container__secondary a,
+.button__container__secondary p {
+    color: var(--neutrals-100);
+}
+
+/* Bouton secondaire */
+
+.button__container__secondary {
+    background-color: var(--primary-900);
+}

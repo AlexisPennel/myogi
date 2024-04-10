@@ -1,8 +1,11 @@
 .main {
   display: flex;
   flex-direction: column;
+  gap: 200px;
   min-height: 100vh;
 }
+
+/* Hero section */
 
 .hero__section__banner {
   width: 100vw;
@@ -10,22 +13,34 @@
   object-fit: cover;
 }
 
-.hero__section__content__wrapper {
+.hero__section__contentWrapper {
   position: relative;
   margin-top: -7vh;
   padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
 }
 
-.hero__section__content__title {
+.contentWrapper__title {
   color: var(--neutrals-100);
 }
 
-.hero__section__content__title span {
+.contentWrapper__title span {
   color: var(--primary-700);
 }
 
-.hero__section__content__description {
+.contentWrapper__description {
   color: var(--neutrals-200);
 }
 
+.contentWrapper__buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Prestation section */
