@@ -7,6 +7,7 @@ import Link from 'next/link';
 // import Burger from './Burger/Burger';
 // import Button from '../Button/Button';
 import { usePathname } from 'next/navigation';
+import Burger from './Burger/Burger';
 
 const Header = () => {
     const pathname = usePathname();
@@ -27,7 +28,7 @@ const Header = () => {
                     </Link>
                 </li>
                 <li className={styles.burger} aria-label='Ouvrir le menu de navigation'>
-                    {/* <Burger /> */}
+                    <Burger />
                 </li>
             </ul>
             <nav className={styles.desktop__links}>

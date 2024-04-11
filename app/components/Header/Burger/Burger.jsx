@@ -7,6 +7,10 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '../../Button/Button'; // Assurez-vous que le chemin d'accès est correct
 import { useRouter } from 'next/navigation';
+import messengerWhite from '../../../../public/icons/messengerWhite.svg';
+import whatsWhite from '../../../../public/icons/whatsWhite.svg'
+import instagramWhite from '../../../../public/icons/instagramWhite.svg'
+
 
 const Burger = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,8 +44,8 @@ const Burger = () => {
             <Image 
                 src={burger}
                 alt='menu de navigation' 
-                width={25} 
-                height={25} 
+                width={35} 
+                height={35} 
                 onClick={toggleMenu}
                 className={styles.burger}
             />
@@ -52,20 +56,33 @@ const Burger = () => {
                         animate={{ x: 0 }}
                         exit={{x:500}}
                         transition={{ease:'easeInOut'}}>
+                            <div className={styles.social__container}>
+                                <Link href={'#'}>
+                                    <Image src={messengerWhite} width={25} height={25} alt='messenger' />
+                                </Link>
+                                <Link href={'#'}>
+                                    <Image src={whatsWhite} width={25} height={25} alt="what's app" />
+                                </Link>
+                                <Link href={'#'}>
+                                    <Image src={instagramWhite} width={25} height={25} alt='instagram' />
+                                </Link> 
+                            </div>
                         <nav>
                             <ul className={styles.links__container}>
                                 <li onKeyDown={(e) => {handleKeyPressLinks(e, '/')}}>
                                     <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
                                 </li>
                                 <li onKeyDown={(e) => {handleKeyPressLinks(e, '/siteinternetsurmesure')}}>
-                                    <Link href={'/siteinternetsurmesure'} onClick={toggleMenu}>Site internet</Link>
+                                    <Link href={'/shootingautomobile'} onClick={toggleMenu}>Shooting automobile</Link>
                                 </li>
                                 <li onKeyDown={(e) => {handleKeyPressLinks(e, '/boutiqueenligne')}}>
-                                    <Link href={'/boutiqueenligne'} onClick={toggleMenu}>Boutique en ligne</Link>
+                                    <Link href={'/shootinganimalier'} onClick={toggleMenu}>Shooting animalier</Link>
+                                </li>
+                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/boutiqueenligne')}}>
+                                    <Link href={'/portfolio'} onClick={toggleMenu}>Portfolio</Link>
                                 </li>
                                 <li onClick={closeMenu}>
-                                    {/* Transmission de la fonction closeMenu en tant que onClick */}
-                                    <Button content={'Me contacter'} scrollId={'#contactSection'} />
+                                    <Button type={'primary'} size={'large'}content={'Contact'} scrollId={'#contact'} />
                                 </li>
                             </ul>
                         </nav>

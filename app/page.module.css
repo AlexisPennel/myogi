@@ -11,6 +11,14 @@
   width: 100vw;
   height: 60vh;
   object-fit: cover;
+  opacity: 0.1;
+  animation: Entrance 600ms 900ms ease-in forwards;
+}
+
+@keyframes Entrance {
+  100% {
+    opacity: 1;
+  }
 }
 
 .hero__section__contentWrapper {
@@ -20,7 +28,14 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  opacity: 0.1;
+  animation: titleEntrance 600ms 900ms ease-in forwards;
+}
 
+@keyframes titleEntrance {
+  100% {
+    opacity: 1;
+  }
 }
 
 .contentWrapper__title {
@@ -44,3 +59,22 @@
 }
 
 /* Prestation section */
+.sections48__container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/************************ Toutes les sections  ********************/
+.sections__headers {
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sections__headers__center {
+  align-items: center;
+  text-align: center;
+}
+

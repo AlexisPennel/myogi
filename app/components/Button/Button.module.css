@@ -8,6 +8,7 @@
     width: fit-content;
     background-color: var(--primary-800);
     cursor: pointer;
+    border-radius: 3px;
 }
 
 .button__container a,
@@ -21,4 +22,11 @@
 
 .button__container__secondary {
     background-color: var(--primary-900);
+}
+
+
+/* Bouton primaire small */
+.button__container__small {
+    height: 36px;
+    padding: 0px 16px;
 }

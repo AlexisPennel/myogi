@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node generatePorfolioHome.js",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "prebuild": "node generatePorfolioHome.js",
+    "build": "next build"
   },
   "dependencies": {
     "framer-motion": "^11.0.27",

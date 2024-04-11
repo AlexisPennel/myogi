@@ -6,6 +6,30 @@
     left: 0;
     width: 100vw;
     padding: 24px 16px 0px 16px;
+    z-index: 2;
+}
+
+.logo {
+    transform: translateX(32vw) scale(1.5);
+    animation: entranceLogo ease-in-out 600ms 400ms forwards;
+}
+
+@keyframes entranceLogo {
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+.burger {
+    cursor: pointer;
+    opacity: 0;
+    animation: entranceBurger 600ms 900ms ease-in forwards;
+}
+
+@keyframes entranceBurger {
+    100% {
+        opacity: 1;
+    }
 }
 
 .linksContainer {

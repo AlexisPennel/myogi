@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import styles from './Button.module.css';
 
 
-const Button = ({ type, content, link, scrollId }) => {
+const Button = ({ type, size, content, link, scrollId }) => {
 
     const handleClick = () => {
         if (scrollId && !link) {
@@ -32,7 +32,7 @@ const Button = ({ type, content, link, scrollId }) => {
                     onKeyDown={scrollId && handleKeyDown}
                     whileTap={{ scale: 0.95 }}
                     whileHover={{ boxShadow: "var(--button-boxShadow)", y:-2 }}
-                    className={styles.button__container}>
+                    className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
                     {link ?
                         <Link href={link}>
                             {content}
