@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 24px;
-    height: 40px;
+    padding: 0px 16px;
+    height: 36px;
     width: fit-content;
     background-color: var(--primary-800);
     cursor: pointer;
@@ -29,4 +29,25 @@
 .button__container__small {
     height: 36px;
     padding: 0px 16px;
+}
+
+
+@media only screen and (min-width : 1200px) {
+
+    .button__container,
+    .button__container__secondary {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 24px;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+
+    .button__container,
+    .button__container__secondary {
+        /* padding: 0px 32px; */
+        height: 44px;
+    }
 }

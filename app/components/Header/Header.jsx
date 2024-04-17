@@ -8,6 +8,7 @@ import Link from 'next/link';
 // import Button from '../Button/Button';
 import { usePathname } from 'next/navigation';
 import Burger from './Burger/Burger';
+import Button from '../Button/Button';
 
 const Header = () => {
     const pathname = usePathname();
@@ -37,16 +38,19 @@ const Header = () => {
                         <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link}>Accueil</Link>
                     </li>
                     <li>
-                        <Link href={'/siteinternetsurmesure'} className={pathname === '/siteinternetsurmesure' ? styles.link__active : styles.link}>Site internet</Link>
+                        <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link}>Shooting automobile</Link>
                     </li>
                     <li>
-                        <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Boutique en ligne</Link>
+                        <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Shooting animalier</Link>
+                    </li>
+                    <li>
+                        <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Portfolio</Link>
+                    </li>
+                    <li>
+                        <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} />
                     </li>
                 </ul>
             </nav>
-            <div className={styles.contactButton__container}>
-                {/* <Button content={'Me contacter'} scrollId={'#contactSection'} /> */}
-            </div>
         </header>
     );
 };

@@ -1,19 +1,19 @@
 :root {
   --neutrals-900: #181414;
-	--neutrals-800: #1d1d1d;
-	--neutrals-700: #212121;
-	--neutrals-600: #3b3b3c;
-	--neutrals-500: #5c5d5d;
-	--neutrals-400: #8d8d8e;
-	--neutrals-300: #b9babc;
-	--neutrals-200: #dddedf;
-	--neutrals-100: #ededed;
-	
-	--primary-900: #313b47;
-	--primary-800: #354d6c;
-	--primary-700: #46668e;
-	--primary-600: #9da9bc;
-	--primary-500: #c2c9d4;
+  --neutrals-800: #1d1d1d;
+  --neutrals-700: #212121;
+  --neutrals-600: #3b3b3c;
+  --neutrals-500: #5c5d5d;
+  --neutrals-400: #8d8d8e;
+  --neutrals-300: #b9babc;
+  --neutrals-200: #dddedf;
+  --neutrals-100: #ededed;
+
+  --primary-900: #313b47;
+  --primary-800: #354d6c;
+  --primary-700: #46668e;
+  --primary-600: #9da9bc;
+  --primary-500: #c2c9d4;
 
   --background: #181414;
 
@@ -35,9 +35,12 @@ body {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-source);
   text-transform: uppercase;
   font-weight: 700;
@@ -45,7 +48,7 @@ h1, h2, h3 {
 }
 
 h1 {
-   font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
 h2 {
@@ -56,7 +59,8 @@ h3 {
   font-size: 1.5rem;
 }
 
-p, a {
+p,
+a {
   font-size: 1rem;
   font-family: var(--font-lato);
   font-weight: 400;
@@ -73,9 +77,31 @@ a {
   text-decoration: none;
 }
 
+
+@media only screen and (min-width : 1200px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  p,
+  a {
+    font-size: 1.125rem;
+  }
+}
+
 @media only screen and (min-width : 1700px) {
   h1 {
     font-size: 6rem;
+    line-height: 108%;
   }
 
   h2 {
@@ -86,8 +112,8 @@ a {
     font-size: 2.5rem;
   }
 
-  p, a {
-    font-size: 1.5rem;
+  p,
+  a {
+    font-size: 1.25rem;
   }
 }
-

@@ -72,8 +72,8 @@ const Burger = () => {
                                 <li onKeyDown={(e) => {handleKeyPressLinks(e, '/')}}>
                                     <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
                                 </li>
-                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/siteinternetsurmesure')}}>
-                                    <Link href={'/shootingautomobile'} onClick={toggleMenu}>Shooting automobile</Link>
+                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/shooting-automobile')}}>
+                                    <Link href={'/shooting-automobile'} onClick={toggleMenu}>Shooting automobile</Link>
                                 </li>
                                 <li onKeyDown={(e) => {handleKeyPressLinks(e, '/boutiqueenligne')}}>
                                     <Link href={'/shootinganimalier'} onClick={toggleMenu}>Shooting animalier</Link>

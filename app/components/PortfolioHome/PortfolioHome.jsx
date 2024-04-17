@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PortfolioHome.module.css';
 import Image from 'next/image';
+import PortfolioHomeLoading from './PortfolioHomeLoading';
 
 const PortfolioHome = () => {
-    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const [jsonList, setJsonList] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         document.addEventListener("contextmenu", function (e) {
@@ -20,26 +21,42 @@ const PortfolioHome = () => {
             .then(res => res.json())
             .then(data => {
                 setJsonList(data);
+                setIsLoading(false);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
-    
+
 
     return (
-        <div className={styles.container}>
-            {jsonList !== null && 
-                <>
-                    {jsonList.PortfolioHome.map((photo, index) => (
-                        <div key={index}>
-                            <Image src={photo} width={1920} height={1080} alt='asas' placeholder="blur" blurDataURL={blurDataUrl} loading='lazy' />
-                        </div>
-                    ))}
-                </>
-                
+        <>
+            {isLoading &&
+                <PortfolioHomeLoading />
             }
-        </div>
+            <div className={styles.container}>
+                {jsonList !== null &&
+                    <>
+                        <div className={styles.container1}>
+                            <Image src={jsonList.PortfolioHome[0]} width={1920} height={1080} alt='Photo de Myogi' noindex tabIndex={0} />
+                        </div>
+                        <div className={styles.container2}>
+                            <Image src={jsonList.PortfolioHome[1]} width={1920} height={1080} alt='Photo de Myogi' noindex tabIndex={0} />
+                        </div>
+                        <div className={styles.container3}>
+                            <Image src={jsonList.PortfolioHome[2]} width={1920} height={1080} alt='Photo de Myogi' noindex  tabIndex={0}/>
+                        </div>
+                        <div className={styles.container4}>
+                            <Image src={jsonList.PortfolioHome[3]} width={1920} height={1080} alt='Photo de Myogi' noindex  tabIndex={0}/>
+                        </div>
+                        <div className={styles.container5}>
+                            <Image src={jsonList.PortfolioHome[4]} width={1920} height={1080} alt='Photo de Myogi' noindex  tabIndex={0}/>
+                        </div>
+                    </>
+
+                }
+            </div>
+        </>
     );
 };
 
