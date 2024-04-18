@@ -18,14 +18,13 @@ const page = () => {
         "/images/ShootingAuto/06.jpg",
         "/images/ShootingAuto/07.jpg",
         "/images/ShootingAuto/08.jpg",
-    ]
+    ];
 
 
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
                 <Image src={bannerAuto} width={1064} height={3671} sizes="100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
-                <div aria-hidden='true' className={styles.hero__section__banner__filter}></div>
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Elevons ensemble la beauté de votre automobile avec des shootings exceptionnels. Chaque photo sublime les détails et reflète l'élégance unique de votre véhicule.</p>
@@ -37,15 +36,15 @@ const page = () => {
             </section>
 
             {/* process */}
-            <section className={styles.sections48__container} id="mesPrestations" aria-labelledby="servicesTitle" tabIndex={0}>
+            <section className={styles.sections48__container} id="deroulement" aria-labelledby="deroulementTitle" tabIndex={0}>
                 <header className={styles.sections__headers}>
-                    <h2 className={styles.sections__titles} id="servicesTitle" tabIndex={0}>Le déroulement</h2>
+                    <h2 className={styles.sections__titles} id="deroulementTitle" tabIndex={0}>Le déroulement</h2>
                 </header>
                 <ProcessCards />
             </section>
 
             {/* Apercus du resultat */}
-            <section className={styles.sections32__container} id="about" aria-labelledby="galerieTitle" tabIndex={0}>
+            <section className={styles.sections32__container} id="galerie" aria-labelledby="galerieTitle" tabIndex={0}>
                 <header className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
                     <h2 className={styles.sections__titles} id="galerieTitle" tabIndex={0}>Aperçu du résultat</h2>
                     <p tabIndex={0}>Immergez vous dans un aperçu de mes réalisations les plus récentes dans le monde de la photographie automobile. Chaque cliché sélectionné illustre mon engagement à capturer l'élégance et la puissance de chaque véhicule.</p>

@@ -45,6 +45,38 @@
 
 }
 
+@media only screen and (min-width : 768px) {
+    .list__container {
+        gap: 80px;
+        padding: 0px 30px;
+    }
+
+    .list__cards {
+        flex-direction: row;
+        gap: 32px;
+        height: 200px;
+        max-height: 200px;
+    }
+
+
+    .imageContainer__image {
+        width: 35vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .imageContainer__image1 {
+        width: 35vw;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    .cards__content { 
+        max-width: 60vw;
+    }
+}
+
 
 @media only screen and (min-width : 1200px) {
     .list__container {
@@ -62,13 +94,11 @@
     .imageContainer__image {
         width: 25vw;
         height: 100%;
-        object-fit: cover;
     }
     
     .imageContainer__image1 {
         width: 25vw;
         height: 100%;
-        object-fit: cover;
         object-position: 0 -200px;
     }
 

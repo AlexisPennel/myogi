@@ -1,0 +1,39 @@
+.hero__section__banner {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    transform: translateY(-50px);
+    opacity: 0.3;
+    animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
+}
+
+@keyframes PhotoEntrance {
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .hero__section__banner {
+        object-position: center;
+    }
+} 
+
+
+@media only screen and (min-width : 1200px) {
+    .hero__section__banner {
+        width: 50vw;
+        height: 100vh;
+        object-fit: cover;
+        transform: translateX(200px);
+        opacity: 0.3;
+        animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
+    }
+}
+
+
+@media only screen and (min-width : 1700px) {
+    
+
+}

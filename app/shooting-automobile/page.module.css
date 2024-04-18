@@ -44,16 +44,6 @@
     animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
 }
 
-.hero__section__banner__filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 40vh;
-    width: 100vw;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 64%, rgb(0, 0, 0) 100%);
-    z-index: 1;
-}
 
 @keyframes PhotoEntrance {
     100% {
@@ -124,9 +114,7 @@
     opacity: 1;
 }
 
-
-@media only screen and (min-width : 1200px) {
-
+@media only screen and (min-width : 768px) {
     /************************ Toutes les sections  ********************/
     .sections32__container {
         gap: 80px;
@@ -137,8 +125,47 @@
     }
 
     .sections__headers {
-        padding: 0px 60px;
+        padding: 0px 30px;
         gap: 24px;
+    }
+
+    .sections__headers p {
+        max-width: 70vw;
+    }
+    
+    /* Hero section *******************************/
+    
+    .hero__section__contentWrapper {
+        padding-left: 30px;
+        gap: 64px;
+        max-width: 75vw;
+        margin-top: -6vh;
+    }
+
+
+    .hero__section__banner {
+        object-position: bottom;
+    }
+
+    /* Contact sectioon ************/
+
+    .section__contact {
+        padding: 64px 0px;
+    }
+
+    .contact__email {
+        padding: 0px 30px;
+        font-size: 64px;
+    }
+
+} 
+
+
+@media only screen and (min-width : 1200px) {
+
+    /************************ Toutes les sections  ********************/
+    .sections__headers {
+        padding: 0px 60px;
     }
 
     .sections__headers p {
@@ -171,21 +198,10 @@
         height: 100vh;
         object-fit: cover;
         transform: translateX(200px);
-        object-position: bottom;
         opacity: 0.3;
         animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
     }
 
-    .hero__section__banner__filter {
-        position: absolute;
-        top: 0;
-        left: 50vw;
-        height: 100vh;
-        width: 50vw;
-        background: rgb(255, 255, 255);
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 64%, rgb(0, 0, 0) 100%);
-        z-index: 1;
-    }
 
     .hero__section__contentWrapper {
         position: absolute;
@@ -231,6 +247,12 @@
         gap: 64px;
         transform: translateX(-200px);
         animation: contentWrapperEntrance 0.3s 0.3s ease-in forwards
+    }
+
+    /* Contact sectioon ************/
+
+    .contact__email {
+        padding: 0px 105px;
     }
 
 }

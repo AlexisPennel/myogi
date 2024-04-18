@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './AutoPageGalery.module.css';
 import Image from 'next/image';
 import arrowRight from '../../../public/icons/arrowRight.svg';
@@ -9,7 +9,36 @@ import { AnimatePresence, motion } from 'framer-motion';
 const AutoPageGalery = ({ imagesFiles }) => {
     const [imageActive, setImageActive] = useState(null);
     const [images, setImages] = useState(imagesFiles);
-    const [animationDirection, setAnimationDirection] = useState(0); // 0 for left, 1 for right
+    const [animationDirection, setAnimationDirection] = useState(0);
+    const altDescriptions = [
+        "Photo d'une Bmw M4",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+    ]   
+
+    const handleKeyDown = (event, index) => {
+        if (event.key === "ArrowRight") {
+            handleNavigation(1);
+        } else if (event.key === "ArrowLeft") {
+            handleNavigation(-1);
+        }
+
+        if (event.key === 'Enter') {
+            setImageActive(index);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     const handleNavigation = (direction) => {
         setAnimationDirection(direction);
@@ -38,8 +67,10 @@ const AutoPageGalery = ({ imagesFiles }) => {
                         onClick={() => setImageActive(index)}
                         layoutId={index.toString()}
                         whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.95 }}>
-                        <Image src={img} width={720} height={720} alt={`Image ${index} de Myogi`} quality={50} />
+                        whileTap={{ scale: 0.95 }}
+                        tabIndex={0}
+                        onKeyDown={(event) => {handleKeyDown(event, index)}}>
+                        <Image src={img} width={720} height={720} alt={`${altDescriptions[index]}`} quality={50} />
                     </motion.li>
                 ))}
             </ul>
@@ -61,12 +92,13 @@ const AutoPageGalery = ({ imagesFiles }) => {
                                     className={styles.images}
                                     width={720}
                                     height={720}
+                                    alt={`${altDescriptions[imageActive]}`}
                                 />
                             </motion.div>
                         </div>
                     </AnimatePresence>
                     <div className={styles.galery__buttons__container}>
-                        <Image src={arrowLeft} width={35} height={35} alt='Previous' onClick={(e) => { e.stopPropagation(); handleNavigation(-1); }} className={styles.galery__buttons} />
+                        <Image src={arrowLeft} width={35} height={35} alt='Previous' role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); handleNavigation(-1); }} className={styles.galery__buttons} />
 
                         <div className={styles.pagination}>
                             {images.map((_, index) => (
@@ -74,11 +106,12 @@ const AutoPageGalery = ({ imagesFiles }) => {
                             ))}
                         </div>
 
-                        <Image src={arrowRight} width={35} height={35} alt='Next' onClick={(e) => { e.stopPropagation(); handleNavigation(1); }} className={styles.galery__buttons} />
+                        <Image src={arrowRight} width={35} height={35} alt='Next' role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); handleNavigation(1); }} className={styles.galery__buttons} />
                     </div>
                     <motion.button className={styles.close__button} onClick={() => setImageActive(null)}
                         whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}>Fermer</motion.button>
+                        whileTap={{ scale: 0.95 }}
+                        tabIndex={0}>Fermer</motion.button>
                 </div>
             )}
         </>

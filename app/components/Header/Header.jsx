@@ -41,7 +41,7 @@ const Header = () => {
                         <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link}>Shooting automobile</Link>
                     </li>
                     <li>
-                        <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Shooting animalier</Link>
+                        <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link}>Shooting animalier</Link>
                     </li>
                     <li>
                         <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Portfolio</Link>
