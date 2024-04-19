@@ -44,7 +44,7 @@ const Header = () => {
                         <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link}>Shooting animalier</Link>
                     </li>
                     <li>
-                        <Link href={'/boutiqueenligne'} className={pathname === '/boutiqueenligne' ? styles.link__active : styles.link}>Portfolio</Link>
+                        <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link}>Portfolio</Link>
                     </li>
                     <li>
                         <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} />

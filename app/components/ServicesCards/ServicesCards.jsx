@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './ServicesCards.module.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import shootingAuto from '../../../public/images/shootingAutoCard.jpg';
-import shootingAnimalier from '../../../public/images/shootingAnimalierCard.jpg';
+import shootingAuto from '../../../public/images/shootingAutoCard-min.webp';
+import shootingAnimalier from '../../../public/images/shootingAnimalierCard-min.webp';
 import Button from '../Button/Button';
 
 const ServicesCards = () => {
@@ -27,7 +27,7 @@ const ServicesCards = () => {
                         <p tabIndex={0}>Immortalisez les moments magiques avec votre compagnon. Capturez l'essence et la personnalité de vos animaux de compagnie à travers des photos qui racontent leur histoire. Laissez-moi révéler le lien unique qui vous unit à eux, dans des clichés empreints d'émotion et de beauté naturelle.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
-                        <Button type={'primary'} content={'En savoir plus'} link={'/shootingautomobile'} />
+                        <Button type={'primary'} content={'En savoir plus'} link={'/shooting-automobile'} />
                     </div>
                 </div>
             </motion.li>
@@ -48,7 +48,7 @@ const ServicesCards = () => {
                         <p tabIndex={0}>Immortalisez les moments magiques avec votre compagnon. Capturez l'essence et la personnalité de vos animaux de compagnie à travers des photos qui racontent leur histoire. Laissez-moi révéler le lien unique qui vous unit à eux, dans des clichés empreints d'émotion et de beauté naturelle.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
-                        <Button type={'primary'} content={'En savoir plus'} link={'/shootinganimalier'} />
+                        <Button type={'primary'} content={'En savoir plus'} link={'/shooting-animalier'} />
                     </div>
                 </div>
 

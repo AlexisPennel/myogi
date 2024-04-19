@@ -6,21 +6,54 @@ import arrowRight from '../../../public/icons/arrowRight.svg';
 import arrowLeft from '../../../public/icons/arrowLeft.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const AutoPageGalery = ({ imagesFiles }) => {
-    const [imageActive, setImageActive] = useState(null);
-    const [images, setImages] = useState(imagesFiles);
+import photoSmall1 from '../../../public/images/ShootingAuto/small/01-min.webp';
+import photoSmall2 from '../../../public/images/ShootingAuto/small/02-min.webp';
+import photoSmall3 from '../../../public/images/ShootingAuto/small/03-min.webp';
+import photoSmall4 from '../../../public/images/ShootingAuto/small/04-min.webp';
+import photoSmall5 from '../../../public/images/ShootingAuto/small/05-min.webp';
+import photoSmall6 from '../../../public/images/ShootingAuto/small/06-min.webp';
+import photoSmall7 from '../../../public/images/ShootingAuto/small/07-min.webp';
+import photoSmall8 from '../../../public/images/ShootingAuto/small/08-min.webp';
+
+
+import photo1 from '../../../public/images/ShootingAuto/01-min.webp';
+import photo2 from '../../../public/images/ShootingAuto/02-min.webp';
+import photo3 from '../../../public/images/ShootingAuto/03-min.webp';
+import photo4 from '../../../public/images/ShootingAuto/04-min.webp';
+import photo5 from '../../../public/images/ShootingAuto/05-min.webp';
+import photo6 from '../../../public/images/ShootingAuto/06-min.webp';
+import photo7 from '../../../public/images/ShootingAuto/07-min.webp';
+import photo8 from '../../../public/images/ShootingAuto/08-min.webp';
+
+
+const AutoPageGalery = () => {
     const [animationDirection, setAnimationDirection] = useState(0);
-    const altDescriptionsAuto = [
-        "Photo d'une Bmw M4",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
+    const [imageActive, setImageActive] = useState(null);
+    
+    const imagesSmall = [
+        photoSmall1,
+        photoSmall2,
+        photoSmall3,
+        photoSmall4,
+        photoSmall5,
+        photoSmall6,
+        photoSmall7,
+        photoSmall8
     ]
-    const altDescriptionsAnimalier = [
+
+    const images = [
+        photo1,
+        photo2,
+        photo3,
+        photo4,
+        photo5,
+        photo6,
+        photo7,
+        photo8
+    ];
+
+
+    const altDescriptions = [
         "Photo d'une Bmw M4",
         "Photo de",
         "Photo de",
@@ -72,7 +105,7 @@ const AutoPageGalery = ({ imagesFiles }) => {
     return (
         <>
             <ul className={styles.list__container}>
-                {images.map((img, index) => (
+                {imagesSmall.map((img, index) => (
                     <motion.li key={index}
                         onClick={() => setImageActive(index)}
                         layoutId={index.toString()}
@@ -80,7 +113,7 @@ const AutoPageGalery = ({ imagesFiles }) => {
                         whileTap={{ scale: 0.95 }}
                         tabIndex={0}
                         onKeyDown={(event) => { handleKeyDown(event, index) }}>
-                        <Image src={img} width={720} height={720} alt={`${altDescriptionsAnimalier[index]}`} sizes='(min-width: 1700px) 387px, (min-width: 1200px) 295px, (min-width: 768px) 178px, 159px' />
+                        <Image src={img} width={1172} height={1172} alt={`${altDescriptions[index]}`} sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" placeholder='blur'/>
                     </motion.li>
                 ))}
             </ul>
@@ -102,8 +135,9 @@ const AutoPageGalery = ({ imagesFiles }) => {
                                     className={styles.images}
                                     width={720}
                                     height={720}
-                                    alt={`${altDescriptionsAnimalier[imageActive]}`}
-                                    sizes='100vw'
+                                    alt={`${altDescriptions[imageActive]}`}
+                                    sizes='(min-width: 1200px) 30vw, 100vw'
+                                    placeholder='blur'
                                 />
                             </motion.div>
                         </div>
