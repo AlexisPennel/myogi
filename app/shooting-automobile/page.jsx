@@ -24,7 +24,7 @@ const page = () => {
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                <Image src={bannerAuto} width={1920} height={1080} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
+                <Image src={bannerAuto} width={1920} height={720} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Elevons ensemble la beauté de votre automobile avec des shootings exceptionnels. Chaque photo sublime les détails et reflète l'élégance unique de votre véhicule.</p>
@@ -56,8 +56,8 @@ const page = () => {
             <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
                 <header className={styles.sections__headers}>
                     <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez votre shooting</h2>
+                    <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
                 </header>
-                <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
                 <Form />
             </section>
         </main>

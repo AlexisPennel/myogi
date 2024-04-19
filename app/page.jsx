@@ -3,9 +3,7 @@ import styles from "./page.module.css";
 import bannerHome from '../public/images/bannerHome.jpg';
 import Button from "./components/Button/Button";
 import ServicesCards from "./components/ServicesCards/ServicesCards";
-import Loader from "./components/Loader/Loader";
 import PortfolioHome from "./components/PortfolioHome/PortfolioHome";
-import bannerAbout from '../public/images/bannerAbout.jpg';
 import BannerAbout from "./components/BannerAbout/BannerAbout";
 import Link from "next/link";
 import Form from "./components/Form/Form";
@@ -60,8 +58,8 @@ export default function Home() {
       <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
         <header className={styles.sections__headers}>
           <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez votre shooting</h2>
+          <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
         </header>
-        <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
         <Form />
       </section>
     </main>

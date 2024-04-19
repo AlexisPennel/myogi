@@ -1,5 +1,12 @@
 .about__banner {
-    width: 288px;
-    height: 303px;
+    width: 80vw;
+    height: 40vh;
     object-fit: cover;
+}
+
+@media only screen and (min-width : 768px) {
+    .about__banner {
+        width: 60vw;
+        height: 40vh;
+    }
 }
