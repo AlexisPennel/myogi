@@ -8,8 +8,8 @@ import Image from 'next/image';
 const BannerAbout = () => {
     return (
         <motion.div 
-            initial={{opacity:0.1, x:-100}}
-            whileInView={{opacity:1, x:0}}
+            initial={{opacity:0.1, y:20}}
+            whileInView={{opacity:1, y:0}}
             transition={{delay:0.3, ease:'easeInOut'}}
         >
             <Image src={aboutBanner} width={1920} height={2880} alt="Photo de Myogi, photographe animalier et automobile de Rouen" className={styles.about__banner}  tabIndex={0}/>

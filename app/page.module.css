@@ -83,6 +83,12 @@
   gap: 32px;
 }
 
+.about__responsive__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .about__bio {
   padding: 0px 16px;
 }
@@ -215,6 +221,19 @@
     max-width: 40vw;
   }
 
+  /* About  */
+
+  .about__responsive__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 64px;
+    height: fit-content;
+  }
+
+  .about__bio {
+    padding: 0px 0px 0px 60px;
+  }
+
   /* Contact sectioon ************/
 
   .section__contact {
@@ -234,6 +253,18 @@
     /* display: flex;
       flex-direction: column;
       gap: 16px; */
+  }
+
+
+  /* About */
+
+  .about__responsive__wrapper {
+    gap: 120px;
+  }
+
+
+  .about__bio {
+    padding: 0px 0px 0px 105px;
   }
 
 

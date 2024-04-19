@@ -48,10 +48,12 @@ export default function Home() {
         <header className={styles.sections__headers}>
           <h2 className={styles.sections__titles} id="aboutTitle" tabIndex={0}>Qui suis-je ?</h2>
         </header>
-        <BannerAbout />
-        <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, photographe professionnel basé à Rouen, en Normandie, spécialisé dans la photographie animalière et automobile. Ma passion pour la capture de moments uniques, qui m'anime depuis de nombreuses années, m'a permis de perfectionner mon art. <br /><br />
-          Je m'efforce d'immortaliser la beauté et l'émotion inhérentes à chaque sujet, mettant en lumière l'éclat et la singularité de chaque scène, qu'il s'agisse de la grâce naturelle d'un animal ou du caractère distinctif d'une voiture. <br /><br />
-          Je vous invite à plonger dans mon univers et à considérer une collaboration pour votre projet photographique, que ce soit en Normandie ou au-delà. Ensemble, explorons la possibilité de créer des souvenirs durables et significatifs à travers mon objectif.</p>
+        <div className={styles.about__responsive__wrapper}>
+          <BannerAbout />
+          <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, photographe professionnel basé à Rouen, en Normandie, spécialisé dans la photographie animalière et automobile. Ma passion pour la capture de moments uniques, qui m'anime depuis de nombreuses années, m'a permis de perfectionner mon art. <br /><br />
+            Je m'efforce d'immortaliser la beauté et l'émotion inhérentes à chaque sujet, mettant en lumière l'éclat et la singularité de chaque scène, qu'il s'agisse de la grâce naturelle d'un animal ou du caractère distinctif d'une voiture. <br /><br />
+            Je vous invite à plonger dans mon univers et à considérer une collaboration pour votre projet photographique, que ce soit en Normandie ou au-delà. Ensemble, explorons la possibilité de créer des souvenirs durables et significatifs à travers mon objectif.</p>
+        </div>
       </section>
 
       {/* contact */}
