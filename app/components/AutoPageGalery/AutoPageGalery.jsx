@@ -10,7 +10,7 @@ const AutoPageGalery = ({ imagesFiles }) => {
     const [imageActive, setImageActive] = useState(null);
     const [images, setImages] = useState(imagesFiles);
     const [animationDirection, setAnimationDirection] = useState(0);
-    const altDescriptions = [
+    const altDescriptionsAuto = [
         "Photo d'une Bmw M4",
         "Photo de",
         "Photo de",
@@ -19,7 +19,17 @@ const AutoPageGalery = ({ imagesFiles }) => {
         "Photo de",
         "Photo de",
         "Photo de",
-    ]   
+    ]
+    const altDescriptionsAnimalier = [
+        "Photo d'une Bmw M4",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+        "Photo de",
+    ]
 
     const handleKeyDown = (event, index) => {
         if (event.key === "ArrowRight") {
@@ -69,8 +79,8 @@ const AutoPageGalery = ({ imagesFiles }) => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.95 }}
                         tabIndex={0}
-                        onKeyDown={(event) => {handleKeyDown(event, index)}}>
-                        <Image src={img} width={720} height={720} alt={`${altDescriptions[index]}`} quality={50} />
+                        onKeyDown={(event) => { handleKeyDown(event, index) }}>
+                        <Image src={img} width={720} height={720} alt={`${altDescriptionsAnimalier[index]}`} sizes='(min-width: 1700px) 387px, (min-width: 1200px) 295px, (min-width: 768px) 178px, 159px' />
                     </motion.li>
                 ))}
             </ul>
@@ -92,7 +102,8 @@ const AutoPageGalery = ({ imagesFiles }) => {
                                     className={styles.images}
                                     width={720}
                                     height={720}
-                                    alt={`${altDescriptions[imageActive]}`}
+                                    alt={`${altDescriptionsAnimalier[imageActive]}`}
+                                    sizes='100vw'
                                 />
                             </motion.div>
                         </div>
