@@ -1,0 +1,137 @@
+.list__container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    padding: 0px 16px;
+}
+
+.list__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.imageContainer__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.imageContainer__image1 {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0px -160px;
+}
+
+.imageContainer__number {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--neutrals-100);
+    padding: 0px 8px;
+    font-family: var(--font-source);
+    line-height: auto;
+}
+
+.cards__content { 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cards__buttonContainer {
+    margin-top: 8px;
+
+}
+
+@media only screen and (min-width : 768px) {
+    .list__container {
+        gap: 80px;
+        padding: 0px 30px;
+    }
+
+    .list__cards {
+        flex-direction: row;
+        gap: 32px;
+        height: 200px;
+        max-height: 200px;
+    }
+
+
+    .imageContainer__image {
+        width: 35vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .imageContainer__image1 {
+        width: 35vw;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    .cards__content { 
+        max-width: 60vw;
+    }
+}
+
+
+@media only screen and (min-width : 1200px) {
+    .list__container {
+        gap: 80px;
+        padding: 0px 60px;
+    }
+
+    .list__cards {
+        flex-direction: row;
+        gap: 32px;
+        max-height: 230px;
+    }
+
+
+    .imageContainer__image {
+        width: 25vw;
+        height: 100%;
+    }
+    
+    .imageContainer__image1 {
+        width: 25vw;
+        height: 100%;
+        object-position: 0 -200px;
+    }
+
+    .cards__content { 
+        max-width: 40vw;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .list__container {
+        padding: 0px 105px;
+    }
+
+    .list__cards {
+        max-height: none;
+        height: 247px;
+    }
+
+    
+    .imageContainer__image {
+        width: 20vw;
+        min-height: 247px;
+    }
+    
+    .imageContainer__image1 {
+        width: 20vw;
+        height: 100%;
+        min-height: 247px;
+
+    }
+
+    .imageContainer__number {
+        font-size: 3rem;
+    }
+
+}

@@ -1,0 +1,133 @@
+.container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 24px 16px 0px 16px;
+    z-index: 2;
+    transform: translateY(-100px);
+    animation: entranceHeader 0.3s 0.3s ease-in forwards;
+}
+
+.burger {
+    cursor: pointer;
+}
+
+@keyframes entranceHeader {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.linksContainer {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desktop__links {
+    display: none;
+    color: var(--neutrals-200);
+}
+
+.contactButton__container {
+    display: none;
+}
+
+@media only screen and (min-width : 768px) {
+    .container {
+        padding: 24px 60px 0px 30px;
+    }
+
+    .logo {
+        width: 44px;
+        height: 38px;
+    }
+}
+
+
+@media only screen and (min-width : 1200px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        padding: 32px 60px 0px 60px;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .logo {
+        width: 130px;
+        height: 30px;
+    }
+
+    .linksContainer {
+        width: fit-content;
+    }
+
+    .contactButton__container {
+        display: block;
+    }
+
+    .desktop__links {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .desktop__links__list {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+    }
+
+    .desktop__links__list li {
+        display: flex;
+        align-items: center;
+    }
+
+    .link {
+        font-weight: 500;
+        font-size: 1.125rem;
+    }
+
+    .link__active {
+        color: var(--primary-700);
+        font-weight: 600;
+        font-size: 1.125rem;
+    }
+
+}
+
+@media only screen and (min-width : 1700px) {
+    .container {
+        padding: 48px 105px 0px 105px;
+    }
+
+    .logo {
+        width: 165px;
+        height: 38px;
+    }
+
+    .desktop__links__list {
+        gap: 56px;
+    }
+
+    .link {
+        font-size: 1.25rem;
+    }
+
+    .link__active {
+        font-size: 1.25rem;
+    }
+}

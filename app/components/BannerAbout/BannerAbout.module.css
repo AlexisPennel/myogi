@@ -1,0 +1,26 @@
+.about__banner {
+    width: 80vw;
+    height: 40vh;
+    object-fit: cover;
+}
+
+@media only screen and (min-width : 768px) {
+    .about__banner {
+        width: 60vw;
+        height: 40vh;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .about__banner {
+        width: 40vw;
+        height: 60vh;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .about__banner {
+        width: 30vw;
+        height: 50vh;
+    }
+}
