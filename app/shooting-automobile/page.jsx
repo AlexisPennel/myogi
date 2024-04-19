@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
-import bannerAuto from '../../public/images/bannerAuto.jpg'
+import bannerAuto from '../../public/images/bannerAuto-min.webp';
 import Button from '../components/Button/Button';
 import Link from 'next/link';
 import Form from '../components/Form/Form';
@@ -9,22 +9,10 @@ import ProcessCards from '../components/ProcessCards/ProcessCards';
 import AutoPageGalery from '../components/AutoPageGalery/AutoPageGalery';
 
 const page = () => {
-    const images = [
-        "/images/ShootingAuto/01.jpg",
-        "/images/ShootingAuto/02.jpg",
-        "/images/ShootingAuto/03.jpg",
-        "/images/ShootingAuto/04.jpg",
-        "/images/ShootingAuto/05.jpg",
-        "/images/ShootingAuto/06.jpg",
-        "/images/ShootingAuto/07.jpg",
-        "/images/ShootingAuto/08.jpg",
-    ];
-
-
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                <Image src={bannerAuto} width={1920} height={720} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
+                <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Elevons ensemble la beauté de votre automobile avec des shootings exceptionnels. Chaque photo sublime les détails et reflète l'élégance unique de votre véhicule.</p>
@@ -49,7 +37,7 @@ const page = () => {
                     <h2 className={styles.sections__titles} id="galerieTitle" tabIndex={0}>Aperçu du résultat</h2>
                     <p tabIndex={0}>Immergez vous dans un aperçu de mes réalisations les plus récentes dans le monde de la photographie automobile. Chaque cliché sélectionné illustre mon engagement à capturer l'élégance et la puissance de chaque véhicule.</p>
                 </header>
-                <AutoPageGalery imagesFiles={images}/>
+                <AutoPageGalery/>
             </section>
 
             {/* contact */}

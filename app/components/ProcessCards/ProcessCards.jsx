@@ -3,9 +3,9 @@ import React from 'react';
 import styles from './ProcessCards.module.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import processCard1 from '../../../public/images/processCard1-min.jpg';
-import processCard2 from '../../../public/images/processCard2-min.jpg';
-import processCard3 from '../../../public/images/processCard3-min.jpg';
+import processCard1 from '../../../public/images/processCard1-min.webp';
+import processCard2 from '../../../public/images/processCard2-min.webp';
+import processCard3 from '../../../public/images/processCard3-min.webp';
 
 
 const ProcessCards = () => {
@@ -20,7 +20,7 @@ const ProcessCards = () => {
                 aria-labelledby='lieuTitle' >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
-                    <Image src={processCard1} width={1920} height={1080} sizes='50vw' alt="Photo d'un telephone portable dans une main" className={styles.imageContainer__image1} placeholder='blur' tabIndex={0}/>
+                    <Image src={processCard1} width={816} height={510} sizes="(min-width: 1700px) 20vw, (min-width: 1200px) 25vw, (min-width: 780px) 35vw, calc(100vw - 32px)" alt="Photo d'un telephone portable dans une main" className={styles.imageContainer__image} placeholder='blur' tabIndex={0}/>
                 </div>
                 <div className={styles.cards__content}>
                     <h3 tabIndex={0} id='lieuTitle'>Choix du lieu idéal</h3>
@@ -36,7 +36,7 @@ const ProcessCards = () => {
                 tabIndex={0}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>02</span>
-                    <Image src={processCard2} width={1920} height={1080} alt="Photo d'un objectif d'appareil photo" className={styles.imageContainer__image} placeholder='blur' sizes='50vw' tabIndex={0} />
+                    <Image src={processCard2} width={816} height={510} alt="Photo d'un objectif d'appareil photo" className={styles.imageContainer__image} placeholder='blur' sizes="(min-width: 1700px) 20vw, (min-width: 1200px) 25vw, (min-width: 780px) 35vw, calc(100vw - 32px)" tabIndex={0} />
                 </div>
                 <div className={styles.cards__content}>
                     <h3 tabIndex={0} id='shootingTitle'>Le Shooting</h3>
@@ -52,7 +52,7 @@ const ProcessCards = () => {
                 tabIndex={0}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>03</span>
-                    <Image src={processCard3} width={720} height={720} alt="Photos sur papier sur une table" className={styles.imageContainer__image} placeholder='blur' sizes='50vw' tabIndex={0} />
+                    <Image src={processCard3} width={816} height={510} alt="Photos sur papier sur une table" className={styles.imageContainer__image} placeholder='blur' sizes="(min-width: 1700px) 20vw, (min-width: 1200px) 25vw, (min-width: 780px) 35vw, calc(100vw - 32px)" tabIndex={0} />
                 </div>
                 <div className={styles.cards__content}>
                     <h3 tabIndex={0} id='livraisonTitle'>la Livraison </h3>
