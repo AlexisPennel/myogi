@@ -29,7 +29,7 @@ import photo8 from '../../../public/images/ShootingAnimalier/08-min.webp';
 const AnimPageGalery = () => {
     const [animationDirection, setAnimationDirection] = useState(0);
     const [imageActive, setImageActive] = useState(null);
-    
+
     const imagesSmall = [
         photoSmall1,
         photoSmall2,
@@ -113,7 +113,7 @@ const AnimPageGalery = () => {
                         whileTap={{ scale: 0.95 }}
                         tabIndex={0}
                         onKeyDown={(event) => { handleKeyDown(event, index) }}>
-                        <Image src={img} width={1172} height={1172} alt={`${altDescriptions[index]}`} sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" placeholder='blur'/>
+                        <Image src={img} width={1172} height={1172} alt={`${altDescriptions[index]}`} sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" placeholder='blur' />
                     </motion.li>
                 ))}
             </ul>
@@ -130,6 +130,7 @@ const AnimPageGalery = () => {
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd}>
+                                <p className={styles.loadingMessage}>Chargement en cours,<br/> veuillez patienter.</p>
                                 <Image
                                     src={images[imageActive]}
                                     className={styles.images}

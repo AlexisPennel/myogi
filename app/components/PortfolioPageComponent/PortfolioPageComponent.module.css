@@ -1,29 +1,67 @@
-.list__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 16px;
-    list-style: none;
+.container {
     padding: 0px 16px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
 }
 
-.list__container li {
-    min-width: 100%;
-    min-height: 157px;
-    height: 157px;
-    background-color: rgba(0, 0, 0, 0.205);
+/* Buttons cat *******************************/
+.buttons__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.list__container li img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.buttons__container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.buttons {
+    outline: none;
+    border: none;
+    background-color: var(--primary-900);
+    border-radius: 32px;
+    font-size: 1rem;
+    color: var(--neutrals-200);
+    padding: 8px 32px;
     cursor: pointer;
 }
 
-/* Galery */
+.buttons__active {
+    background-color: var(--primary-800);
+}
+
+/* Help message ************************************/
+
+.helpMessage__container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.helpMessage__container p {
+    font-size: 0.93rem;
+}
+
+/* render Images small **************************/
+
+.images__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.images__small {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Galery ***************************************/
 
 .galery__wrapper {
     position: fixed;
@@ -88,7 +126,7 @@
 }
 
 
-/* Navigation galery */
+/* Navigation galery *************************************/
 
 .galery__buttons__container {
     display: flex;
@@ -144,75 +182,42 @@
 }
 
 @media only screen and (min-width : 768px) {
-    .list__container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+    .container {
         padding: 0px 30px;
     }
 
-    /* Galery */
+    /* Buttons cat *******************************/
 
-    .galery__wrapper {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        max-width: 100vw;
-        padding: 0px 0px 16px 0px;
+    .buttons__container {
+        gap: 16px;
+
     }
 
-    .images {
-        max-width: 100vw;
-        width: auto;
-        height: auto;
-        max-height: 80vh;
-        object-fit: cover;
-        background-color: black;
-        pointer-events: none;
+    .buttons {
+        font-size: 1.125rem;
+        padding: 10px 32px;
+    }
+
+    /* Help message ************************************/
+
+    .helpMessage__container img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .helpMessage__container p {
+        font-size: 1rem;
     }
 }
 
-
 @media only screen and (min-width : 1200px) {
-    .list__container {
+    .container {
         padding: 0px 60px;
-    }
-
-    .list__container li {
-        width: auto;
-        height: 278px;
-    }
-    
-    /* Navigation galery */
-    .galery__buttons__container {
-        width: fit-content;
-        gap: 48px;
-    }
-
-    .galery__buttons {
-        width: 40px;
-        height: 40px;
-    }
-
-    .pagination {
-        gap: 8px;
-    }
-
-    .close__button {
-        padding: 8px 32px;
-        font-size: 1.125rem;
     }
 }
 
 @media only screen and (min-width : 1700px) {
-    .list__container {
+    .container {
         padding: 0px 105px;
-        width: 100%;
-        gap: 48px;
-    }
-
-    .list__container li {
-        width: auto;
-        height: 387px;
     }
 }

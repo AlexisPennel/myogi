@@ -1,9 +1,3 @@
 {
-  "PortfolioHome": [
-    "/images/PortfolioHome/01.jpg",
-    "/images/PortfolioHome/02.jpg",
-    "/images/PortfolioHome/03.jpg",
-    "/images/PortfolioHome/04.jpg",
-    "/images/PortfolioHome/05.jpg"
-  ]
+  "PortfolioHome": []
 }
