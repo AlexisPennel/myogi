@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-        <Image src={bannerHome} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" />
+        <Image src={bannerHome} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true" />
         <div className={styles.hero__section__contentWrapper}>
           <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Capturons <br /><span>l'instant parfait</span></h1>
           <p className={styles.contentWrapper__description} tabIndex={0}>Votre photographe à Rouen pour des clichés animaliers et automobiles uniques. Explorez la beauté à travers mon objectif.</p>
