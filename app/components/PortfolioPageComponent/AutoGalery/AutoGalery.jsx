@@ -108,6 +108,7 @@ const AutoGalery = () => {
                         whileTap={{ scale: 0.95 }}
                         tabIndex={0}
                         className={`${styles['imageItem-' + index]}`}
+                        onContextMenu={(event) => event.preventDefault()}
                         >
                         <Image 
                             src={img} 
@@ -118,8 +119,9 @@ const AutoGalery = () => {
                             sizes='100vw' 
                             noindex="true" 
                             placeholder='blur' 
-                            onClick={() => { setImageActive(index) }} 
-                            onKeyDown={(event) => { handleKeyDown(event, index) }} />
+                            onClick={() => { setImageActive(index) }}
+                            onKeyDown={(event) => { handleKeyDown(event, index) }} 
+                            draggable="false"/>
                     </motion.li>
                 ))}
             </ul>
@@ -136,7 +138,8 @@ const AutoGalery = () => {
                                 drag="x"
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={1}
-                                onDragEnd={handleDragEnd}>
+                                onDragEnd={handleDragEnd} 
+                                onContextMenu={(event) => event.preventDefault()}>
                                 <p className={styles.loadingMessage}>Chargement en cours,<br /> veuillez patienter.</p>
                                 <Image
                                     src={imagesAuto[imageActive]}
@@ -146,6 +149,7 @@ const AutoGalery = () => {
                                     alt={`${altDescriptions[imageActive]}`}
                                     sizes='(min-width: 1200px) 30vw, 100vw'
                                     placeholder='blur'
+                                    draggable="false"
                                 />
                             </motion.div>
                         </div>

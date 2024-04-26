@@ -72,7 +72,11 @@ const AutoPageGalery = () => {
         }
 
         if (event.key === 'Enter') {
-            setImageActive(index);
+            if (index) {
+                setImageActive(index);
+            } else {
+                setImageActive(0);
+            }
         }
     };
 
@@ -138,7 +142,7 @@ const AutoPageGalery = () => {
                                     height={720}
                                     alt={`${altDescriptions[imageActive]}`}
                                     sizes='(min-width: 1200px) 30vw, 100vw'
-                                    placeholder='blur'
+                                    placeholder="blur"
                                 />
                             </motion.div>
                         </div>

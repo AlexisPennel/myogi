@@ -72,7 +72,11 @@ const AnimPageGalery = () => {
         }
 
         if (event.key === 'Enter') {
-            setImageActive(index);
+            if (index) {
+                setImageActive(index);
+            } else {
+                setImageActive(0);
+            }
         }
     };
 
