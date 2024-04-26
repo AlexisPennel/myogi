@@ -198,7 +198,7 @@
     }
   
     .hero__section__banner {
-      width: 50vw;
+      width: 40vw;
       height: 100vh;
       object-fit: cover;
       transform: translateX(200px);
@@ -212,7 +212,7 @@
       left: 0;
       padding-left: 60px;
       top: 180px;
-      gap: 64px;
+      gap: 48px;
       transform: translateX(-200px);
       animation: contentWrapperEntrance 0.3s 0.3s ease-in forwards
     }

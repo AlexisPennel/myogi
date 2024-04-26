@@ -152,7 +152,7 @@
 
   .hero__section__contentWrapper {
     padding-left: 30px;
-    gap: 64px;
+    gap: 48px;
     max-width: 75vw;
     margin-top: -6vh;
   }
@@ -198,7 +198,7 @@
   }
 
   .hero__section__banner {
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
     object-fit: cover;
     transform: translateX(200px);
@@ -277,6 +277,10 @@
     gap: 64px;
     transform: translateX(-200px);
     animation: contentWrapperEntrance 0.3s 0.3s ease-in forwards
+  }
+
+  .hero__section__banner {
+    width: 40vw;
   }
 
   .contact__email {

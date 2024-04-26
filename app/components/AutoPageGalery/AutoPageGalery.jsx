@@ -72,7 +72,11 @@ const AutoPageGalery = () => {
         }
 
         if (event.key === 'Enter') {
-            setImageActive(index);
+            if (index) {
+                setImageActive(index);
+            } else {
+                setImageActive(0);
+            }
         }
     };
 
@@ -130,6 +134,7 @@ const AutoPageGalery = () => {
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd}>
+                                <p className={styles.loadingMessage}>Chargement en cours,<br/> veuillez patienter.</p>
                                 <Image
                                     src={images[imageActive]}
                                     className={styles.images}
@@ -137,7 +142,7 @@ const AutoPageGalery = () => {
                                     height={720}
                                     alt={`${altDescriptions[imageActive]}`}
                                     sizes='(min-width: 1200px) 30vw, 100vw'
-                                    placeholder='blur'
+                                    placeholder="blur"
                                 />
                             </motion.div>
                         </div>

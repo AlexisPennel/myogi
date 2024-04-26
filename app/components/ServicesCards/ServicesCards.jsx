@@ -19,7 +19,7 @@ const ServicesCards = () => {
                 aria-labelledby='autoTitle' >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
-                    <Image src={shootingAuto} width={4830} height={2717} alt="Photo du photographe Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='100vw' tabIndex={0} />
+                    <Image src={shootingAuto} width={1280} height={720} alt="Photo du photographe Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true"/>
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
@@ -40,7 +40,7 @@ const ServicesCards = () => {
                 tabIndex={0}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>02</span>
-                    <Image src={shootingAnimalier} width={4830} height={2717} alt="Photo de Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='100vw' tabIndex={0} />
+                    <Image src={shootingAnimalier} width={1280} height={720} alt="Photo de Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true"/>
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
