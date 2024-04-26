@@ -121,7 +121,8 @@ const AutoGalery = () => {
                             placeholder='blur' 
                             onClick={() => { setImageActive(index) }}
                             onKeyDown={(event) => { handleKeyDown(event, index) }} 
-                            draggable="false"/>
+                            draggable="false"
+                            />
                     </motion.li>
                 ))}
             </ul>
