@@ -13,7 +13,7 @@ const page = () => {
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                <Image src={bannerAnimalier} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles2.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true"/>
+                <Image src={bannerAnimalier} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles2.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true" draggable="false"/>
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Animalier</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Capturons ensemble l'âme et la beauté de vos animaux dans des séances photo mémorables. Chaque image révèle leur caractère unique et met en lumière les moments de complicité et de naturel.</p>
@@ -39,6 +39,10 @@ const page = () => {
                     <p tabIndex={0}>Immergez vous dans un aperçu de mes réalisations les plus récentes dans le monde de la photographie automobile. Chaque cliché sélectionné illustre mon engagement à capturer l'élégance et la puissance de chaque véhicule.</p>
                 </header>
                 <AnimPageGalery/>
+                <div className={styles.see__morePhotos}>
+                    <h3>Découvrez plus de photos sur ma page portfolio</h3>
+                    <Button type={'primary'} content={'Voir le portfolio'} link={"/portfolio"} />
+                </div>
             </section>
 
             {/* contact */}

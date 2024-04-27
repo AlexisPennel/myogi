@@ -12,7 +12,7 @@ const page = () => {
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true" />
+                <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Elevons ensemble la beauté de votre automobile avec des shootings exceptionnels. Chaque photo sublime les détails et reflète l'élégance unique de votre véhicule.</p>
@@ -37,7 +37,11 @@ const page = () => {
                     <h2 className={styles.sections__titles} id="galerieTitle" tabIndex={0}>Aperçu du résultat</h2>
                     <p tabIndex={0}>Immergez vous dans un aperçu de mes réalisations les plus récentes dans le monde de la photographie automobile. Chaque cliché sélectionné illustre mon engagement à capturer l'élégance et la puissance de chaque véhicule.</p>
                 </header>
-                <AutoPageGalery/>
+                <AutoPageGalery />
+                <div className={styles.see__morePhotos}>
+                    <h3>Découvrez plus de photos sur ma page portfolio</h3>
+                    <Button type={'primary'} content={'Voir le portfolio'} link={"/portfolio"} />
+                </div>
             </section>
 
             {/* contact */}

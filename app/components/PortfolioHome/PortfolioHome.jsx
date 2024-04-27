@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import styles from './PortfolioHome.module.css';
 import Image from 'next/image';
@@ -20,19 +21,19 @@ const PortfolioHome = () => {
     return (
         <ul className={styles.container}>
             <li className={styles.container1}>
-                <Image src={photo1} width={1280} height={720} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[0]}`} noindex tabIndex={0} placeholder='blur' />
+                <Image src={photo1} width={1280} height={720} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[0]}`} noindex="true" tabIndex={0} placeholder='blur' draggable="false" onContextMenu={(event) => event.preventDefault()}/>
             </li>
             <li className={styles.container2}>
-                <Image src={photo2} width={1080} height={720} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[1]}`} noindex tabIndex={0} placeholder='blur' />
+                <Image src={photo2} width={1080} height={720} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[1]}`} noindex="true" tabIndex={0} placeholder='blur' draggable="false" onContextMenu={(event) => event.preventDefault()}/>
             </li>
             <li className={styles.container3}>
-                <Image src={photo3} width={720} height={1080} sizes="(min-width: 768px) 29vw, 100vw" alt={`${altDescriptions[2]}`} noindex tabIndex={0} placeholder='blur' />
+                <Image src={photo3} width={720} height={1080} sizes="(min-width: 768px) 29vw, 100vw" alt={`${altDescriptions[2]}`} noindex="true" tabIndex={0} placeholder='blur' draggable="false" onContextMenu={(event) => event.preventDefault()}/>
             </li>
             <li className={styles.container4}>
-                <Image src={photo4} width={720} height={1280} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[3]}`} noindex tabIndex={0} placeholder='blur' />
+                <Image src={photo4} width={720} height={1280} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[3]}`} noindex="true" tabIndex={0} placeholder='blur' draggable="false" onContextMenu={(event) => event.preventDefault()}/>
             </li>
             <li className={styles.container5}>
-                <Image src={photo5} width={1080} height={864} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[4]}`} noindex tabIndex={0} placeholder='blur' />
+                <Image src={photo5} width={1080} height={864} sizes="(min-width: 1700px) 28vw, (min-width: 1200px) 29vw, (min-width: 768px) 28vw, 100vw" alt={`${altDescriptions[4]}`} noindex="true" tabIndex={0} placeholder='blur' draggable="false" onContextMenu={(event) => event.preventDefault()}/>
             </li>
         </ul>
     );

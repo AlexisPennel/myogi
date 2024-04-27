@@ -145,7 +145,7 @@ const AnimGalery = () => {
                                     width={1920}
                                     height={1080}
                                     alt={`${altDescriptions[imageActive]}`}
-                                    sizes='(min-width: 1200px) 30vw, 100vw'
+                                    sizes='100vw'
                                     placeholder='blur'
                                     draggable="false"
                                 />

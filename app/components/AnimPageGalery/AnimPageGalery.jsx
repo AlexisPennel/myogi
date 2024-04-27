@@ -117,7 +117,7 @@ const AnimPageGalery = () => {
                         whileTap={{ scale: 0.95 }}
                         tabIndex={0}
                         onKeyDown={(event) => { handleKeyDown(event, index) }}>
-                        <Image src={img} width={1172} height={1172} alt={`${altDescriptions[index]}`} sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" placeholder='blur' />
+                        <Image src={img} width={1172} height={1172} alt={`${altDescriptions[index]}`} sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" placeholder='blur' onContextMenu={(event) => event.preventDefault()} draggable="false" />
                     </motion.li>
                 ))}
             </ul>
@@ -133,7 +133,8 @@ const AnimPageGalery = () => {
                                 drag="x"
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={1}
-                                onDragEnd={handleDragEnd}>
+                                onDragEnd={handleDragEnd}
+                                onContextMenu={(event) => event.preventDefault()}>
                                 <p className={styles.loadingMessage}>Chargement en cours,<br/> veuillez patienter.</p>
                                 <Image
                                     src={images[imageActive]}
@@ -143,6 +144,7 @@ const AnimPageGalery = () => {
                                     alt={`${altDescriptions[imageActive]}`}
                                     sizes='(min-width: 1200px) 30vw, 100vw'
                                     placeholder='blur'
+                                    draggable="false"
                                 />
                             </motion.div>
                         </div>
