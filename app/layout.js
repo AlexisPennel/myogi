@@ -37,7 +37,7 @@ export const metadata = {
   msTileColor: '#46668e',
   manifest: 'favicon/site.webmanifest',
   openGraph: {
-    title: 'Photographe animalier sur Rouen - Romain Martin',
+    title: 'Photographe animalier à Rouen - Romain Martin',
     description: '',
     url: "",
     image: ''
