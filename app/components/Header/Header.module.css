@@ -39,6 +39,19 @@
     display: none;
 }
 
+.cartAndBurger__wrapper {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart__icon {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
 @media only screen and (min-width : 768px) {
     .container {
         padding: 24px 60px 0px 30px;

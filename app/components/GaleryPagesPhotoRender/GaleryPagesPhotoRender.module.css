@@ -1,0 +1,35 @@
+.files__section {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0px 16px;
+}
+
+.files__list {
+    width: 100%;
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 32px
+}
+
+.files__list h3 {
+    position: relative;
+    margin-top: -6vh;
+    margin-left: 4vw;
+}
+
+.notFound__message {
+    text-align: center;
+    font-weight: 600;
+    padding: 16px;
+    background: var(--neutrals-700);
+    border-radius: 10px;
+}
+
+.notFound__message a {
+    color: var(--primary-600);
+    text-decoration: underline;
+    font-weight: 600;
+}

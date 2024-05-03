@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--neutrals-200);
+    color: var(--neutrals-200);
+    box-shadow: none;
+    font-size: 1rem;
+    max-width: 70%;
+}
+
+.input__error {
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--neutrals-200);
+    color: var(--neutrals-200);
+    box-shadow: none;
+    font-size: 1rem;
+    max-width: 55%;
+    border-bottom: 2px solid var(--error);
+}
+
+.error__message span {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.input__error::placeholder {
+    color: var(--error);
+} 
+
+.input::placeholder {
+    color: var(--neutrals-200);
+}
+
+.container label {
+    display: none;
+}
+
+.submit__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: var(--primary-800);
+    gap: 8px;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    width: fit-content;
+    font-family: var(--font-lato);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Files List  *************/
+.files__section {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0px 16px 200px 16px;
+}
+
+.files__list {
+    width: 100%;
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 32px
+}
+
+.files__list h3 {
+    position: relative;
+    margin-top: -6vh;
+    margin-left: 4vw;
+}

@@ -1,0 +1,22 @@
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--neutrals-800);
+}
+
+.backButton {
+    width: 100%;
+    outline: none;
+    border: 2px solid var(--neutrals-400);
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--neutrals-400);
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: var(--font-lato);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

@@ -1,0 +1,85 @@
+{
+  "mr-dupont-30-04-24": {
+    "images": [
+      {
+        "path": "/galeries/mr-dupont-30-04-24/1-5.jpg",
+        "price": 5
+      },
+      {
+        "path": "/galeries/mr-dupont-30-04-24/2-10.jpg",
+        "price": 10
+      },
+      {
+        "path": "/galeries/mr-dupont-30-04-24/3-5.jpg",
+        "price": 5
+      }
+    ]
+  },
+  "seat-normandie-19-04-24": {
+    "aa-123-aa": {
+      "images": [
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/1-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/2-20.jpg",
+          "price": 20
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/3-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/4-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/5-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/6-20.jpg",
+          "price": 20
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/aa-123-aa/7-3.jpg",
+          "price": 3
+        }
+      ],
+      "free": "1"
+    },
+    "bb-123-bb": {
+      "images": [
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/1-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/2-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/3-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/4-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/5-10.jpg",
+          "price": 10
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/6-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-19-04-24/bb-123-bb/7-10.jpg",
+          "price": 10
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.photosSection__container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0px 16px;
+    margin: 0px 0px 200px 0px;
+}
+
+.freePhoto__message {
+    text-align: center;
+    font-weight: 600;
+    padding: 16px;
+    margin: 0px 16px;
+    background: var(--neutrals-700);
+    border-radius: 10px;
+}
+
+.photos__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.photos__container {
+    position: relative;
+}
+
+.photos {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.photos__price {
+    padding: 4px 8px;
+    background-color: var(--primary-600);
+    font-family: var(--font-source);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 75px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.25rem;    
+}
+
+.photos__addToCart {
+    outline: none;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(255, 255, 255, 0.70);
+    position: absolute;
+    right: 0;
+    bottom: 0.5vh;
+    cursor: pointer;
+}
+
+.photos__inCart {
+    background-color: var(--green);
+    opacity: 0.9;
+}
+
+/* Voir le panier bouton page  *******************/
+.cartButton__page {
+    width: 100%;
+    background-color: var(--primary-800);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--neutrals-200);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-family: var(--font-lato);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.cartButton__page__icon {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.cartButton__page__icon span {
+    font-size: 1rem;
+}
+
+/* Voir le panier bouton **********************/
+.seeCart__container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-800);
+    cursor: pointer;
+}
+
+.seeCart__container p {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.seeCart__length {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkCart__container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}

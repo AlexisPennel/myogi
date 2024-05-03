@@ -3,8 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 16px;
-    height: 36px;
+    padding: 0px 24px;
+    height: 40px;
+    gap: 8px;
     width: fit-content;
     background-color: var(--primary-800);
     cursor: pointer;
