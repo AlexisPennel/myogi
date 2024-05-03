@@ -3,15 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node generatePorfolioHome.js",
-    "dev": "next dev",
-    "prebuild": "node generatePorfolioHome.js",
-    "build": "next build"
+    "dev": "node generateImageList.js && next dev",
+    "build": "node generateImageList.js && next build",
+    "start": "next start",
+    "generate-images-list": "node generateImageList.js"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.3.0",
     "framer-motion": "^11.0.27",
-    "next": "14.1.4",
+    "next": "^14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "uuid": "^9.0.1"
   }
 }

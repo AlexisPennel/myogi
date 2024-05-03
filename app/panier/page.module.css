@@ -1,0 +1,29 @@
+.steps__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 32px;
+}
+
+.steps__li {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.steps__li span {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: var(--primary-600);
+    font-size: 1rem;
+    font-family: var(--font-lato);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+.steps__li p {
+    font-size: 1.125rem;
+}

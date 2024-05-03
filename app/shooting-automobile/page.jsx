@@ -40,7 +40,7 @@ const page = () => {
                 <AutoPageGalery />
                 <div className={styles.see__morePhotos}>
                     <h3>Découvrez plus de photos sur ma page portfolio</h3>
-                    <Button type={'primary'} content={'Voir le portfolio'} link={"/portfolio"} />
+                    <Button type={'primary'} size={'large'} content={'Voir le portfolio'} link={"/portfolio"} />
                 </div>
             </section>
 

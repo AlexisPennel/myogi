@@ -3,9 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './Button.module.css';
+import Image from 'next/image';
 
 
-const Button = ({ type, size, content, link, scrollId }) => {
+const Button = ({ type, size, content, link, scrollId, icon, action }) => {
 
     const handleClick = () => {
         if (scrollId && !link) {
@@ -13,6 +14,10 @@ const Button = ({ type, size, content, link, scrollId }) => {
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+        }
+
+        if (action) {
+            action();
         }
     };
 
@@ -41,6 +46,9 @@ const Button = ({ type, size, content, link, scrollId }) => {
                         <p>
                             {content}
                         </p>
+                    }
+                    {icon && 
+                        <Image src={icon} width={24} height={24} alt='icone' />
                     }
                 </motion.div>
             }

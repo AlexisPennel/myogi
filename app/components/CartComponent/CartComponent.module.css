@@ -1,0 +1,130 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 0px 16px 200px 16px;
+}
+
+.emptyCart__message {
+    text-align: center;
+    font-weight: 600;
+    padding: 16px;
+    margin: 0px 16px;
+    background: var(--neutrals-700);
+    border-radius: 10px;
+}
+
+.cartItems__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cartItems__li {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cartItems__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cartItems__list span {
+    color: var(--neutrals-200);
+    font-family: var(--font-lato);
+    font-weight: 600;
+}
+
+.cartItems__list img {
+    object-fit: cover;
+}
+
+.photoAndRemove__wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.trash__container {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--neutrals-200);
+}
+
+.add__photos {
+    outline: none;
+    border: 2px solid var(--neutrals-300);
+    background-color: transparent;
+    color: var(--neutrals-300);
+    padding: 8px;
+    width: fit-content;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.93rem;
+}
+
+/* Payment container  **************************/
+
+.payment__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price__total {
+    color: var(--primary-600);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.price__totalText {
+    color: var(--neutrals-200);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.payment__helpMessage {
+    font-style: italic;
+}
+
+.payment__helpMessage a {
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--primary-600);
+}
+
+.payment__button {
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    height: 40px;
+    gap: 10px;
+    width: 100%;
+    background-color: var(--primary-800);
+    cursor: pointer;
+    border-radius: 3px;
+    color: var(--neutrals-200);
+    font-family: var(--font-lato);
+    font-size: 1.125rem;
+    font-weight: 600;
+}

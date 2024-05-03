@@ -39,7 +39,7 @@ export default function Home() {
         </header>
         <PortfolioHome />
         <div className={styles.portfolio__button__container}>
-          <Button type={'primary'} content={'Voir tout le portfolio'} link={'/portfolio'} />
+          <Button type={'primary'} size={'large'} content={'Voir le portfolio complet'} link={'/portfolio'} />
         </div>
       </section>
 

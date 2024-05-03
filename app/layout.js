@@ -2,6 +2,7 @@ import { Lato, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import { CartProvider } from "./CartContext";
 
 
 export const metadata = {
@@ -62,9 +63,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body className={`${LatoFont.variable} ${SourceFont.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
