@@ -10,17 +10,23 @@ import Button from '../Button/Button';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 import cartIcon from '../../../public/icons/cart.svg';
+import downloadWhite from '../../../public/icons/downloadWhite.svg';
 
 const Header = () => {
     const pathname = usePathname();
-    const { cart } = useContext(CartContext);
+    const { cart, downloadFiles } = useContext(CartContext);
 
     const [showCartIcon, setShowCartIcon] = useState(false);
+    const [showDownloadIcon, setShowDownloadIcon] = useState(false);
 
     useEffect(() => {
         // On met à jour l'affichage de l'icône du panier une fois que le composant est monté
         setShowCartIcon(cart != null && Object.keys(cart).length > 0);
     }, [cart]);
+
+    useEffect(() => {
+        setShowDownloadIcon(downloadFiles != undefined);
+    },[downloadFiles])
 
     const handleLogoKeyPress = (event) => {
         if (event.key === 'Enter') {
@@ -47,6 +53,13 @@ const Header = () => {
                             </Link>
                         </li>
                     )}
+                    {showDownloadIcon && 
+                        <li>
+                        <Link href={'/telechargement'} className={styles.cart__icon}>
+                            <Image src={downloadWhite} width={25} height={25} alt='Icone telechargement' />
+                        </Link>
+                    </li>
+                    }
                     <li className={styles.burger} aria-label='Ouvrir le menu de navigation'>
                         <Burger />
                     </li>

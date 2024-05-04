@@ -1,0 +1,25 @@
+.merci__text {
+    font-size: 1.25rem;
+}
+
+
+.warning__message {
+    font-weight: 600;
+    padding: 16px;
+    margin-top: 24px;
+    width: 100%;
+    background: var(--neutrals-700);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.warning__message__content a {
+    text-decoration: underline;
+    color: var(--primary-500);
+    font-weight: 600;
+}

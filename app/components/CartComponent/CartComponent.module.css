@@ -12,6 +12,11 @@
     margin: 0px 16px;
     background: var(--neutrals-700);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
 .cartItems__list {

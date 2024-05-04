@@ -83,7 +83,7 @@ const GaleryPagesRender = ({ params }) => {
                         <p className={styles2.notFound__message}>Galerie inexistante ou supprimée. Verifiez que l'URL soit bien correcte. <br /><Link href={"mailto:myogi.photo@gmail.com"}>Contactez Myogi</Link> en cas de problème.</p>
                     }
                     {subDirectories.length > 0 &&
-                        <GaleryPagesForm slug={slug} subDir={subDirectories} />
+                        <GaleryPagesForm slug={slug} subDir={subDirectories} photosFiles={jsonList} />
                     }
                     {galleryPhotos.length > 0  &&
                         <div>

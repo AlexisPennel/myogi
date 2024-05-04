@@ -1,0 +1,45 @@
+.items__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0px 16px;
+    margin-bottom: 200px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.items__content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.items__photo {
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.items__download__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.items__download__container p {
+    color: var(--primary-600);
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--neutrals-200);
+}
