@@ -15,6 +15,14 @@ const CartProvider = ({ children }) => {
         return [];
     });
 
+    const [downloadFiles, setDownloadFiles] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const data = localStorage.getItem('downloadItem');
+            return data ? JSON.parse(data) : [];
+        }
+        return [];
+    })
+
     // Effectuer des opérations sur localStorage uniquement côté client
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -32,7 +40,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, downloadFiles, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );

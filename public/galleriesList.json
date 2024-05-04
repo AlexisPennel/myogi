@@ -80,6 +80,14 @@
           "price": 10
         }
       ]
+    },
+    "ford": {
+      "images": [
+        {
+          "path": "/galeries/seat-normandie-19-04-24/ford/1-10.jpg",
+          "price": 10
+        }
+      ]
     }
   }
 }

@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from '../CartComponent/CartComponent.module.css';
 import styles2 from './CartPaymentComponent.module.css';
 import Loader from '../Loader/Loader';
@@ -10,10 +10,11 @@ import Link from 'next/link';
 import { validate as isValidUuid } from 'uuid';
 import { useRouter } from 'next/navigation';
 import Button from '../Button/Button';
+import { CartContext } from '@/app/CartContext';
 
 const CartPaymentComponent = ({ id }) => {
     const router = useRouter();
-    const [cartItems, setCartItems] = useState([]);
+    const { cart, setCart } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [pageLoading, setPageLoading] = useState(true);
 
@@ -30,7 +31,7 @@ const CartPaymentComponent = ({ id }) => {
                 router.push('/');
                 return;
             }
-            console.log('id valide')
+            setPageLoading(false);
         }
     }, [id]);
 
@@ -41,19 +42,10 @@ const CartPaymentComponent = ({ id }) => {
         intent: "capture",
     };
 
-    // Recuperation cart 
-    useEffect(() => {
-        const data = localStorage.getItem('cart');
-        if (data) {
-            setCartItems(JSON.parse(data));
-            setPageLoading(false);
-        }
-    }, [])
-
     // Calcul total du panier
     useEffect(() => {
-        setTotal(cartItems.reduce((acc, item) => acc + item.price, 0));
-    }, [cartItems]);
+        setTotal(cart.reduce((acc, item) => acc + item.price, 0));
+    }, [cart]);
 
     if (pageLoading) {
         return <Loader />
@@ -61,11 +53,11 @@ const CartPaymentComponent = ({ id }) => {
 
     return (
         <section className={styles.container}>
-            {cartItems.length === 0 &&
+            {cart.length === 0 &&
                 <p>Votre panier est vide</p>
             }
             <ul className={styles.cartItems__list}>
-                {cartItems.map((photo, index) => (
+                {cart.map((photo, index) => (
                     <li key={index} className={styles.cartItems__li}>
                         <div className={styles.cartItems__wrapper}>
                             <div className={styles.photoAndRemove__wrapper}>
@@ -102,7 +94,7 @@ const CartPaymentComponent = ({ id }) => {
                                             item_total: { value: `${total}`, currency_code: "EUR" }, // Assurez-vous que cela correspond au total de la commande
                                         },
                                     },
-                                    items: cartItems.map((photo, index) => ({
+                                    items: cart.map((photo, index) => ({
                                         name: photo.path, // Nom de la photo, adapté si nécessaire
                                         unit_amount: {
                                             currency_code: "EUR",
@@ -123,9 +115,11 @@ const CartPaymentComponent = ({ id }) => {
                                 setPaymentIsLoading(true);
                                 console.log(details);
                                 if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
-                                    console.log('paiement valide');
+                                    setCart([]);
+                                    localStorage.setItem('downloadItem', JSON.stringify(cart));
                                     localStorage.removeItem('cart');
                                     setTimeout(() => {
+                                        router.push('/telechargement');
                                         setApprovePayment(true);
                                         setUserEmail(details.payer.email_address);
                                         // Afficher le pop-up après un délai, par exemple 2 secondes (2000 millisecondes)

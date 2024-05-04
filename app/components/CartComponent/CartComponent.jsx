@@ -26,25 +26,12 @@ const CartComponent = () => {
         return undefined;
     });
 
-    // // Recuperation cart 
-    // useEffect(() => {
-    //     const data = localStorage.getItem('cart');
-    //     if (data) {
-    //         setCartItems(JSON.parse(data));
-    //         setPageLoading(false);
-    //     }
-    // }, [])
-
     // Calcul total du panier
     useEffect(() => {
         setTotal(cart.reduce((acc, item) => acc + item.price, 0));
         setPageLoading(false);
     }, [cart]);
 
-    // // Retirer photo du panier
-    // const removeToCart = (indexToRemove) => {
-    //     removeFromCart(indexToRemove);
-    // };
 
     // Ajouter des photos 
     const addPhotosToCart = () => {
@@ -65,7 +52,11 @@ const CartComponent = () => {
 
     const handleEmptyCart = () => {
         if (galleryParams) {
-            router.push(`/galeries/${galleryParams.slug}`)
+            if (galleryParams.id) {
+                router.push(`/galeries/${galleryParams.slug}/${galleryParams.id}`)
+            } else {
+                router.push(`/galeries/${galleryParams.slug}`)
+            }
         }
     }
 
@@ -78,11 +69,11 @@ const CartComponent = () => {
             {cart.length === 0 &&
                 <div className={styles.emptyCart__message}>
                     <p>Votre panier est vide</p>
-                    <Button type={'primary'} content={'Acheter des photos'} size={'small'} action={handleEmptyCart()} />
+                    <Button type={'primary'} content={'Acheter des photos'} size={'small'} action={handleEmptyCart} />
                 </div>
             }
             {cart.length !== 0 &&
-                <> 
+                <>
                     <ul className={styles.cartItems__list}>
                         {cart.map((photo, index) => (
                             <li key={index} className={styles.cartItems__li}>

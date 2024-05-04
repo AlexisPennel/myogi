@@ -15,7 +15,6 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
                 element.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         }
-
         if (action) {
             action();
         }
@@ -31,12 +30,12 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
 
     return (
         <>
-            {type === 'primary' &&
+            {type === 'primary' && !action &&
                 <motion.div
                     onClick={scrollId && handleClick}
                     onKeyDown={scrollId && handleKeyDown}
                     whileTap={{ scale: 0.95 }}
-                    whileHover={{ boxShadow: "var(--button-boxShadow)", y:-2 }}
+                    whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
                     className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
                     {link ?
                         <Link href={link}>
@@ -47,18 +46,18 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
                             {content}
                         </p>
                     }
-                    {icon && 
+                    {icon &&
                         <Image src={icon} width={24} height={24} alt='icone' />
                     }
                 </motion.div>
             }
 
-            {type === 'secondary' &&
+            {type === 'secondary' && !action &&
                 <motion.div
                     onClick={scrollId && handleClick}
                     onKeyDown={scrollId && handleKeyDown}
                     whileTap={{ scale: 0.95 }}
-                    whileHover={{ boxShadow: "var(--button-boxShadow)", y:-2}}
+                    whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
                     className={styles.button__container__secondary}>
                     {link ?
                         <Link href={link}>
@@ -69,6 +68,19 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
                             {content}
                         </p>
                     }
+                </motion.div>
+            }
+
+            {action &&
+                <motion.div
+                    onClick={handleClick}
+                    onKeyDown={handleKeyDown}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
+                    className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
+                    <p>
+                        {content}
+                    </p>
                 </motion.div>
             }
         </>
