@@ -25,7 +25,10 @@ const Header = () => {
     }, [cart]);
 
     useEffect(() => {
-        setShowDownloadIcon(downloadFiles != undefined);
+        console.log(downloadFiles)
+        if (downloadFiles.length > 0) {
+            setShowDownloadIcon(true);
+        }
     },[downloadFiles])
 
     const handleLogoKeyPress = (event) => {
