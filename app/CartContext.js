@@ -30,6 +30,12 @@ const CartProvider = ({ children }) => {
         }
     }, [cart]);
 
+   useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('downloadItem', JSON.stringify(downloadFiles));
+        }
+   })
+
     const addToCart = (item) => {
         setCart(prevCart => [...prevCart, item]);
     };
@@ -40,7 +46,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, downloadFiles, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, downloadFiles, setDownloadFiles, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );

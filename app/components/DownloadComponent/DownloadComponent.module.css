@@ -43,3 +43,15 @@
     height: 1px;
     background-color: var(--neutrals-200);
 }
+
+@media only screen and (min-width : 768px) {
+    .items__list {
+        padding: 0px 30px;
+        max-width: 60vw;
+    }
+
+    .items__download__container img {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -49,6 +49,10 @@
     transform: scale(0.95);
 }
 
+.cart__icon {
+    display: flex;
+    gap: 4px;
+}
 
 .menu__container button {
     position: absolute;
@@ -80,7 +84,15 @@
 
 @media only screen and (min-width : 768px) {
     .burger {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu__container {
+        width: 40vw;
+    }
+
+    .links__container a {
+        font-size: 1.25rem;
     }
 }

@@ -15,21 +15,18 @@ import downloadWhite from '../../../public/icons/downloadWhite.svg';
 const Header = () => {
     const pathname = usePathname();
     const { cart, downloadFiles } = useContext(CartContext);
-
     const [showCartIcon, setShowCartIcon] = useState(false);
     const [showDownloadIcon, setShowDownloadIcon] = useState(false);
 
     useEffect(() => {
-        // On met à jour l'affichage de l'icône du panier une fois que le composant est monté
         setShowCartIcon(cart != null && Object.keys(cart).length > 0);
     }, [cart]);
 
     useEffect(() => {
-        console.log(downloadFiles)
         if (downloadFiles.length > 0) {
             setShowDownloadIcon(true);
         }
-    },[downloadFiles])
+    }, [downloadFiles])
 
     const handleLogoKeyPress = (event) => {
         if (event.key === 'Enter') {
@@ -48,20 +45,20 @@ const Header = () => {
                     </Link>
                 </li>
                 <div className={styles.cartAndBurger__wrapper}>
-                    {showCartIcon && (
-                        <li>
+                    {showCartIcon &&
+                        <li className={styles.mobile__icons}>
                             <Link href={'/panier'} className={styles.cart__icon}>
                                 <Image src={cartIcon} width={25} height={25} alt='Icone panier' />
                                 <p>{cart.length}</p>
                             </Link>
                         </li>
-                    )}
-                    {showDownloadIcon && 
-                        <li>
-                        <Link href={'/telechargement'} className={styles.cart__icon}>
-                            <Image src={downloadWhite} width={25} height={25} alt='Icone telechargement' />
-                        </Link>
-                    </li>
+                    }
+                    {showDownloadIcon &&
+                        <li className={styles.mobile__icons}>
+                            <Link href={'/telechargement'} className={styles.cart__icon}>
+                                <Image src={downloadWhite} width={25} height={25} alt='Icone telechargement' />
+                            </Link>
+                        </li>
                     }
                     <li className={styles.burger} aria-label='Ouvrir le menu de navigation'>
                         <Burger />
@@ -72,28 +69,53 @@ const Header = () => {
                 <ul className={styles.desktop__links__list}>
                     <motion.li
                         whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
-                        <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link}>Accueil</Link>
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link} tabIndex={0}>Accueil</Link>
+                    </motion.li>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link} tabIndex={0}>Shooting automobile</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ scale: 1.05, y: -1 }}
                         whileTap={{ scale: 0.95, y: 1 }}>
-                        <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link}>Shooting automobile</Link>
+                        <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link} tabIndex={0}>Shooting animalier</Link>
                     </motion.li>
                     <motion.li
                         whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
-                        <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link}>Shooting animalier</Link>
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link} tabIndex={0}>Portfolio</Link>
                     </motion.li>
+                    {showCartIcon &&
+                        <motion.li
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            whileTap={{ scale: 0.95, y: 1 }}
+                            tabIndex={-1}>
+                            <Link href={'/panier'} className={styles.cart__icon} tabIndex={0}>
+                                <Image src={cartIcon} width={30} height={30} alt='Icone panier' />
+                                <p>{cart.length}</p>
+                            </Link>
+                        </motion.li>
+                    }
+                    {showDownloadIcon &&
+                        <motion.li
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            whileTap={{ scale: 0.95, y: 1 }}
+                            tabIndex={-1}>
+                            <Link href={'/telechargement'} tabIndex={0}>
+                                <Image src={downloadWhite} width={30} height={30} alt='Icone telechargement' />
+                            </Link>
+                        </motion.li>
+                    }
                     <motion.li
                         whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
-                        <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link}>Portfolio</Link>
-                    </motion.li>
-                    <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
-                        <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} />
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} tabIndex={0}/>
                     </motion.li>
                 </ul>
             </nav>

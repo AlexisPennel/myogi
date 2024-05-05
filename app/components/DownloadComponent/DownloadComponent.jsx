@@ -1,28 +1,22 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './DownloadComponent.module.css';
 import Image from 'next/image';
 import Loader from '../Loader/Loader';
 import downloadIcon from '../../../public/icons/download.svg';
 import { motion } from 'framer-motion';
+import { CartContext } from '@/app/CartContext';
 
 const DownloadComponent = ({ params }) => {
-    const [items, setItems] = useState(() => {
-        if (typeof window !== 'undefined') {
-            const data = localStorage.getItem('downloadItem');
-            return data ? JSON.parse(data) : [];
-        }
-        return [];
-    });
+    const {downloadFiles} = useContext(CartContext);
     const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        if (items.length > 0 ) {
+        if (downloadFiles.length > 0 ) {
             setPageLoading(false);
         }
-    }, [items]);
+    }, [downloadFiles]);
 
-    
 
     const handleDownload = (url) => {
         const link = document.createElement('a');
@@ -39,7 +33,7 @@ const DownloadComponent = ({ params }) => {
 
     return (
         <ul className={styles.items__list}>
-            {items.map((photo, index) => (
+            {downloadFiles.map((photo, index) => (
                 <li key={index} className={styles.items}>
                     <div className={styles.items__content}>
                         <Image src={photo.path} width={720} height={720} alt='photo' className={styles.items__photo} draggable="false" />

@@ -1,3 +1,12 @@
+/* Section principale ****************************/
+.main__section {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding: 0px 16px 200px 16px;
+}
+
+/* Pour les deux sous sections  ******************/
 .sections {
     display: flex;
     flex-direction: column;
@@ -20,15 +29,19 @@
     color: var(--neutrals-200);
 }
 
-.container {
+/* Form (sous section 1) **********************************/
+.form__container {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .input__wrapper {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
 }
 
 .input {
@@ -40,7 +53,7 @@
     color: var(--neutrals-200);
     box-shadow: none;
     font-size: 1rem;
-    max-width: 70%;
+    width: 60%;
 }
 
 .input__error {
@@ -52,7 +65,7 @@
     color: var(--neutrals-200);
     box-shadow: none;
     font-size: 1rem;
-    max-width: 55%;
+    width: 60%;
     border-bottom: 2px solid var(--error);
 }
 
@@ -63,13 +76,13 @@
 
 .input__error::placeholder {
     color: var(--error);
-} 
+}
 
 .input::placeholder {
     color: var(--neutrals-400);
 }
 
-.container label {
+.form__container label {
     display: none;
 }
 
@@ -90,13 +103,7 @@
     cursor: pointer;
 }
 
-/* Files List  *************/
-.files__section {
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
-    padding: 0px 16px 200px 16px;
-}
+/* Files List (sous section 2)  **********************/
 
 .files__list {
     width: 100%;
@@ -113,7 +120,60 @@
 }
 
 .elements__images {
-   width: 150px;
-   height: 150px;
-   object-fit: cover;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    background-color: var(--neutrals-800);
+}
+
+@media only screen and (min-width : 768px) {
+
+    /* Section principale ****************************/
+    .main__section {
+        padding: 0px 30px 200px 30px;
+    }
+}
+
+
+@media only screen and (min-width : 1200px) {
+
+    /* Section principale ****************************/
+    .main__section {
+        padding: 0px 60px 200px 60px;
+    }
+
+    /* Pour les deux sous sections  ******************/
+    .sections {
+        gap: 32px;
+    }
+
+    /* Form (sous section 1) *************************/
+
+    .input__wrapper {
+        width: 400px;
+        max-width: 400px;
+    }
+
+    .input {
+        font-size: 1.125rem;
+    }
+
+    .input__error {
+        font-size: 1.125rem;
+    }
+
+    .submit__button {
+        font-size: 1.125rem;
+    }
+
+    /* Files List (sous section 2)  **********************/
+
+    .files__list {
+        gap: 24px;
+    }
+
+    .elements__images {
+        width: 200px;
+        height: 200px;
+    }
 }

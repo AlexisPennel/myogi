@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Burger.module.css';
 import Image from 'next/image';
 import burger from '../../../../public/icons/burger.svg';
@@ -10,11 +10,27 @@ import { useRouter } from 'next/navigation';
 import messengerWhite from '../../../../public/icons/messengerWhite.svg';
 import whatsWhite from '../../../../public/icons/whatsWhite.svg'
 import instagramWhite from '../../../../public/icons/instagramWhite.svg'
+import { CartContext } from '@/app/CartContext';
+import cartIcon from '../../../../public/icons/cart.svg';
+import downloadWhite from '../../../../public/icons/downloadWhite.svg';
 
 
 const Burger = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
+    const { cart, downloadFiles } = useContext(CartContext);
+    const [showCartIcon, setShowCartIcon] = useState(false);
+    const [showDownloadIcon, setShowDownloadIcon] = useState(false);
+
+    useEffect(() => {
+        setShowCartIcon(cart != null && Object.keys(cart).length > 0);
+    }, [cart]);
+
+    useEffect(() => {
+        if (downloadFiles.length > 0) {
+            setShowDownloadIcon(true);
+        }
+    }, [downloadFiles])
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -36,16 +52,16 @@ const Burger = () => {
     }
 
     return (
-        <div 
-            tabIndex={0} 
-            aria-label='Menu de navigation' 
+        <div
+            tabIndex={0}
+            aria-label='Menu de navigation'
             onKeyDown={handleKeyPress} // Gère l'ouverture/fermeture avec la touche Entrée
         >
-            <Image 
+            <Image
                 src={burger}
-                alt='menu de navigation' 
-                width={35} 
-                height={35} 
+                alt='menu de navigation'
+                width={35}
+                height={35}
                 onClick={toggleMenu}
                 className={styles.burger}
             />
@@ -54,35 +70,50 @@ const Burger = () => {
                     <motion.div className={styles.menu__container} onClick={e => e.stopPropagation()}
                         initial={{ x: 500 }}
                         animate={{ x: 0 }}
-                        exit={{x:500}}
-                        transition={{ease:'easeInOut'}}>
-                            <div className={styles.social__container}>
-                                <Link href={'#'}>
-                                    <Image src={messengerWhite} width={25} height={25} alt='messenger' />
-                                </Link>
-                                <Link href={'#'}>
-                                    <Image src={whatsWhite} width={25} height={25} alt="what's app" />
-                                </Link>
-                                <Link href={'#'}>
-                                    <Image src={instagramWhite} width={25} height={25} alt='instagram' />
-                                </Link> 
-                            </div>
+                        exit={{ x: 500 }}
+                        transition={{ ease: 'easeInOut' }}>
+                        <div className={styles.social__container}>
+                            <Link href={'#'}>
+                                <Image src={messengerWhite} width={25} height={25} alt='messenger' />
+                            </Link>
+                            <Link href={'#'}>
+                                <Image src={whatsWhite} width={25} height={25} alt="what's app" />
+                            </Link>
+                            <Link href={'#'}>
+                                <Image src={instagramWhite} width={25} height={25} alt='instagram' />
+                            </Link>
+                        </div>
                         <nav>
                             <ul className={styles.links__container}>
-                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/')}}>
+                                <li onKeyDown={(e) => { handleKeyPressLinks(e, '/') }}>
                                     <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
                                 </li>
-                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/shooting-automobile')}}>
+                                <li onKeyDown={(e) => { handleKeyPressLinks(e, '/shooting-automobile') }}>
                                     <Link href={'/shooting-automobile'} onClick={toggleMenu}>Shooting automobile</Link>
                                 </li>
-                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/shooting-animalier')}}>
+                                <li onKeyDown={(e) => { handleKeyPressLinks(e, '/shooting-animalier') }}>
                                     <Link href={'/shooting-animalier'} onClick={toggleMenu}>Shooting animalier</Link>
                                 </li>
-                                <li onKeyDown={(e) => {handleKeyPressLinks(e, '/portfolio')}}>
+                                <li onKeyDown={(e) => { handleKeyPressLinks(e, '/portfolio') }}>
                                     <Link href={'/portfolio'} onClick={toggleMenu}>Portfolio</Link>
                                 </li>
+                                {showCartIcon &&
+                                    <li className={styles.mobile__icons} onKeyDown={(e) => { handleKeyPressLinks(e, '/panier') }}>
+                                        <Link href={'/panier'} className={styles.cart__icon}>
+                                            <Image src={cartIcon} width={25} height={25} alt='Icone panier' />
+                                            <p>{cart.length}</p>
+                                        </Link>
+                                    </li>
+                                }
+                                {showDownloadIcon &&
+                                    <li className={styles.mobile__icons} onKeyDown={(e) => { handleKeyPressLinks(e, '/telechargement') }}>
+                                        <Link href={'/telechargement'} className={styles.cart__icon}>
+                                            <Image src={downloadWhite} width={25} height={25} alt='Icone telechargement' />
+                                        </Link>
+                                    </li>
+                                }
                                 <li onClick={closeMenu}>
-                                    <Button type={'primary'} size={'large'}content={'Contact'} scrollId={'#contact'} />
+                                    <Button type={'primary'} size={'large'} content={'Contact'} scrollId={'#contact'} />
                                 </li>
                             </ul>
                         </nav>
