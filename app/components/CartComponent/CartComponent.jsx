@@ -5,7 +5,6 @@ import styles from './CartComponent.module.css';
 import trash from '../../../public/icons/trash.svg';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import arrowRight from '../../../public/icons/arrowRight.svg';
 import Loader from '../Loader/Loader';
 import { v4 as uuidv4 } from 'uuid';
@@ -13,8 +12,8 @@ import { CartContext } from '@/app/CartContext';
 import Button from '../Button/Button';
 
 const CartComponent = () => {
+    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
-    // const [cartItems, setCart] = useState([]);
     const { cart, removeFromCart } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [pageLoading, setPageLoading] = useState(true);
@@ -69,14 +68,14 @@ const CartComponent = () => {
             {cart.length === 0 &&
                 <div className={styles.emptyCart__message}>
                     <p>Votre panier est vide</p>
-                    <Button type={'primary'} content={'Acheter des photos'} size={'small'} action={handleEmptyCart} />
+                    <Button type={'primary'} content={'Ajouter des photos'} size={'small'} action={handleEmptyCart} />
                 </div>
             }
             {cart.length !== 0 &&
                 <>
                     <ul className={styles.cartItems__list}>
                         {cart.map((photo, index) => (
-                            <li key={index} className={styles.cartItems__li}>
+                            <li key={index} className={styles.cartItems__li} onContextMenu={(event) => event.preventDefault()}>
                                 <div className={styles.cartItems__wrapper}>
                                     <div className={styles.photoAndRemove__wrapper}>
                                         <Image src={photo.path}
@@ -86,7 +85,9 @@ const CartComponent = () => {
                                             noindex="true"
                                             className={styles.cartItems__photos}
                                             draggable="false"
-                                            quality={100} />
+                                            quality={80}
+                                            placeholder='blur'
+                                            blurDataURL={blurDataUrl} />
                                         <motion.div className={styles.trash__container}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
@@ -96,20 +97,19 @@ const CartComponent = () => {
                                             <p>Retirer</p>
                                         </motion.div>
                                     </div>
-
-                                    <span>{photo.price}€</span>
+                                    <span className={styles.cartItems__price}>{photo.price}€</span>
                                 </div>
                                 <div className={styles.line}></div>
                             </li>
                         ))}
-                        <motion.button
-                            className={styles.add__photos}
-                            onClick={addPhotosToCart}
-                            whileHover={{ scale: 1.05, color: "var(--neutrals-200)", border: "2px solid var(--neutrals-200)" }}
-                            whileTap={{ scale: 0.95 }}>
-                            Ajouter des photos
-                        </motion.button>
                     </ul>
+                    <motion.button
+                        className={styles.add__photos}
+                        onClick={addPhotosToCart}
+                        whileHover={{ scale: 1.05, color: "var(--neutrals-200)", border: "2px solid var(--neutrals-200)" }}
+                        whileTap={{ scale: 0.95 }}>
+                        Ajouter des photos
+                    </motion.button>
                     <div className={styles.payment__container}>
                         <div className={styles.price}>
                             <p className={styles.price__totalText}>TOTAL</p>

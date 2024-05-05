@@ -9,20 +9,17 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Link from 'next/link';
 import { validate as isValidUuid } from 'uuid';
 import { useRouter } from 'next/navigation';
-import Button from '../Button/Button';
 import { CartContext } from '@/app/CartContext';
 
 const CartPaymentComponent = ({ id }) => {
+    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
-    const { cart, setCart } = useContext(CartContext);
+    const { cart, setCart, setDownloadFiles } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [pageLoading, setPageLoading] = useState(true);
 
     // Pat pal ******************************
-    const [paymentReady, setPaymentReady] = useState(false);
     const [paymentIsLoading, setPaymentIsLoading] = useState(false);
-    const [approvePayment, setApprovePayment] = useState(false);
-    const [userEmail, setUserEmail] = useState();
 
     //  Verification id
     useEffect(() => {
@@ -47,7 +44,7 @@ const CartPaymentComponent = ({ id }) => {
         setTotal(cart.reduce((acc, item) => acc + item.price, 0));
     }, [cart]);
 
-    if (pageLoading) {
+    if (pageLoading || paymentIsLoading) {
         return <Loader />
     }
 
@@ -58,7 +55,7 @@ const CartPaymentComponent = ({ id }) => {
             }
             <ul className={styles.cartItems__list}>
                 {cart.map((photo, index) => (
-                    <li key={index} className={styles.cartItems__li}>
+                    <li key={index} className={styles.cartItems__li} onContextMenu={(event) => event.preventDefault()}>
                         <div className={styles.cartItems__wrapper}>
                             <div className={styles.photoAndRemove__wrapper}>
                                 <Image src={photo.path}
@@ -68,9 +65,11 @@ const CartPaymentComponent = ({ id }) => {
                                     noindex="true"
                                     className={styles.cartItems__photos}
                                     draggable="false"
-                                    quality={100} />
+                                    quality={100} 
+                                    placeholder='blur'
+                                    blurDataURL={blurDataUrl}/>
                             </div>
-                            <span>{photo.price}€</span>
+                            <span className={styles.cartItems__price}>{photo.price}€</span>
                         </div>
                         <div className={styles.line}></div>
                     </li>
@@ -113,16 +112,12 @@ const CartPaymentComponent = ({ id }) => {
                         onApprove={(data, actions) => {
                             return actions.order.capture().then((details) => {
                                 setPaymentIsLoading(true);
-                                console.log(details);
                                 if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
+                                    setDownloadFiles(cart);
                                     setCart([]);
-                                    localStorage.setItem('downloadItem', JSON.stringify(cart));
-                                    localStorage.removeItem('cart');
                                     setTimeout(() => {
                                         router.push('/telechargement');
-                                        setApprovePayment(true);
-                                        setUserEmail(details.payer.email_address);
-                                        // Afficher le pop-up après un délai, par exemple 2 secondes (2000 millisecondes)
+                                        setPaymentIsLoading(false);
                                     }, 2000);
                                 }
                             });

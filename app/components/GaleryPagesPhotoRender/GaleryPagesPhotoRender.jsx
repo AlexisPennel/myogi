@@ -14,7 +14,6 @@ const GaleryPagesPhotoRender = ({ params }) => {
     const [jsonList, setJsonList] = useState(null);
     const [galleryPhotos, setGalleryPhotos] = useState(null);
     const [pageLoading, setPageLoading] = useState(true);
-    const [freePhotos, setFreePhotos] = useState('0');
 
     useEffect(() => {
         if (params) {
@@ -48,7 +47,6 @@ const GaleryPagesPhotoRender = ({ params }) => {
             const gallery = jsonList[slug][pageId];
             if (gallery) {
                 setGalleryPhotos(gallery.images || []);
-                setFreePhotos(gallery.free);
             } else {
                 console.log(`Aucune galerie trouvée avec le slug : ${slug}`);
                 setGalleryPhotos(false);
@@ -59,7 +57,6 @@ const GaleryPagesPhotoRender = ({ params }) => {
 
     useEffect(() => {
         if (galleryPhotos !== null) {
-            console.log(galleryPhotos);
             setPageLoading(false);
         }
     }, [galleryPhotos])
@@ -75,11 +72,11 @@ const GaleryPagesPhotoRender = ({ params }) => {
                             <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">{pageTitle}<br /><span>{pageId}</span></h1>
                             <p className={styles.contentWrapper__description} tabIndex={0}>Plongez dans l'univers de vos propres shootings grâce à un espace dédié où chaque moment capturé vous attend. Sur cette page, vous avez la liberté de sélectionner vos clichés préférés et l'opportunité d'acquérir ces souvenirs tangibles.</p>
                             <div className={styles.contentWrapper__buttonsContainer}>
-                                <Button type={'primary'} size={'large'} content={'Les photos du shooting'} scrollId={'#mesPrestations'} />
+                                <Button type={'primary'} size={'large'} content={'Les photos du shooting'} scrollId={'#photosSection'} />
                             </div>
                         </div>
                     </section>
-                    <GaleryPagesPhotos photos={galleryPhotos} free={freePhotos} params={params} />
+                    <GaleryPagesPhotos photos={galleryPhotos} params={params} />
                 </>
                 :
                 <Loader />

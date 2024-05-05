@@ -58,8 +58,17 @@
     }
 
     .logo {
-        width: 44px;
-        height: 38px;
+        width: 140px;
+        height: auto;
+    }
+
+    .cartAndBurger__wrapper {
+        gap: 32px;
+    }
+    
+    .cart__icon img {
+      width: 35px;
+      height: 35px;
     }
 }
 
@@ -120,6 +129,10 @@
         font-size: 1.125rem;
     }
 
+    /* Icones cart and download ***********/
+    .mobile__icons {
+        display: none;
+    }
 }
 
 @media only screen and (min-width : 1700px) {

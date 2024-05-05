@@ -8,11 +8,15 @@
 
 .freePhoto__message {
     text-align: center;
-    font-weight: 600;
     padding: 16px;
-    margin: 0px 16px;
     background: var(--neutrals-700);
     border-radius: 10px;
+}
+
+.freePhoto__message a {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--primary-600);
 }
 
 .photos__list {
@@ -24,6 +28,11 @@
 
 .photos__container {
     position: relative;
+    height: fit-content;
+    min-height: 200px;
+    min-width: 100%;
+    background-color: var(--neutrals-800);
+    width: fit-content;
 }
 
 .photos {
@@ -45,7 +54,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 1.25rem;    
+    font-size: 1.25rem;
 }
 
 .photos__addToCart {
@@ -56,7 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgba(255, 255, 255, 0.70);
+    background-color: rgba(255, 255, 255, 0.70);
     position: absolute;
     right: 0;
     bottom: 0.5vh;
@@ -111,7 +120,7 @@
     cursor: pointer;
 }
 
-.seeCart__container p {
+.seeCart__text {
     font-size: 1.125rem;
     font-weight: 600;
 }
@@ -123,9 +132,124 @@
     align-items: center;
 }
 
+.seeCart__length p {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
 .linkCart__container {
     display: flex;
     gap: 16px;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (min-width : 768px) {
+    .photosSection__container {
+        padding: 0px 30px;
+    }
+
+    .photosSection__header {
+        align-self: center;
+    }
+
+    .freePhoto__message {
+        width: fit-content;
+        padding: 16px 48px;
+        align-self: center;
+        font-size: 1.125rem;
+        max-width: 70vw;
+    }
+
+    .photos__list {
+        max-width: 70vw;
+        gap: 24px;
+        align-self: center;
+    }
+
+    .photos__price {
+        padding: 8px 32px;
+        font-size: 1.5rem;
+    }
+
+    .photos__addToCart {
+        width: 55px;
+        height: 55px;
+    }
+
+    .photos__addToCart img {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    /* Voir le panier bouton page  *******************/
+    .cartButton__page {
+        padding: 0px 48px;
+        height: 45px;
+        width: fit-content;
+        align-self: center;
+    }
+
+    .cartButton__page__icon span {
+        font-size: 1.125rem;
+    }
+
+    /* Voir le panier bouton **********************/
+    .seeCart__container {
+        height: 6vh;
+        background-color: var(--primary-900);
+    }
+
+    .linkCart__container {
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .seeCart__length {
+        width: 100px;
+        height: 100%;
+        background-color: var(--primary-800);
+        gap: 4px;
+    }
+
+    .seeCart__length img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .seeCart__length p {
+        font-size: 1.5rem;
+    }
+
+    .seeCart__text {
+        width: 35vw;
+        background-color: var(--primary-800);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .photosSection__container {
+        padding: 0px 60px;
+    }
+
+    .freePhoto__message {
+        max-width: 35vw;
+    }
+
+    .photos__list {
+        max-width: 35vw;
+    }
+
+    /* Voir le panier bouton **********************/
+    .seeCart__container {
+        height: 10vh;
+    }
+
 }

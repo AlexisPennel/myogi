@@ -6,39 +6,63 @@ import Image from 'next/image';
 import addToCartIcon from '../../../public/icons/addToCart.svg';
 import checkIcon from '../../../public/icons/check.svg';
 import cartIcon from '../../../public/icons/cart.svg';
+import downloadIcon from '../../../public/icons/downloadBlack.svg';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 import { useRouter } from 'next/navigation';
 
-const GaleryPagesPhotos = ({ photos, free, params }) => {
+const GaleryPagesPhotos = ({ photos, params }) => {
+    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
     const [photosList, setPhotosList] = useState([]);
-    const [freePhotos, setFreePhotos] = useState('0');
+    const [freePhotos, setFreePhotos] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
 
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
     useEffect(() => {
         if (photos) {
+            const freePhotosCount = photos.filter(photo => photo.price === 0).length;
+            setFreePhotos(freePhotosCount);
             setPhotosList(photos);
             setIsLoading(false);
         }
-        if (free) {
-            setFreePhotos(free);
-        }
-    }, [photos, free]);
+    }, [photos]);
+
 
     const handleAddToCartClick = (event, photo) => {
         event.preventDefault();
         const isAlreadyInCart = cart.some((element) => element.path === photo.path);
         if (isAlreadyInCart) {
-            console.log('dans le panier');
             removeFromCart(photo);
         } else {
             addToCart(photo);
             localStorage.setItem('params', JSON.stringify(params));
         }
+    };
+
+    const handleDownload = (photo) => {
+        const isAlreadyInCart = cart.some((element) => element.path === photo.path);
+        if (isAlreadyInCart) {
+            removeFromCart(photo);
+        } else {
+            addToCart(photo);
+            localStorage.setItem('params', JSON.stringify(params));
+        }
+        fetch(photo.path)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = photo.path.split('/').pop();
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(() => alert('Failed to download photo'));
     };
 
     const isPhotoInCart = (photo) => {
@@ -50,16 +74,16 @@ const GaleryPagesPhotos = ({ photos, free, params }) => {
     }
 
     return (
-        <section className={styles.photosSection__container}>
+        <section className={styles.photosSection__container} id='photosSection'>
             <header className={styles.photosSection__header}>
                 <h2>Les photos du shooting</h2>
             </header>
-            {freePhotos !== "0" &&
-                <p className={styles.freePhoto__message}>{freePhotos} Photo gratuite au choix</p>
+            {freePhotos !== 0 &&
+                <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>Contactez-moi.</Link></p>
             }
             <ul className={styles.photos__list}>
                 {photosList.map((photo, index) => (
-                    <li className={styles.photos__container} key={index}>
+                    <li className={styles.photos__container} key={index} onContextMenu={(event) => event.preventDefault()}>
                         <span className={styles.photos__price}>{photo.price}€</span>
                         <Image
                             src={photo.path}
@@ -69,25 +93,42 @@ const GaleryPagesPhotos = ({ photos, free, params }) => {
                             sizes='100vw'
                             alt='photos'
                             draggable="false"
-                            noindex="true" />
-                        <motion.button
-                            className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={(event) => handleAddToCartClick(event, photo)}
-                        >
-                            <Image
-                                src={isPhotoInCart(photo) ? checkIcon : addToCartIcon}
-                                width={30}
-                                height={30}
-                                alt={isPhotoInCart(photo) ? 'Icone vérifié' : 'Icone ajouter au panier'} />
-                        </motion.button>
+                            noindex="true"
+                            placeholder='blur'
+                            blurDataURL={blurDataUrl} />
+                        {photo.price === 0 ? (
+                            <motion.button
+                                className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={() => handleDownload(photo)}
+                            >
+                                <Image
+                                    src={downloadIcon}
+                                    width={30}
+                                    height={30}
+                                    alt='Icone télécharger' />
+                            </motion.button>
+                        ) : (
+                            <motion.button
+                                className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={(event) => handleAddToCartClick(event, photo)}
+                            >
+                                <Image
+                                    src={isPhotoInCart(photo) ? checkIcon : addToCartIcon}
+                                    width={30}
+                                    height={30}
+                                    alt={isPhotoInCart(photo) ? 'Icone vérifié' : 'Icone ajouter au panier'} />
+                            </motion.button>
+                        )}
                     </li>
                 ))}
             </ul>
             <motion.button
                 className={styles.cartButton__page}
-                onClick={() => {router.push('/panier')}}>
+                onClick={() => { router.push('/panier') }}>
                 Voir le panier
                 <div className={styles.cartButton__page__icon}>
                     <Image src={cartIcon} width={24} height={24} alt='icone panier' />
@@ -101,10 +142,10 @@ const GaleryPagesPhotos = ({ photos, free, params }) => {
                     className={styles.seeCart__container}>
                     <Link href={'/panier'} className={styles.linkCart__container}>
                         <div className={styles.seeCart__length}>
-                            <Image src={cartIcon} width={24} height={24} alt='icone panier' />
+                            <Image src={cartIcon} width={28} height={28} alt='icone panier' />
                             <p>{cart.length}</p>
                         </div>
-                        <p>Voir le panier</p>
+                        <p className={styles.seeCart__text}>Voir le panier</p>
                     </Link>
                 </motion.div>
             }

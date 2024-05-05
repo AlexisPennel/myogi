@@ -66,7 +66,7 @@ const GaleryPagesRender = ({ params }) => {
     }, [galleryPhotos])
 
     return (
-        <div className={styles.main}>
+        <main className={styles.main}>
             {!pageLoading ?
                 <>
                     <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
@@ -75,7 +75,7 @@ const GaleryPagesRender = ({ params }) => {
                             <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">{pageTitle}<br /><span>{pageDate}</span></h1>
                             <p className={styles.contentWrapper__description} tabIndex={0}>Plongez dans l'univers de vos propres shootings grâce à un espace dédié où chaque moment capturé vous attend. Sur cette page, vous avez la liberté de sélectionner vos clichés préférés et l'opportunité d'acquérir ces souvenirs tangibles.</p>
                             <div className={styles.contentWrapper__buttonsContainer}>
-                                <Button type={'primary'} size={'large'} content={'Les photos du shooting'} scrollId={'#mesPrestations'} />
+                                <Button type={'primary'} size={'large'} content={'Les photos du shooting'} scrollId={'#photosSection'} />
                             </div>
                         </div>
                     </section>
@@ -94,7 +94,7 @@ const GaleryPagesRender = ({ params }) => {
                 :
                 <Loader />
             }
-        </div>
+        </main>
     );
 };
 
