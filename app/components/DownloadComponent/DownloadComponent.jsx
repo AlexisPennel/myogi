@@ -8,11 +8,12 @@ import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 
 const DownloadComponent = ({ params }) => {
-    const {downloadFiles} = useContext(CartContext);
+    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
+    const { downloadFiles } = useContext(CartContext);
     const [pageLoading, setPageLoading] = useState(true);
 
     useEffect(() => {
-        if (downloadFiles.length > 0 ) {
+        if (downloadFiles.length > 0) {
             setPageLoading(false);
         }
     }, [downloadFiles]);
@@ -34,9 +35,17 @@ const DownloadComponent = ({ params }) => {
     return (
         <ul className={styles.items__list}>
             {downloadFiles.map((photo, index) => (
-                <li key={index} className={styles.items}>
-                    <div className={styles.items__content}>
-                        <Image src={photo.path} width={720} height={720} alt='photo' className={styles.items__photo} draggable="false" />
+                <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
+                    <div className={styles.items__content} >
+                        <Image
+                            src={photo.path}
+                            width={720}
+                            height={720}
+                            alt='photo' className={styles.items__photo}
+                            draggable="false"
+                            noindex="true"
+                            placeholder='blur'
+                            blurDataURL={blurDataUrl} />
                         <motion.div
                             className={styles.items__download__container}
                             onClick={() => handleDownload(photo.path)}
@@ -52,5 +61,5 @@ const DownloadComponent = ({ params }) => {
         </ul>
     );
 };
- 
+
 export default DownloadComponent;
