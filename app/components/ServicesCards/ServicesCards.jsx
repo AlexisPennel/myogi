@@ -1,25 +1,49 @@
 'use client'
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './ServicesCards.module.css';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import shootingAuto from '../../../public/images/shootingAutoCard-min.webp';
 import shootingAnimalier from '../../../public/images/shootingAnimalierCard-min.webp';
 import Button from '../Button/Button';
 
+
 const ServicesCards = () => {
+    const ref = useRef(null);
+    const ref2 = useRef(null);
+
+    // Scroll progress for first card
+    const { scrollYProgress: scrollYProgressOne } = useScroll({
+        target: ref,
+        offset: ["start end", 'end end'],
+    });
+
+    // Scroll progress for second card
+    const { scrollYProgress: scrollYProgressTwo } = useScroll({
+        target: ref2,
+        offset: ["start end", 'end end'],
+    });
+
+    // Translations
+    const translateXOne = useTransform(scrollYProgressOne, [0, 1], ["100px", "0px"]);
+    const translateXTwo = useTransform(scrollYProgressTwo, [0, 1], ["-100px", "0px"]);
+
+    // Opacities
+    const opacityOne = useTransform(scrollYProgressOne, [0, 1], [0, 1]);
+    const opacityTwo = useTransform(scrollYProgressTwo, [0, 1], [0, 1]);
+
     return (
         <ul className={styles.list__container}>
             <motion.li
-                initial={{ opacity: 0, x:200 }}
-                whileInView={{ opacity: 1, x:0 }}
-                transition={{ ease: 'easeInOut' }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className={styles.list__cards}
                 tabIndex={0}
-                aria-labelledby='autoTitle' >
+                aria-labelledby='autoTitle'
+                style={{ translateX: translateXOne, opacity: opacityOne }}
+                ref={ref} >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
-                    <Image src={shootingAuto} width={1280} height={720} alt="Photo du photographe Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()}/>
+                    <Image src={shootingAuto} width={1280} height={720} alt="Photo du photographe Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
@@ -32,15 +56,15 @@ const ServicesCards = () => {
                 </div>
             </motion.li>
             <motion.li
-                initial={{ opacity: 0, x:-200 }}
-                whileInView={{ opacity: 1, x:0 }}
-                transition={{ ease: 'easeInOut' }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className={styles.list__cards}
                 aria-labelledby='animauxTitle'
-                tabIndex={0}>
+                tabIndex={0}
+                ref={ref2}
+                style={{ translateX: translateXTwo, opacity: opacityTwo }}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>02</span>
-                    <Image src={shootingAnimalier} width={1280} height={720} alt="Photo de Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()}/>
+                    <Image src={shootingAnimalier} width={1280} height={720} alt="Photo de Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
