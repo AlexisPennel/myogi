@@ -8,6 +8,13 @@ import Form from '../components/Form/Form';
 import ProcessCards from '../components/ProcessCards/ProcessCards';
 import AutoPageGalery from '../components/AutoPageGalery/AutoPageGalery';
 
+export const metadata = {
+    title: 'Shooting automobile à Rouen',
+    description: "Photographe automobile à Rouen, je capture l'élégance de votre voiture. Réservez votre shooting professionnel dès maintenant !",
+    author: 'Romain Martin',
+    creator: 'Romain Martin',
+};
+
 const page = () => {
     return (
         <main className={styles.main}>

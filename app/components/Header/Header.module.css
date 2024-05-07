@@ -124,7 +124,7 @@
     }
 
     .link__active {
-        color: var(--primary-700);
+        color: var(--primary-600);
         font-weight: 600;
         font-size: 1.125rem;
     }

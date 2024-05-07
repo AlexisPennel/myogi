@@ -38,10 +38,9 @@ export const metadata = {
   msTileColor: '#46668e',
   manifest: 'favicon/site.webmanifest',
   openGraph: {
-    title: 'Photographe animalier à Rouen - Romain Martin',
-    description: '',
-    url: "",
-    image: ''
+    title: 'Photographe à Rouen | Animalier et Automobile',
+    description: 'Spécialiste de la photographie animalière et automobile.',
+    url: "https://myogiphotographie.vercel.app/",
   }
 }
 

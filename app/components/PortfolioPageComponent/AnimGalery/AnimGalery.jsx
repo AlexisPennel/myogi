@@ -115,7 +115,7 @@ const AnimGalery = () => {
                             alt={`${altDescriptions[index]}`} 
                             sizes='100vw' 
                             className={styles.images__small} 
-                            noindex 
+                            noindex="true"
                             placeholder='blur' 
                             onClick={() => { setImageActive(index) }} 
                             onKeyDown={(event) => { handleKeyDown(event, index) }}
@@ -148,6 +148,7 @@ const AnimGalery = () => {
                                     sizes='100vw'
                                     placeholder='blur'
                                     draggable="false"
+                                    noindex="true"
                                 />
                             </motion.div>
                         </div>

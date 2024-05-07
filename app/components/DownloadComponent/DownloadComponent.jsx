@@ -6,14 +6,21 @@ import Loader from '../Loader/Loader';
 import downloadIcon from '../../../public/icons/download.svg';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
+import { useRouter } from 'next/navigation';
+import Button from '../Button/Button';
 
 const DownloadComponent = ({ params }) => {
+    const router = useRouter();
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const { downloadFiles } = useContext(CartContext);
     const [pageLoading, setPageLoading] = useState(true);
+    const [noDownloadItems, setNoDownloadItems] = useState(false);
 
     useEffect(() => {
         if (downloadFiles.length > 0) {
+            setPageLoading(false);
+        } else {
+            setNoDownloadItems(true);
             setPageLoading(false);
         }
     }, [downloadFiles]);
@@ -34,6 +41,12 @@ const DownloadComponent = ({ params }) => {
 
     return (
         <ul className={styles.items__list}>
+            {noDownloadItems && 
+                <div className={styles.warning__message}>
+                    <p>Aucune photo à télécharger.</p>
+                    <Button content={"Retour page d'accueil"} link={'/'} type={'primary'} />
+                </div>
+            }
             {downloadFiles.map((photo, index) => (
                 <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
                     <div className={styles.items__content} >

@@ -56,6 +56,8 @@ const CartComponent = () => {
             } else {
                 router.push(`/galeries/${galleryParams.slug}`)
             }
+        } else {
+            router.push('/')
         }
     }
 
@@ -68,7 +70,11 @@ const CartComponent = () => {
             {cart.length === 0 &&
                 <div className={styles.emptyCart__message}>
                     <p>Votre panier est vide</p>
-                    <Button type={'primary'} content={'Ajouter des photos'} size={'small'} action={handleEmptyCart} />
+                    {galleryParams ?
+                        <Button type={'primary'} content={'Ajouter des photos'} size={'small'} action={handleEmptyCart} />
+                        :
+                        <Button type={'primary'} content={"Retour page d'accueil"} size={'small'} link={'/'} />
+                    }
                 </div>
             }
             {cart.length !== 0 &&
