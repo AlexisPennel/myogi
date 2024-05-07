@@ -1,0 +1,35 @@
+.main {
+    padding: 150px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.button__container {
+    width: fit-content;
+}
+
+@media only screen and (min-width : 768px) {
+    .main {
+        padding: 150px 30px;
+        gap: 48px;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .main {
+        padding: 150px 60px;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .main {
+        padding: 150px 105px;
+    }
+}

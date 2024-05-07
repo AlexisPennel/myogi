@@ -9,6 +9,14 @@ import Form from '../components/Form/Form';
 import ProcessCards from '../components/ProcessCards/ProcessCards';
 import AnimPageGalery from '../components/AnimPageGalery/AnimPageGalery';
 
+export const metadata = {
+    title: 'Shooting animalier à Rouen',
+    description: "Photographe spécialisé dans la photographie de chiens à Rouen, créons des souvenirs avec votre compagnon à quatre pattes ",
+    author: 'Romain Martin',
+    creator: 'Romain Martin',
+};
+
+
 const page = () => {
     return (
         <main className={styles.main}>

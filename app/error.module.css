@@ -1,0 +1,54 @@
+.main {
+    padding: 150px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.buttons__container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.resetButton {
+    padding: 0px 24px;
+    height: 40px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutrals-700);
+    color: #373737;
+    border-radius: 3px;
+    cursor: pointer;
+    gap: 8px;
+}
+
+@media only screen and (min-width : 768px) {
+    .main {
+        padding: 150px 30px;
+        gap: 48px;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .main {
+        padding: 150px 60px;
+    }
+
+    .main h1 {
+        font-size: 3rem;
+    }
+    
+
+    .resetButton {
+        height: 44px;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .main {
+        padding: 150px 105px;
+    }
+}

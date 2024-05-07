@@ -11,8 +11,8 @@ const BannerAbout = () => {
             initial={{opacity:0.1, y:20}}
             whileInView={{opacity:1, y:0}}
             transition={{delay:0.3, ease:'easeInOut'}}
-        >
-            <Image src={aboutBanner} width={1920} height={2880} alt="Photo de Myogi, photographe animalier et automobile de Rouen" className={styles.about__banner}  tabIndex={0}/>
+            onContextMenu={(event) => event.preventDefault()}>
+            <Image src={aboutBanner} width={1920} height={2880} alt="Photo de Myogi, photographe animalier et automobile de Rouen" className={styles.about__banner}  tabIndex={0} noindex="true" draggable="false"/>
         </motion.div>
     );
 };

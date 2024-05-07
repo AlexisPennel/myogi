@@ -11,9 +11,9 @@ const ServicesCards = () => {
     return (
         <ul className={styles.list__container}>
             <motion.li
-                initial={{ opacity: 0.1 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2, ease: 'easeInOut' }}
+                initial={{ opacity: 0, x:200 }}
+                whileInView={{ opacity: 1, x:0 }}
+                transition={{ ease: 'easeInOut' }}
                 className={styles.list__cards}
                 tabIndex={0}
                 aria-labelledby='autoTitle' >
@@ -32,9 +32,9 @@ const ServicesCards = () => {
                 </div>
             </motion.li>
             <motion.li
-                initial={{ opacity: 0.1 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2, ease: 'easeInOut' }}
+                initial={{ opacity: 0, x:-200 }}
+                whileInView={{ opacity: 1, x:0 }}
+                transition={{ ease: 'easeInOut' }}
                 className={styles.list__cards}
                 aria-labelledby='animauxTitle'
                 tabIndex={0}>
@@ -51,7 +51,6 @@ const ServicesCards = () => {
                         <Button type={'primary'} content={'En savoir plus'} link={'/shooting-animalier'} />
                     </div>
                 </div>
-
             </motion.li>
         </ul>
     );

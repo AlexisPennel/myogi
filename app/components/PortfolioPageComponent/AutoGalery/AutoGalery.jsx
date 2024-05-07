@@ -151,6 +151,7 @@ const AutoGalery = () => {
                                     sizes='(min-width: 1200px) 30vw, 100vw'
                                     placeholder='blur'
                                     draggable="false"
+                                    noindex="true"
                                 />
                             </motion.div>
                         </div>

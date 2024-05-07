@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './PortfolioPageComponent.module.css';
 import { motion } from 'framer-motion';
 import help from '../../../public/icons/help.svg';
@@ -9,8 +9,7 @@ import AnimGalery from './AnimGalery/AnimGalery';
 
 
 const PortfolioPageComponent = () => {
-    const [animationDirection, setAnimationDirection] = useState(0);
-    const [catActive, setCatActive] = useState(1);
+    const [catActive, setCatActive] = useState(2);
 
     return (
         <section className={styles.container}>
