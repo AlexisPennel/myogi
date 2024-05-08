@@ -38,17 +38,15 @@ const Header = () => {
 
     return (
         <header className={styles.container}>
-            <ul className={styles.linksContainer}>
-                <li>
-                    <Link href={'/'} tabIndex={0} onKeyDown={handleLogoKeyPress} aria-label="Retour à l'accueil">
-                        <Image src={logo} width={104} height={24} alt='Logo de Myogi Photographe automobile et animalier professionnel' className={styles.logo} />
-                    </Link>
-                </li>
-                <div className={styles.cartAndBurger__wrapper}>
+            <nav className={styles.nav}>
+                <Link href={'/'} tabIndex={0} onKeyDown={handleLogoKeyPress} aria-label="Retour à l'accueil">
+                    <Image src={logo} width={104} height={24} alt='Logo de Romain Martin - Photographe animalier et automobile à Rouen' className={styles.logo} />
+                </Link>
+                <ul className={styles.nav__list}>
                     {showCartIcon &&
                         <li className={styles.mobile__icons}>
                             <Link href={'/panier'} className={styles.cart__icon}>
-                                <Image src={cartIcon} width={25} height={25} alt='Icone panier' />
+                                <Image src={cartIcon} width={25} height={25} alt='Icône page panier' />
                                 <p>{cart.length}</p>
                             </Link>
                         </li>
@@ -56,7 +54,86 @@ const Header = () => {
                     {showDownloadIcon &&
                         <li className={styles.mobile__icons}>
                             <Link href={'/telechargement'} className={styles.cart__icon}>
-                                <Image src={downloadWhite} width={25} height={25} alt='Icone telechargement' />
+                                <Image src={downloadWhite} width={25} height={25} alt='Icône de la page téléchargement' />
+                            </Link>
+                        </li>
+                    }
+                    <li className={styles.burger} aria-label='Ouvrir le menu de navigation'>
+                        <Burger />
+                    </li>
+                </ul>
+                <ul className={styles.nav__list__desktop}>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link} tabIndex={0}>Accueil</Link>
+                    </motion.li>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link} tabIndex={0}>Shooting automobile</Link>
+                    </motion.li>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}>
+                        <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link} tabIndex={0}>Shooting animalier</Link>
+                    </motion.li>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link} tabIndex={0}>Portfolio</Link>
+                    </motion.li>
+                    {showCartIcon &&
+                        <motion.li
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            whileTap={{ scale: 0.95, y: 1 }}
+                            tabIndex={-1}>
+                            <Link href={'/panier'} className={styles.cart__icon} tabIndex={0}>
+                                <Image src={cartIcon} width={30} height={30} alt='Icône de la page panier' />
+                                <p>{cart.length}</p>
+                            </Link>
+                        </motion.li>
+                    }
+                    {showDownloadIcon &&
+                        <motion.li
+                            whileHover={{ scale: 1.05, y: -1 }}
+                            whileTap={{ scale: 0.95, y: 1 }}
+                            tabIndex={-1}>
+                            <Link href={'/telechargement'} tabIndex={0}>
+                                <Image src={downloadWhite} width={30} height={30} alt='Icône page téléchargement' />
+                            </Link>
+                        </motion.li>
+                    }
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}
+                        tabIndex={-1}>
+                        <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} tabIndex={0} />
+                    </motion.li>
+                </ul>
+            </nav>
+            {/* <ul className={styles.linksContainer}>
+                <li>
+                    <Link href={'/'} tabIndex={0} onKeyDown={handleLogoKeyPress} aria-label="Retour à l'accueil">
+                        <Image src={logo} width={104} height={24} alt='Logo de Romain Martin - Photographe animalier et automobile à Rouen' className={styles.logo} />
+                    </Link>
+                </li>
+                <div className={styles.cartAndBurger__wrapper}>
+                    {showCartIcon &&
+                        <li className={styles.mobile__icons}>
+                            <Link href={'/panier'} className={styles.cart__icon}>
+                                <Image src={cartIcon} width={25} height={25} alt='Icône page panier' />
+                                <p>{cart.length}</p>
+                            </Link>
+                        </li>
+                    }
+                    {showDownloadIcon &&
+                        <li className={styles.mobile__icons}>
+                            <Link href={'/telechargement'} className={styles.cart__icon}>
+                                <Image src={downloadWhite} width={25} height={25} alt='Icône de la page téléchargement' />
                             </Link>
                         </li>
                     }
@@ -65,6 +142,7 @@ const Header = () => {
                     </li>
                 </div>
             </ul>
+            </nav>
             <nav className={styles.desktop__links}>
                 <ul className={styles.desktop__links__list}>
                     <motion.li
@@ -96,7 +174,7 @@ const Header = () => {
                             whileTap={{ scale: 0.95, y: 1 }}
                             tabIndex={-1}>
                             <Link href={'/panier'} className={styles.cart__icon} tabIndex={0}>
-                                <Image src={cartIcon} width={30} height={30} alt='Icone panier' />
+                                <Image src={cartIcon} width={30} height={30} alt='Icône de la page panier' />
                                 <p>{cart.length}</p>
                             </Link>
                         </motion.li>
@@ -107,7 +185,7 @@ const Header = () => {
                             whileTap={{ scale: 0.95, y: 1 }}
                             tabIndex={-1}>
                             <Link href={'/telechargement'} tabIndex={0}>
-                                <Image src={downloadWhite} width={30} height={30} alt='Icone telechargement' />
+                                <Image src={downloadWhite} width={30} height={30} alt='Icône page téléchargement' />
                             </Link>
                         </motion.li>
                     }
@@ -118,7 +196,7 @@ const Header = () => {
                         <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} tabIndex={0}/>
                     </motion.li>
                 </ul>
-            </nav>
+            </nav> */}
         </header>
     );
 };

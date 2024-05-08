@@ -54,14 +54,14 @@ const AutoPageGalery = () => {
 
 
     const altDescriptions = [
-        "Photo d'une Bmw M4",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
+        "Bmw M4 blanche",
+        "Photo de la calandre d'une Cupra Formentor",
+        "Porsche Cayman GTS grise en noir et blanc",
+        "Arrière d'une Nissan GTR R35 grise",
+        "Voiture sportive violette ",
+        "Photo en noir et blanc d'une Ford Mustang",
+        "Arrière d'une Seat Cupra ",
+        "Profil d'une Porsche Cayman GTS",
     ]
 
     const handleKeyDown = (event, index) => {
@@ -144,7 +144,7 @@ const AutoPageGalery = () => {
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd}
                                 onContextMenu={(event) => event.preventDefault()}>
-                                <p className={styles.loadingMessage}>Chargement en cours,<br/> veuillez patienter.</p>
+                                <span className={styles.loader}></span>
                                 <Image
                                     src={images[imageActive]}
                                     className={styles.images}

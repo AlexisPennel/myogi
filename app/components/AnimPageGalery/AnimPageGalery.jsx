@@ -24,6 +24,7 @@ import photo5 from '../../../public/images/ShootingAnimalier/05-min.webp';
 import photo6 from '../../../public/images/ShootingAnimalier/06-min.webp';
 import photo7 from '../../../public/images/ShootingAnimalier/07-min.webp';
 import photo8 from '../../../public/images/ShootingAnimalier/08-min.webp';
+import Loader from '../Loader/Loader';
 
 
 const AnimPageGalery = () => {
@@ -54,14 +55,14 @@ const AnimPageGalery = () => {
 
 
     const altDescriptions = [
-        "Photo d'une Bmw M4",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
-        "Photo de",
+        "Chiot avec une coccinelle sur le musot",
+        "Chien Akita Inu tête vers le haut",
+        "Chiot qui regarde la main de son maître",
+        "Akita Inu blanc sur un tronc d'arbre",
+        "Chiot avec la gueule ouverte",
+        "Akita Inu gris avec la gueule ouverte",
+        "Chiot avec une coccinelle rouge sur le nez",
+        "Akita Inu sur une fontainer",
     ]
 
     const handleKeyDown = (event, index) => {
@@ -144,7 +145,7 @@ const AnimPageGalery = () => {
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd}
                                 onContextMenu={(event) => event.preventDefault()}>
-                                <p className={styles.loadingMessage}>Chargement en cours,<br /> veuillez patienter.</p>
+                                <span className={styles.loader}></span>
                                 <Image
                                     src={images[imageActive]}
                                     className={styles.images}

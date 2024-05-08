@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle" >
-        <Image src={bannerHome} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Myogi, d'une BMW M4" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
+        <Image src={bannerHome} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Romain Martin d'une BMW M4 blanche" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
         <div className={styles.hero__section__contentWrapper}>
           <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Capturons <br /><span>l'instant parfait</span></h1>
           <p className={styles.contentWrapper__description} tabIndex={0}>Votre photographe à Rouen pour des clichés animaliers et automobiles uniques. Explorez la beauté à travers mon objectif.</p>
@@ -39,12 +39,12 @@ export default function Home() {
       </section>
 
       {/* Portfolio */}
-      <section className={styles.sections48__container} id="mesPrestations" aria-labelledby="portfolioTitle" tabIndex={0}>
+      <section className={styles.sections48__container} id="Portfolio" aria-labelledby="portfolioTitle" tabIndex={0}>
         <header className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
           <h2 className={styles.sections__titles} id="portfolioTitle" tabIndex={0}>Mon Portfolio</h2>
           <p tabIndex={0}>Plongez dans une sélection de mes meilleures œuvres photographiques. Chaque cliché vous invite à explorer l'étendue de ma créativité et de mon expertise.</p>
         </header>
-        <PortfolioHome />
+          <PortfolioHome />
         <div className={styles.portfolio__button__container}>
           <Button type={'primary'} size={'large'} content={'Voir le portfolio complet'} link={'/portfolio'} />
         </div>

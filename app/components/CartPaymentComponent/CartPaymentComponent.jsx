@@ -65,7 +65,7 @@ const CartPaymentComponent = ({ id }) => {
                                     noindex="true"
                                     className={styles.cartItems__photos}
                                     draggable="false"
-                                    quality={100} 
+                                    quality={50} 
                                     placeholder='blur'
                                     blurDataURL={blurDataUrl}/>
                             </div>

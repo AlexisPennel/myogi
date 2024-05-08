@@ -91,7 +91,7 @@ const CartComponent = () => {
                                             noindex="true"
                                             className={styles.cartItems__photos}
                                             draggable="false"
-                                            quality={80}
+                                            quality={50}
                                             placeholder='blur'
                                             blurDataURL={blurDataUrl} />
                                         <motion.div className={styles.trash__container}
