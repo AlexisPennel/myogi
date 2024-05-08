@@ -43,7 +43,7 @@ const ServicesCards = () => {
                 ref={ref} >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
-                    <Image src={shootingAuto} width={1280} height={720} alt="Photo du photographe Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
+                    <Image src={shootingAuto} width={1280} height={720} alt="Photo d'une porshe Cayman GTS grise" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
@@ -64,7 +64,7 @@ const ServicesCards = () => {
                 style={{ translateX: translateXTwo, opacity: opacityTwo }}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>02</span>
-                    <Image src={shootingAnimalier} width={1280} height={720} alt="Photo de Myogi d'une porshe Cayman" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
+                    <Image src={shootingAnimalier} width={1280} height={720} alt="Photo d'un chien Akita Inu blanc'" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />
                 </div>
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>

@@ -42,19 +42,19 @@ const AutoGalery = () => {
     ]
 
     const altDescriptions = [
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
+        "Porsche Cayman GTS",
+        "Arrière d'une Nisan GTR R35",
+        "Ford Mustang ancienne",
+        "Jante dorée d'une voiture sportive",
+        "Nissan GTR R35 avec flammes au pot d'échappement",
+        "Phare d'une voiture Porsche",
+        "Cupra Formentor de face",
+        "Seat Cupra blanche",
+        "Voiture sportive violette",
+        "Cupra Formentor de face",
+        "BMW M4 blanche",
+        "Phare d'une voiture orange",
+        "Avant d'une Porsche Cayman GTS grise",
     ]
 
 
@@ -141,7 +141,7 @@ const AutoGalery = () => {
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd} 
                                 onContextMenu={(event) => event.preventDefault()}>
-                                <p className={styles.loadingMessage}>Chargement en cours,<br /> veuillez patienter.</p>
+                                <span className={styles.loader}></span>
                                 <Image
                                     src={imagesAuto[imageActive]}
                                     className={styles.images}

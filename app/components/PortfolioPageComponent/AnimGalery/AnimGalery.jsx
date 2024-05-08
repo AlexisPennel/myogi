@@ -41,19 +41,19 @@ const AnimGalery = () => {
     ]
 
     const altDescriptions = [
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
-        "saasas",
+        "Akita Inu blanc.",
+        "Chiot avec une coccinelle.",
+        "Akita Inu gris dans une forêt.",
+        "Chiot allongé dans l'herbe avec une coccinelle.",
+        "Akita Inu gris avec les pattes dans l'eau.",
+        "Chiot Akita Inu blanc sur une couverture blanche",
+        "Chiot allongé dans l'herbe",
+        "Akita Inu sur un tronc regardant vers le ciel",
+        "Chiot jouant dans l'herbe",
+        "Akita avec les pattes sur une fontaine et regardant vers le ciel",
+        "Chien blanc assis dans l'herbe",
+        "Deux chiens assis sur une route",
+        "Chien roux avec un bandana regardant vers le ciel",
     ]
 
 
@@ -138,7 +138,7 @@ const AnimGalery = () => {
                                 dragElastic={1}
                                 onDragEnd={handleDragEnd}
                                 onContextMenu={(event) => event.preventDefault()}>
-                                <p className={styles.loadingMessage}>Chargement en cours,<br /> veuillez patienter.</p>
+                                <span className={styles.loader}></span>
                                 <Image
                                     src={images[imageActive]}
                                     className={styles.images}
