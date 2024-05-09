@@ -7,6 +7,14 @@ import DownloadComponent from '../components/DownloadComponent/DownloadComponent
 import warning from '../../public/icons/warning.svg';
 import Link from 'next/link';
 
+export const metadata = {
+    title: 'Téléchagement de vos photos',
+    description: "Téléchagement vos photos !",
+    author: 'Romain Martin',
+    creator: 'Romain Martin',
+    robots: 'noindex'
+};
+
 const page = ({ params }) => {
     return (
         <main className={styles.main}>

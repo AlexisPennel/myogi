@@ -1,0 +1,15 @@
+.sections__list__li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sections__list__li a {
+    color: var(--neutrals-200);
+}
+
+.sections__list__image {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}

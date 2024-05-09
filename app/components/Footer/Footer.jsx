@@ -44,23 +44,23 @@ const Footer = () => {
                             <Link href={'/'} className={styles.links}>Accueil</Link>
                         </li>
                         <li>
-                            <Link href={'/siteinternetsurmesure'} className={styles.links}>Shooting automobile</Link>
+                            <Link href={'/shooting-automobile'} className={styles.links}>Shooting automobile</Link>
                         </li>
                         <li>
-                            <Link href={'/boutiqueenligne'} className={styles.links}>Shooting animalier</Link>
+                            <Link href={'/shooting-animalier'} className={styles.links}>Shooting animalier</Link>
                         </li>
                         <li>
-                            <Link href={'/mentionslegales'} className={styles.links}>Portfolio</Link>
+                            <Link href={'/portfolio'} className={styles.links}>Portfolio</Link>
                         </li>
                         <li>
-                            <Link href={'/mentionslegales'} className={styles.legal__links}>Mentions légales</Link>
+                            <Link href={'/mentions-legales'} className={styles.legal__links}>Mentions légales</Link>
                         </li>
                         <li>
                             <Link href={'/credits'} className={styles.legal__links}>Crédits</Link>
                         </li>
-                        <li>
-                            <Link href={'/credits'} className={styles.legal__links}>Conditions générales de vente</Link>
-                        </li>
+                        {/* <li>
+                            <Link href={'/conditions-generale-de-vente'} className={styles.legal__links}>Conditions générales de vente</Link>
+                        </li> */}
                     </ul>
                 </nav>
             </div>
