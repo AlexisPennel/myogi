@@ -27,12 +27,12 @@ const Footer = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href={'https://m.me/AlexisDeveloppementWeb'} aria-label="Contacter sur Facebook" >
+                            <Link href={'https://m.me/AlexisPennel'} aria-label="Contacter sur Facebook" >
                                 <Image src={fb} width={25} height={25} alt="Logo de Facebook" />
                             </Link>
                         </li>
                         <li>
-                            <Link href={'https://www.instagram.com/ap.developpement.web/'} aria-label="Visiter le profil Instagram" >
+                            <Link href={'https://www.instagram.com/myogi.jpg/'} aria-label="Visiter le profil Instagram" >
                                 <Image src={insta} width={25} height={25} alt="Logo de Instagram" />
                             </Link>
                         </li>

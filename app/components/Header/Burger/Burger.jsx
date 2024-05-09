@@ -79,7 +79,7 @@ const Burger = () => {
                             <Link href={'#'}>
                                 <Image src={whatsWhite} width={25} height={25} alt="what's app" />
                             </Link>
-                            <Link href={'#'}>
+                            <Link href={'https://www.instagram.com/myogi.jpg/'}>
                                 <Image src={instagramWhite} width={25} height={25} alt='instagram' />
                             </Link>
                         </div>
