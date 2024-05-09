@@ -6,6 +6,14 @@ import Image from 'next/image';
 import bannerCart from '../../public/images/bannerCart-min.webp';
 import CartComponent from '../components/CartComponent/CartComponent';
 
+export const metadata = {
+    title: 'Votre panier',
+    description: "Votre panier photo",
+    author: 'Romain Martin',
+    creator: 'Romain Martin',
+    robots: 'noindex'
+};
+
 const page = () => {
     return (
         <main className={styles.main}>

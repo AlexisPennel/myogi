@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { CartProvider } from "./CartContext";
 import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   icons: [
@@ -65,7 +64,6 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <body className={`${LatoFont.variable} ${SourceFont.variable}`}>
         <Analytics />
-        <SpeedInsights />
         <CartProvider>
           <Header />
           {children}

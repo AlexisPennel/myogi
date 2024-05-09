@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /galeries
+Disallow: /panier
+Disallow: /telechargement
+Sitemap: https://myogiphotographie.vercel.app/sitemap.xml

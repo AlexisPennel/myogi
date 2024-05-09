@@ -5,6 +5,14 @@ import Image from 'next/image';
 import bannerCart from '../../../public/images/bannerCart-min.webp';
 import CartPaymentComponent from '@/app/components/CartPaymentComponent/CartPaymentComponent';
 
+export const metadata = {
+    title: 'Paiement de votre panier',
+    description: "Galerie photo de votre shooting",
+    author: 'Romain Martin',
+    creator: 'Romain Martin',
+    robots: 'noindex'
+};
+
 const page = ({params}) => {
     const id = params.id;
     return (
@@ -30,7 +38,6 @@ const page = ({params}) => {
                 </div>
             </section>
             <CartPaymentComponent id={id} />
-
         </main>
     );
 };
