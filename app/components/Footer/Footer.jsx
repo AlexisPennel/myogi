@@ -4,8 +4,7 @@ import Link from 'next/link';
 import logo from '../../../public/Logo.svg'
 import logo2 from '../../../public/Logo2.svg'
 import Image from 'next/image';
-import whats from '../../../public/icons/whatsWhite.svg';
-import fb from '../../../public/icons/messengerWhite.svg';
+import mail from '../../../public/icons/mail.svg';
 import insta from '../../../public/icons/instagramWhite.svg';
 import logoAP from '../../../public/icons/logoAP.svg';
 
@@ -22,18 +21,13 @@ const Footer = () => {
                     </Link>
                     <ul className={styles.social__container}>
                         <li>
-                            <Link href={'https://api.whatsapp.com/send?phone=0649535905'} aria-label="Contacter sur WhatsApp" >
-                                <Image src={whats} width={25} height={25} alt="Logo de What's App" />
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={'https://m.me/AlexisPennel'} aria-label="Contacter sur Facebook" >
-                                <Image src={fb} width={25} height={25} alt="Logo de Facebook" />
-                            </Link>
-                        </li>
-                        <li>
                             <Link href={'https://www.instagram.com/myogi.jpg/'} aria-label="Visiter le profil Instagram" >
                                 <Image src={insta} width={25} height={25} alt="Logo de Instagram" />
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={"mailto:myogi.photo@gmail.com"} aria-label="Contactez-moi par email" >
+                                <Image src={mail} width={25} height={25} alt="Icone email" />
                             </Link>
                         </li>
                     </ul>
@@ -56,11 +50,11 @@ const Footer = () => {
                             <Link href={'/mentions-legales'} className={styles.legal__links}>Mentions légales</Link>
                         </li>
                         <li>
+                            <Link href={'/conditions-generales-de-vente'} className={styles.legal__links}>Conditions générales de vente</Link>
+                        </li>
+                        <li>
                             <Link href={'/credits'} className={styles.legal__links}>Crédits</Link>
                         </li>
-                        {/* <li>
-                            <Link href={'/conditions-generale-de-vente'} className={styles.legal__links}>Conditions générales de vente</Link>
-                        </li> */}
                     </ul>
                 </nav>
             </div>

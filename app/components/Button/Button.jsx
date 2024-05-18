@@ -58,7 +58,7 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
                     onKeyDown={scrollId && handleKeyDown}
                     whileTap={{ scale: 0.95 }}
                     whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
-                    className={styles.button__container__secondary}>
+                    className={size === 'large' ? styles.button__container__secondary : `${styles.button__container__secondary} ${styles.button__container__small}`}>
                     {link ?
                         <Link href={link}>
                             {content}
