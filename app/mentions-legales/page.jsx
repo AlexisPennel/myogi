@@ -9,7 +9,7 @@ export const metadata = {
     author: 'Romain Martin',
     creator: 'Romain Martin',
     robots: 'noindex'
-  };
+};
 
 const page = () => {
     return (
@@ -29,7 +29,11 @@ const page = () => {
                         <p><strong>Adresse du site web:</strong> https://myogiphotographie.vercel.app/</p>
                     </li>
                     <li>
-                        <p><strong>Propriétaire:</strong> Martin Romain</p>
+                        <p><strong>Propriétaire du site:</strong> Martin Romain</p>
+                        <p><strong>Forme juridique:</strong> Entrepreneur individuel</p>
+                        <p><strong>Email:</strong> <Link href={'mailto:myogi.photo@gmail.com'}>myogi.photo@gmail.com</Link> </p>
+                        <p><strong>Téléphone:</strong> 06.60.35.18.97 </p>
+                        <p><strong>Adresse:</strong> MARTIN Romain IMMEUBLE MARGUERITE 2 APPARTEMENT 201, RUE Bernard de Jussieu 76410 Cléon, France </p>
                     </li>
                     <li>
                         <p><strong>Responsable de publication:</strong> Martin Romain</p>
@@ -38,16 +42,7 @@ const page = () => {
                         <p><strong>Conception et réalisation:</strong> <Link href={'https://www.alexispennel.fr/'}>Alexis Pennel - AP Développement web</Link></p>
                     </li>
                     <li>
-                        <p><strong>Hébergement:</strong> Vercel, 440 N Barranca Ave #4133 Covina, CA 91723.</p>
-                    </li>
-                    <li>
-                        <p><strong>Contact: </strong></p>
-                        <p>Nom-Prénom : Martin Romain</p>
-                        <p>Forme juridique: Entrepreneur individuel</p>
-                        <p>Email : <Link href={'mailto:myogi.photo@gmail.com'}>myogi.photo@gmail.com</Link> </p>
-                        <p>Téléphone : </p>
-                        <p>Adresse : </p>
-
+                        <p><strong>Hébergement du site:</strong> Vercel, 440 N Barranca Ave #4133 Covina, CA 91723.</p>
                     </li>
                 </ul>
             </section>
@@ -77,7 +72,13 @@ const page = () => {
                     <header>
                         <h3>2.4. Propriété intellectuelle</h3>
                     </header>
-                    <p>Le contenu du site https://myogiphotographie.vercel.app/, incluant, sans limitation, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Romain Martin. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+                    <p>Le contenu du site https://myogiphotographie.vercel.app/, incluant, sans limitation, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. <br /><br />
+                    Conformément à la loi du 11 Mars 1957 sur les droit d’auteur, Romain MARTIN conserve les droits de toutes les images prises pendant une séance et à le droit de reproduction pour ses supports de communication. <br /><br />
+                    Même après cession des fichiers numériques, les photographies restent la propriété intellectuelle du photographe et par conséquent, ne sont pas libres de droit. Le droit à l’image du client est quant à lui inaliénable. Un quelconque usage commercial n’est pas autorisé sans l’accord écrit du photographe.<br /><br />
+                    Toute utilisation d’une photographie quel qu’en soit l’usage (concours, diffusion, exposition, reproduction, …) faite sans l’accord écrit de  Romain MARTIN constitue un délit de contrefaçon au sens de l’article L-335-2 de ce même code. Les peines encourues peuvent allier jusqu’à 3 ans d’emprisonnement et 300 000€ d’amende.<br /><br />
+                    Il est interdit et puni par la loi de numériser des tirages en vue de les publier sur Internet, de retirer par n’importe quel procédé le logo/signature du photographe, et de modifier les photos (conversion en Noir et Blanc, application de filtres, recadrage, retouches diverses, etc…).<br /><br />
+                    Pour toute utilisation publique (réseaux sociaux inclus), le client doit obligatoirement citer le nom du photographe.
+                    </p>
                 </section>
                 <section className={styles.sub__sections}>
                     <header>
@@ -89,7 +90,9 @@ const page = () => {
                     <header>
                         <h3>2.6. Données personnelles</h3>
                     </header>
-                    <p>Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 sur la protection des personnes physiques à l'égard du traitement des données à caractère personnel) relative à l'informatique, aux fichiers et aux libertés, ce site a fait l'objet d'une déclaration à la Commission Nationale de l'Informatique et des Libertés (www.cnil.fr). Les utilisateurs disposent d'un droit d'accès, de rectification, de suppression et d'opposition à leurs données personnelles. Pour exercer ce droit, adressez votre demande à Romain Martin par email ou par voie postale.</p>
+                    <p>Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004) relative à l'informatique, aux fichiers et aux libertés, ainsi qu'au Règlement Général sur la Protection des Données (RGPD) entré en vigueur le 25 mai 2018, nous collectons uniquement les informations fournies par le formulaire de contact du site. Ces données sont utilisées exclusivement pour répondre aux demandes des utilisateurs.
+                        Les utilisateurs disposent d'un droit d'accès, de rectification, de suppression et d'opposition à leurs données personnelles. Pour exercer ce droit, veuillez adresser votre demande à Romain Martin par email ou par voie postale.
+                    </p>
                 </section>
             </section>
 
@@ -102,14 +105,7 @@ const page = () => {
                     <header>
                         <h3>3.1. Collecte des informations personnelles</h3>
                     </header>
-                    <p>Nous collectons les informations suivantes via le formulaire de contact disponible sur notre site https://myogiphotographie.vercel.app/ :</p>
-                    <ul className={styles.sections__list}>
-                        <li><p>Nom</p></li>
-                        <li><p>Prénom</p></li>
-                        <li><p>Numéro de Téléphone</p></li>
-                        <li><p>Adresse électronique (email)</p></li>
-                        <li><p>Message</p></li>
-                    </ul>
+                    <p>Nous collectons les informations suivantes via le formulaire de contact disponible sur notre site https://myogiphotographie.vercel.app/ : (nom, Prénom, Numéro de Téléphone, Adresse électronique (email), Message)</p>
                     <p>Les informations personnelles que nous collectons sont recueillies au travers de formulaires et grâce à l’interactivité établie entre vous et notre site Web.</p>
                 </section>
                 <section className={styles.sub__sections}>
@@ -134,12 +130,15 @@ const page = () => {
                             <p>Email: <Link href={'mailto:myogi.photo@gmail.com'}>myogi.photo@gmail.com</Link></p>
                         </li>
                         <li>
-                            <p>Adresse:</p>
+                            <p>Adresse: MARTIN Romain IMMEUBLE MARGUERITE 2 APPARTEMENT 201, RUE Bernard de Jussieu 76410 Cléon, France</p>
                         </li>
                     </ul>
                 </section>
             </section>
+            <div className={styles.buttons__container}>
+                <Button content={'Conditions générales de vente'} link={'/conditions-generales-de-vente'} type={'secondary'} />
                 <Button content={'Retour sur le site'} link={'/'} type={'primary'} />
+            </div>
         </main>
     );
 };

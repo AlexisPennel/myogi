@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import styles from './BannerAbout.module.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import aboutBanner from '../../../public/images/bannerAbout.jpg';
+import aboutBanner from '../../../public/images/bannerAbout.webp';
 import Image from 'next/image';
 
 const BannerAbout = () => {

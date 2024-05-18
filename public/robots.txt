@@ -2,4 +2,7 @@ User-agent: *
 Disallow: /galeries
 Disallow: /panier
 Disallow: /telechargement
+Disallow: /mentions-legales
+Disallow: /conditions-generales-de-vente
+Disallow: /credits
 Sitemap: https://myogiphotographie.vercel.app/sitemap.xml

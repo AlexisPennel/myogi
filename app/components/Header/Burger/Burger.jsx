@@ -7,8 +7,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Button from '../../Button/Button'; // Assurez-vous que le chemin d'accès est correct
 import { useRouter } from 'next/navigation';
-import messengerWhite from '../../../../public/icons/messengerWhite.svg';
-import whatsWhite from '../../../../public/icons/whatsWhite.svg'
+import mail from '../../../../public/icons/mail.svg';
 import instagramWhite from '../../../../public/icons/instagramWhite.svg'
 import { CartContext } from '@/app/CartContext';
 import cartIcon from '../../../../public/icons/cart.svg';
@@ -73,14 +72,11 @@ const Burger = () => {
                         exit={{ x: 500 }}
                         transition={{ ease: 'easeInOut' }}>
                         <div className={styles.social__container}>
-                            <Link href={'#'}>
-                                <Image src={messengerWhite} width={25} height={25} alt='messenger' />
-                            </Link>
-                            <Link href={'#'}>
-                                <Image src={whatsWhite} width={25} height={25} alt="what's app" />
-                            </Link>
                             <Link href={'https://www.instagram.com/myogi.jpg/'}>
                                 <Image src={instagramWhite} width={25} height={25} alt='instagram' />
+                            </Link>
+                            <Link href={"mailto:myogi.photo@gmail.com"} aria-label="Contactez-moi par email" >
+                                <Image src={mail} width={25} height={25} alt="Icone email" />
                             </Link>
                         </div>
                         <nav>
