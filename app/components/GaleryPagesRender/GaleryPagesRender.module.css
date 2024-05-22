@@ -12,3 +12,10 @@
     text-decoration: underline;
     font-weight: 600;
 }
+
+@media only screen and (min-width : 768px) {
+    .notFound__message {
+        max-width: 50vw;
+        align-self: center;
+    }
+}

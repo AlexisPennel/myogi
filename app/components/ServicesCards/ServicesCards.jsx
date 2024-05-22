@@ -38,7 +38,7 @@ const ServicesCards = () => {
                 className={styles.list__cards}
                 tabIndex={0}
                 aria-labelledby='autoTitle'
-                style={{ translateX: translateXOne, opacity: opacityOne }}
+                style={{ translateX: translateXOne, opacity: opacityOne, position:'relative'  }}
                 ref={ref} >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
@@ -59,7 +59,7 @@ const ServicesCards = () => {
                 aria-labelledby='animauxTitle'
                 tabIndex={0}
                 ref={ref2}
-                style={{ translateX: translateXTwo, opacity: opacityTwo }}>
+                style={{ translateX: translateXTwo, opacity: opacityTwo, position:'relative' }}>
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>02</span>
                     <Image src={shootingAnimalier} width={1280} height={720} alt="Photo d'un chien Akita Inu blanc'" className={styles.imageContainer__image} placeholder='blur' sizes='(min-width:768px) 35vw, (min-width:1200px) 25vw, (min-width:1700px) 20vw, 100vw' tabIndex={0} noindex="true" draggable="false" onContextMenu={(event) => event.preventDefault()} />

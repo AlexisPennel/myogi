@@ -177,3 +177,9 @@
         height: 200px;
     }
 }
+
+@media only screen and (min-width : 1700px) {
+    .main__section {
+        padding: 0px 105px 200px 105px;
+    }
+} 

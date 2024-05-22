@@ -24,11 +24,11 @@ const page = ({params}) => {
                     <ul className={styles2.steps__list}>
                         <li className={styles2.steps__li}>
                             <span>1</span>
-                            <p>Achetez vos photos</p>
+                            <p>Achetez vos photos.</p>
                         </li>
                         <li className={styles2.steps__li}>
                             <span>2</span>
-                            <p>Telechargez vos fichiers</p>
+                            <p>Téléchargez vos fichiers.</p>
                         </li>
                         <li className={styles2.steps__li}>
                             <span>3</span>

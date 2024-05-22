@@ -155,7 +155,7 @@ const page = () => {
             </section>
             <div className={styles.buttons__container}>
                 <Button content={'Mentions légales'} link={'/mentions-legales'} type={'secondary'} />
-                <Button content={'Retour sur le site'} link={'/'} type={'primary'} />
+                <Button content={"Retour à l'accueil"} link={'/'} type={'primary'} />
             </div>
         </main>
     );

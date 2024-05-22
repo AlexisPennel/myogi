@@ -48,7 +48,7 @@ const page = () => {
                     </li>
                 </ul>
             </section>
-            <Button content={'Retour sur le site'} link={'/'} type={'primary'} />
+            <Button content={"Retour à l'accueil"} link={'/'} type={'primary'} />
         </main>
     );
 };

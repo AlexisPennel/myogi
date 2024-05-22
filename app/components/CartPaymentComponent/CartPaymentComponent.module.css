@@ -7,10 +7,10 @@
 .backButton {
     width: 100%;
     outline: none;
-    border: 2px solid var(--neutrals-400);
+    border: 2px solid var(--neutrals-200);
     border-radius: 5px;
     background-color: transparent;
-    color: var(--neutrals-400);
+    color: var(--neutrals-200);
     font-size: 1.125rem;
     font-weight: 600;
     font-family: var(--font-lato);

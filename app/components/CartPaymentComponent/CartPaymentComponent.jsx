@@ -65,9 +65,9 @@ const CartPaymentComponent = ({ id }) => {
                                     noindex="true"
                                     className={styles.cartItems__photos}
                                     draggable="false"
-                                    quality={50} 
+                                    quality={50}
                                     placeholder='blur'
-                                    blurDataURL={blurDataUrl}/>
+                                    blurDataURL={blurDataUrl} />
                             </div>
                             <span className={styles.cartItems__price}>{photo.price}€</span>
                         </div>
@@ -80,7 +80,7 @@ const CartPaymentComponent = ({ id }) => {
                     <p className={styles.price__totalText}>TOTAL</p>
                     <p className={styles.price__total}>{total}€</p>
                 </div>
-                <p className={styles.payment__helpMessage}>En cas de difficultés lors du téléchargement, veuillez <Link href={"mailto:myogi.photo@gmail.com"}>me contacter</Link> et vos photos seront envoyées par email.</p>
+                <p className={styles.payment__helpMessage}>En cas de difficultés lors du téléchargement, veuillez <Link href={"mailto:myogi.photo@gmail.com"}>me contacter</Link> et vos photos seront envoyées par e-mail.</p>
                 <PayPalScriptProvider options={initialOptions}>
                     <PayPalButtons
                         style={{ layout: "vertical", color: 'blue' }}
@@ -128,11 +128,18 @@ const CartPaymentComponent = ({ id }) => {
                     />
                 </PayPalScriptProvider>
                 <div className={styles2.line}></div>
-                <motion.button onClick={() => {router.push('/panier')}} className={styles2.backButton}
-                whileHover={{scale:1.03, color:"var(--neutrals-300)", border:"2px solid var(--neutrals-300)"}}
-                whileTap={{scale: 0.95, color:"var(--neutrals-300)", border:"2px solid var(--neutrals-300)"}}>
-                    Modifier le panier
-                </motion.button>
+                <div className={styles.buttons__container}>
+                    <motion.button onClick={() => { router.push('/panier') }} className={styles2.backButton}
+                        whileHover={{ scale: 1.03, color: "var(--neutrals-300)", border: "2px solid var(--neutrals-300)" }}
+                        whileTap={{ scale: 0.95, color: "var(--neutrals-300)", border: "2px solid var(--neutrals-300)" }}>
+                        Modifier le panier
+                    </motion.button>
+                    <motion.button className={styles.conditions__button}>
+                        <Link href='/conditions-generales-de-vente'>
+                            Conditions générales de vente
+                        </Link>
+                    </motion.button>
+                </div>
             </div>
         </section>
     );

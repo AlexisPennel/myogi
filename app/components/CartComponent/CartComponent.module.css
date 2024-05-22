@@ -91,7 +91,7 @@
 .payment__container {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 48px;
 }
 
 .price {
@@ -134,11 +134,39 @@
     width: 100%;
     background-color: var(--primary-800);
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
     color: var(--neutrals-200);
     font-family: var(--font-lato);
     font-size: 1.125rem;
     font-weight: 600;
+}
+
+/* Buttons container  */
+.buttons__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+}
+
+/* conditions generales button */
+.conditions__button {
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: var(--neutrals-200);
+    text-decoration: underline;
+    width: 100%;
+    height: 40px;
+}
+
+.conditions__button a {
+    font-size: 1rem;
 }
 
 @media only screen and (min-width : 768px) {
@@ -162,5 +190,12 @@
     .container {
         padding: 0px 60px 200px 60px;
         max-width: 50vw;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .container {
+        padding: 0px 105px 200px 105px;
+        max-width: 45vw;
     }
 }

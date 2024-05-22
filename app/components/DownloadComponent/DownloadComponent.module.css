@@ -81,3 +81,20 @@
         height: 40px;
     }
 }
+
+@media only screen and (min-width : 1200px) {
+    .warning__message {
+        max-width: 35vw;
+    }
+
+    .items__list {
+        padding: 0px 60px;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+
+    .items__list {
+        padding: 0px 105px;
+    }
+}
