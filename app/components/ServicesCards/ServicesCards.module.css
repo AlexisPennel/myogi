@@ -63,8 +63,13 @@
         max-height: none;
     }
 
+    .cards__imageContainer {
+        min-width: 35vw;
+    }
+
     .imageContainer__image {
         width: 35vw;
+        min-width: 35vw;
         height: 100%;
         object-fit: cover;
     }
@@ -75,7 +80,12 @@
         padding: 0px 60px;
     }
 
+    .cards__imageContainer {
+        min-width: 25vw;
+    }
+
     .imageContainer__image {
+        min-width: 0;
         width: 25vw;
     }
 
@@ -102,7 +112,12 @@
         gap: 24px;
     }
 
+    .cards__imageContainer {
+        min-width: 20vw;
+    }
+
     .imageContainer__image {
+        min-width: 0;
         width: 20vw;
     }
 }

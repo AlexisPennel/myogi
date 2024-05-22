@@ -35,7 +35,6 @@ const ServicesCards = () => {
     return (
         <ul className={styles.list__container}>
             <motion.li
-                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className={styles.list__cards}
                 tabIndex={0}
                 aria-labelledby='autoTitle'
@@ -56,7 +55,6 @@ const ServicesCards = () => {
                 </div>
             </motion.li>
             <motion.li
-                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className={styles.list__cards}
                 aria-labelledby='animauxTitle'
                 tabIndex={0}
