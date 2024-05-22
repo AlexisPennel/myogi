@@ -10,6 +10,7 @@ import Loader from '../Loader/Loader';
 import { v4 as uuidv4 } from 'uuid';
 import { CartContext } from '@/app/CartContext';
 import Button from '../Button/Button';
+import Link from 'next/link';
 
 const CartComponent = () => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
@@ -121,6 +122,7 @@ const CartComponent = () => {
                             <p className={styles.price__totalText}>TOTAL</p>
                             <p className={styles.price__total}>{total}€</p>
                         </div>
+                        <div className={styles.buttons__container}>
                         <motion.button
                             className={styles.payment__button}
                             onClick={(e) => { handlePaymentButton(e) }}
@@ -130,6 +132,12 @@ const CartComponent = () => {
                             Finalisez votre commande
                             <Image src={arrowRight} width={24} height={24} alt='icone fleche vers la droite' />
                         </motion.button>
+                        <motion.button className={styles.conditions__button}>
+                            <Link href='/conditions-generales-de-vente'>
+                            Conditions générales de vente
+                            </Link>
+                        </motion.button>
+                        </div>
                     </div>
                 </>
             }

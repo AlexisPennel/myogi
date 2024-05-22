@@ -164,7 +164,7 @@ const Form = () => {
                 <div className={styles.popUp__wrapper} onClick={() => { setIsSend(false) }}>
                     <div className={styles.popUp__container}>
                         <Image src={success} width={60} height={60} alt='Icone succes' aria-hidden='true' />
-                        <p tabIndex={0}>Merci pour votre message !<br />Un e-mail vous sera envoyé prochainement </p>
+                        <p tabIndex={0}>Merci pour votre message.<br />Un e-mail vous sera envoyé prochainement </p>
                     </div>
                 </div>
             }

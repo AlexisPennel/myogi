@@ -137,7 +137,7 @@ const page = () => {
             </section>
             <div className={styles.buttons__container}>
                 <Button content={'Conditions générales de vente'} link={'/conditions-generales-de-vente'} type={'secondary'} />
-                <Button content={'Retour sur le site'} link={'/'} type={'primary'} />
+                <Button content={"Retour à l'accueil"} link={'/'} type={'primary'} />
             </div>
         </main>
     );

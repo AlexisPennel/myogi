@@ -29,3 +29,19 @@
         max-width: 45vw;
     }
 }
+
+@media only screen and (min-width : 1200px) {
+    .merci__text {
+        font-size: 1.5rem;
+    }
+
+    .warning__message {
+        max-width: 35vw;
+    }
+}
+
+@media only screen and (min-width : 1700px) {
+    .merci__text {
+        font-size: 2rem;
+    }
+}
