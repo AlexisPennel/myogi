@@ -26,7 +26,7 @@ const BannerAbout = () => {
             onContextMenu={(event) => event.preventDefault()}
             ref={ref}>
             <motion.div style={{ translateX: translateX, position: 'relative' }}>
-                <Image src={aboutBanner} width={1920} height={2880} alt="Photo personnelle du photographe Romain Martin" className={styles.about__banner} tabIndex={0} noindex="true" draggable="false" />
+                <Image src={aboutBanner} width={1080} height={1080} alt="Photo personnelle du photographe Romain Martin" className={styles.about__banner} tabIndex={0} noindex="true" draggable="false" />
             </motion.div>
         </motion.div>
     );

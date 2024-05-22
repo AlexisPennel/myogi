@@ -23,7 +23,7 @@ const page = () => {
                 <Image src={bannerPortfolio} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo d'un chiot Akita Inu blanc" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Mon <br /><span>portfolio</span></h1>
-                    <p className={styles.contentWrapper__description} tabIndex={0}>Voyagez à travers ma vision artistique et découvrez la diversité de mon talent photographique. Chaque œuvre est une fenêtre ouverte sur mon univers, reflétant ma passion pour capturer l'instant parfait.</p>
+                    <p className={styles.contentWrapper__description} tabIndex={0}>Voyagez à travers ma vision artistique et explorez la diversité de mon talent pour la photographie animalière et automobile. Chaque œuvre est une fenêtre ouverte sur mon univers, reflétant ma passion pour capturer l'instant parfait.</p>
                     <div className={styles.contentWrapper__buttonsContainer}>
                         <Button type={'primary'} size={'large'} content={'Mes photos'} scrollId={'#mesPhotos'} />
                         <Button type={'secondary'} size={'large'} content={'Réservation'} scrollId={'#contact'} />
