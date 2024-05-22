@@ -22,7 +22,7 @@ export default function Home() {
         <Image src={bannerHome} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Romain Martin d'une BMW M4 blanche" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
         <div className={styles.hero__section__contentWrapper}>
           <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Capturons <br /><span>l'instant parfait</span></h1>
-          <p className={styles.contentWrapper__description} tabIndex={0}>Votre photographe à Rouen pour des clichés animaliers et automobiles uniques. Explorez la beauté à travers mon objectif.</p>
+          <p className={styles.contentWrapper__description} tabIndex={0}>Photographe à Rouen et ses alentours, je suis spécialisé dans la photographie animalière et automobile. Offrez-vous un shooting professionnel pour immortaliser vos moments les plus précieux. </p>
           <div className={styles.contentWrapper__buttonsContainer}>
             <Button type={'primary'} size={'large'} content={'Mes prestations'} scrollId={'#mesPrestations'} />
             <Button type={'secondary'} size={'large'} content={'Qui suis-je ?'} scrollId={'#about'} />
@@ -44,7 +44,7 @@ export default function Home() {
           <h2 className={styles.sections__titles} id="portfolioTitle" tabIndex={0}>Mon Portfolio</h2>
           <p tabIndex={0}>Plongez dans une sélection de mes meilleures œuvres photographiques. Chaque cliché vous invite à explorer l'étendue de ma créativité et de mon expertise.</p>
         </header>
-          <PortfolioHome />
+        <PortfolioHome />
         <div className={styles.portfolio__button__container}>
           <Button type={'primary'} size={'large'} content={'Voir le portfolio complet'} link={'/portfolio'} />
         </div>
@@ -57,9 +57,9 @@ export default function Home() {
         </header>
         <div className={styles.about__responsive__wrapper}>
           <BannerAbout />
-          <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, photographe professionnel basé à Rouen, en Normandie, spécialisé dans la photographie animalière et automobile. Ma passion pour la capture de moments uniques, qui m'anime depuis de nombreuses années, m'a permis de perfectionner mon art. <br /><br />
-            Je m'efforce d'immortaliser la beauté et l'émotion inhérentes à chaque sujet, mettant en lumière l'éclat et la singularité de chaque scène, qu'il s'agisse de la grâce naturelle d'un animal ou du caractère distinctif d'une voiture. <br /><br />
-            Je vous invite à plonger dans mon univers et à considérer une collaboration pour votre projet photographique, que ce soit en Normandie ou au-delà. Ensemble, explorons la possibilité de créer des souvenirs durables et significatifs à travers mon objectif.</p>
+          <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, photographe professionnel à Rouen et ses alentours. Passionné depuis plusieurs années par la photographie, et plus particulièrement la photographie animalière et automobile, j'ai décidé de vous proposer mes services pour immortaliser vos moments les plus précieux.<br /><br />
+          Grâce à mon expérience et ma passion, je m'engage à capturer l'essence de chaque instant, révélant la beauté et l'émotion de vos compagnons à quatre pattes et de vos voitures. <br /><br />
+          Au-delà de la simple capture d'images, je cherche à créer des œuvres d'art qui vous transportent et vous émerveillent à chaque regard. Confiez-moi vos précieux moments, et ensemble, donnons vie à vos histoires à travers mes photographies.</p>
         </div>
       </section>
 

@@ -22,7 +22,7 @@ const page = () => {
                 <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo d'une Porsche Cayman GTS" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
-                    <p className={styles.contentWrapper__description} tabIndex={0}>Elevons ensemble la beauté de votre automobile avec des shootings exceptionnels. Chaque photo sublime les détails et reflète l'élégance unique de votre véhicule.</p>
+                    <p className={styles.contentWrapper__description} tabIndex={0}>Photographe automobile, je capture la beauté exceptionnelle de votre voiture. Chaque cliché sublime les détails et reflète son élégance unique.</p>
                     <div className={styles.contentWrapper__buttonsContainer}>
                         <Button type={'primary'} size={'large'} content={'Le déroulement '} scrollId={'#deroulement'} />
                         <Button type={'secondary'} size={'large'} content={'Réservation'} scrollId={'#contact'} />
@@ -42,7 +42,7 @@ const page = () => {
             <section className={styles.sections32__container} id="galerie" aria-labelledby="galerieTitle" tabIndex={0}>
                 <header className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
                     <h2 className={styles.sections__titles} id="galerieTitle" tabIndex={0}>Aperçu du résultat</h2>
-                    <p tabIndex={0}>Immergez vous dans un aperçu de mes réalisations les plus récentes dans le monde de la photographie automobile. Chaque cliché sélectionné illustre mon engagement à capturer l'élégance et la puissance de chaque véhicule.</p>
+                    <p tabIndex={0}>Plongez dans un aperçu de mes dernières réalisations en photographie automobile. Chaque cliché choisi démontre mon dévouement à saisir l'élégance et la puissance de chaque véhicule, offrant ainsi une expérience visuelle captivante.</p>
                 </header>
                 <AutoPageGalery />
                 <div className={styles.see__morePhotos}>

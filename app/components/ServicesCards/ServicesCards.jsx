@@ -48,7 +48,7 @@ const ServicesCards = () => {
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
                         <h3 tabIndex={0} id='autoTitle'>Shooting Automobile</h3>
-                        <p tabIndex={0}>Immortalisez les moments magiques avec votre compagnon. Capturez l'essence et la personnalité de vos animaux de compagnie à travers des photos qui racontent leur histoire. Laissez-moi révéler le lien unique qui vous unit à eux, dans des clichés empreints d'émotion et de beauté naturelle.</p>
+                        <p tabIndex={0}>Confiez votre automobile à un photographe automobile passionné. Offrez-lui une séance photo qui met en valeur son design et son allure. Découvrez des clichés où chaque courbe et chaque détail brillent.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
                         <Button type={'primary'} content={'En savoir plus'} link={'/shooting-automobile'} />
@@ -69,7 +69,7 @@ const ServicesCards = () => {
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
                         <h3 tabIndex={0} id='animauxTitle'>Shooting Animalier</h3>
-                        <p tabIndex={0}>Immortalisez les moments magiques avec votre compagnon. Capturez l'essence et la personnalité de vos animaux de compagnie à travers des photos qui racontent leur histoire. Laissez-moi révéler le lien unique qui vous unit à eux, dans des clichés empreints d'émotion et de beauté naturelle.</p>
+                        <p tabIndex={0}>Photographe animalier en Normandie, je capture les moments magiques avec vos animaux de compagnie. Immortalisez l'essence et la personnalité de vos compagnons à travers des photos qui racontent leur histoire. Ensemble, révélons le lien unique qui vous unit, avec des clichés remplis d'émotions.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
                         <Button type={'primary'} content={'En savoir plus'} link={'/shooting-animalier'} />

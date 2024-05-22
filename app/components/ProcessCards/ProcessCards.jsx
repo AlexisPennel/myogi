@@ -15,16 +15,17 @@ const ProcessCards = () => {
                 initial={{ opacity: 0.1 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2, ease: 'easeInOut' }}
-                className={styles.list__cards} 
+                className={styles.list__cards}
                 tabIndex={0}
                 aria-labelledby='lieuTitle' >
                 <div className={styles.cards__imageContainer}>
                     <span className={styles.imageContainer__number}>01</span>
-                    <Image src={processCard1} width={816} height={510} sizes="(min-width: 1700px) 20vw, (min-width: 1200px) 25vw, (min-width: 780px) 35vw, calc(100vw - 32px)" alt="Photo d'un telephone portable dans une main" className={styles.imageContainer__image} placeholder='blur' tabIndex={0}/>
+                    <Image src={processCard1} width={816} height={510} sizes="(min-width: 1700px) 20vw, (min-width: 1200px) 25vw, (min-width: 780px) 35vw, calc(100vw - 32px)" alt="Photo d'un telephone portable dans une main" className={styles.imageContainer__image} placeholder='blur' tabIndex={0} />
                 </div>
                 <div className={styles.cards__content}>
                     <h3 tabIndex={0} id='lieuTitle'>Choix du lieu idéal</h3>
-                    <p tabIndex={0}>La première étape cruciale de notre shooting est de sélectionner le décor parfait qui complémente l'esthétique de votre véhicule. </p>
+                    <p tabIndex={0}>
+                        La première étape essentielle de notre shooting photo est de choisir le décor idéal, répondant à vos attentes et mettant en valeur vos photographies de manière exceptionnelle. </p>
                 </div>
             </motion.li>
             <motion.li
