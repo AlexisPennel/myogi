@@ -120,8 +120,8 @@ const AnimPageGalery = () => {
                         onKeyDown={(event) => { handleKeyDown(event, index) }}>
                         <Image
                             src={img}
-                            width={1172}
-                            height={1172}
+                            width={1548}
+                            height={1548}
                             alt={`${altDescriptions[index]}`}
                             sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)"
                             placeholder='blur'
