@@ -60,7 +60,7 @@ const page = () => {
                     <header>
                         <h3>2.2. Responsabilité de l'éditeur</h3>
                     </header>
-                    <p>Romain Martin met en œuvre tous les moyens dont il dispose pour assurer une information fiable et une mise à jour fiable de ses sites web. Toutefois, des erreurs ou omissions peuvent survenir. L'internaute devra donc s'assurer de l'exactitude des informations auprès Romain Martin, et signaler toutes modifications du site qu'il jugerait utile. Romain Martin n'est en aucun cas responsable de l'utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.</p>
+                    <p>Romain Martin met en œuvre tous les moyens dont il dispose pour assurer une information fiable et une mise à jour fiable de ses sites web. Toutefois, des erreurs ou omissions peuvent survenir. L'internaute devra donc s'assurer de l'exactitude des informations auprès de Romain Martin, et signaler toutes modifications du site qu'il jugerait utile. Romain Martin n'est en aucun cas responsable de l'utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.</p>
                 </section>
                 <section className={styles.sub__sections}>
                     <header>
