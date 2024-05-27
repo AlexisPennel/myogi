@@ -119,10 +119,10 @@ const AutoPageGalery = () => {
                         onKeyDown={(event) => { handleKeyDown(event, index) }}>
                         <Image 
                             src={img} 
-                            width={1172} 
-                            height={1172} 
-                            alt={`${altDescriptions[index]}`} 
-                            sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)" 
+                            width={1548} 
+                            height={1548}
+                            sizes="(min-width: 1700px) calc(25vw - 88px), (min-width: 1200px) calc(25vw - 42px), (min-width: 780px) calc(25vw - 27px), calc(50vw - 24px)"
+                            alt={`${altDescriptions[index]}`}
                             placeholder='blur' 
                             onContextMenu={(event) => event.preventDefault()} 
                             noindex="true" 

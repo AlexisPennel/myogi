@@ -19,7 +19,7 @@ const page = () => {
     return (
         <main className={styles.main}>
             <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 50vw, 100vw" priority className={styles.hero__section__banner} alt="Photo d'une Porsche Cayman GTS" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
+                <Image src={bannerAuto} width={2940} height={3840} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo d'une Porsche Cayman GTS" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Automobile</span></h1>
                     <p className={styles.contentWrapper__description} tabIndex={0}>Photographe automobile, je capture la beauté exceptionnelle de votre voiture. Chaque cliché sublime les détails et reflète son élégance unique.</p>

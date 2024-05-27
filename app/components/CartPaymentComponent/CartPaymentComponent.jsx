@@ -81,52 +81,53 @@ const CartPaymentComponent = ({ id }) => {
                     <p className={styles.price__total}>{total}€</p>
                 </div>
                 <p className={styles.payment__helpMessage}>En cas de difficultés lors du téléchargement, veuillez <Link href={"mailto:myogi.photo@gmail.com"}>me contacter</Link> et vos photos seront envoyées par e-mail.</p>
-                <PayPalScriptProvider options={initialOptions}>
-                    <PayPalButtons
-                        style={{ layout: "vertical", color: 'blue' }}
-                        createOrder={(data, actions) => {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    amount: {
-                                        value: `${total}`, // Total de la commande
-                                        breakdown: {
-                                            item_total: { value: `${total}`, currency_code: "EUR" }, // Assurez-vous que cela correspond au total de la commande
+                <div className={styles2.paypal__button__container}>
+                    <PayPalScriptProvider options={initialOptions}>
+                        <PayPalButtons
+                            style={{ layout: "vertical", color: 'blue' }}
+                            createOrder={(data, actions) => {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: `${total}`, // Total de la commande
+                                            breakdown: {
+                                                item_total: { value: `${total}`, currency_code: "EUR" }, // Assurez-vous que cela correspond au total de la commande
+                                            },
                                         },
-                                    },
-                                    items: cart.map((photo, index) => ({
-                                        name: photo.path, // Nom de la photo, adapté si nécessaire
-                                        unit_amount: {
-                                            currency_code: "EUR",
-                                            value: photo.price, // Prix unitaire de la photo
-                                        },
-                                        quantity: "1", // Quantité
-                                        description: "Photo numérique", // Description optionnelle
-                                        category: "DIGITAL_GOODS", // Catégorie pour les biens numériques
-                                    })),
-                                    application_context: {
-                                        shipping_preference: "NO_SHIPPING", // Pas d'expédition nécessaire pour des biens numériques
+                                        items: cart.map((photo, index) => ({
+                                            name: photo.path, // Nom de la photo, adapté si nécessaire
+                                            unit_amount: {
+                                                currency_code: "EUR",
+                                                value: photo.price, // Prix unitaire de la photo
+                                            },
+                                            quantity: "1", // Quantité
+                                            description: "Photo numérique", // Description optionnelle
+                                            category: "DIGITAL_GOODS", // Catégorie pour les biens numériques
+                                        })),
+                                        application_context: {
+                                            shipping_preference: "NO_SHIPPING", // Pas d'expédition nécessaire pour des biens numériques
+                                        }
+                                    }],
+                                });
+                            }}
+                            onApprove={(data, actions) => {
+                                return actions.order.capture().then((details) => {
+                                    setPaymentIsLoading(true);
+                                    if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
+                                        setDownloadFiles(cart);
+                                        setCart([]);
+                                        setTimeout(() => {
+                                            router.push('/telechargement');
+                                        }, 2000);
                                     }
-                                }],
-                            });
-                        }}
-                        onApprove={(data, actions) => {
-                            return actions.order.capture().then((details) => {
-                                setPaymentIsLoading(true);
-                                if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
-                                    setDownloadFiles(cart);
-                                    setCart([]);
-                                    setTimeout(() => {
-                                        router.push('/telechargement');
-                                        setPaymentIsLoading(false);
-                                    }, 2000);
-                                }
-                            });
-                        }}
-                        onError={(err) => {
-                            console.error("Erreur PayPal:", err);
-                        }}
-                    />
-                </PayPalScriptProvider>
+                                });
+                            }}
+                            onError={(err) => {
+                                console.error("Erreur PayPal:", err);
+                            }}
+                        />
+                    </PayPalScriptProvider>
+                </div>
                 <div className={styles2.line}></div>
                 <div className={styles.buttons__container}>
                     <motion.button onClick={() => { router.push('/panier') }} className={styles2.backButton}
