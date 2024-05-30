@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import styles from './PortfolioPageComponent.module.css';
 import { motion } from 'framer-motion';
-import help from '../../../public/icons/help.svg';
-import Image from 'next/image';
 import AutoGalery from './AutoGalery/AutoGalery';
 import AnimGalery from './AnimGalery/AnimGalery';
 
@@ -29,10 +27,6 @@ const PortfolioPageComponent = () => {
                         whileTap={{ scale: 0.95 }}>
                         Animalier
                     </motion.button>
-                </div>
-                <div className={styles.helpMessage__container}>
-                    <Image src={help} alt="Help" width={15} height={15} />
-                    <p>Cliquez pour sélectionner la catégorie</p>
                 </div>
             </div>
 

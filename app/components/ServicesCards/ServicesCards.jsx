@@ -47,7 +47,7 @@ const ServicesCards = () => {
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
                         <h3 tabIndex={0} id='autoTitle'>Shooting Automobile</h3>
-                        <p tabIndex={0}>Confiez votre automobile à un photographe automobile passionné. Offrez-lui une séance photo qui met en valeur son design et son allure. Découvrez des clichés où chaque courbe et chaque détail brillent.</p>
+                        <p tabIndex={0}>Confiez votre voiture à un <strong>photographe automobile</strong> passionné. Offrez-lui une séance photo qui met en valeur son design et son allure. Découvrez des clichés où chaque courbe et chaque détail brillent.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
                         <Button type={'primary'} content={'En savoir plus'} link={'/shooting-automobile'} />
@@ -67,7 +67,7 @@ const ServicesCards = () => {
                 <div className={styles.responsive__wrapper}>
                     <div className={styles.cards__content}>
                         <h3 tabIndex={0} id='animauxTitle'>Shooting Animalier</h3>
-                        <p tabIndex={0}>Photographe animalier en Normandie, je capture les moments magiques avec vos animaux de compagnie. Immortalisez l'essence et la personnalité de vos compagnons à travers des photos qui racontent leur histoire. Ensemble, révélons le lien unique qui vous unit, avec des clichés remplis d'émotions.</p>
+                        <p tabIndex={0}><strong>Photographe animalier en Normandie</strong>, je capture les moments magiques avec vos animaux de compagnie. Immortalisez l'essence et la personnalité de vos compagnons à travers des photos qui racontent leur histoire. Ensemble, révélons le lien unique qui vous unit, avec des clichés remplis d'émotions.</p>
                     </div>
                     <div className={styles.cards__buttonContainer}>
                         <Button type={'primary'} content={'En savoir plus'} link={'/shooting-animalier'} />

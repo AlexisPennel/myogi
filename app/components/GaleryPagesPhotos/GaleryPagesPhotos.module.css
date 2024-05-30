@@ -31,7 +31,6 @@
     height: fit-content;
     min-height: 200px;
     min-width: 100%;
-    background-color: var(--neutrals-800);
     width: fit-content;
 }
 
@@ -252,11 +251,19 @@
         height: 10vh;
     }
 
+    .seeCart__text {
+        width: 30vw;
+    }
+
 }
 
 @media only screen and (min-width : 1700px) {
     /* Voir le panier bouton **********************/
     .seeCart__container {
         height: 8vh;
+    }
+
+    .seeCart__text {
+        width: 25vw;
     }
 }

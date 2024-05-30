@@ -22,7 +22,7 @@ export default function Home() {
         <Image src={bannerHome} width={720} height={1280} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles.hero__section__banner} alt="Photo du photographe Romain Martin d'une BMW M4 blanche" tabIndex={-1} placeholder="blur" noindex="true" draggable="false" />
         <div className={styles.hero__section__contentWrapper}>
           <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Capturons <br /><span>l'instant parfait</span></h1>
-          <p className={styles.contentWrapper__description} tabIndex={0}>Photographe à Rouen, je suis spécialisé dans la photographie animalière et automobile. Offrez-vous un shooting professionnel pour immortaliser vos moments les plus précieux. </p>
+          <p className={styles.contentWrapper__description} tabIndex={0}><strong>Photographe à Rouen</strong>, je suis spécialisé dans la photographie animalière et automobile. Offrez-vous un shooting professionnel pour immortaliser vos moments les plus précieux. </p>
           <div className={styles.contentWrapper__buttonsContainer}>
             <Button type={'primary'} size={'large'} content={'Mes prestations'} scrollId={'#mesPrestations'} />
             <Button type={'secondary'} size={'large'} content={'Qui suis-je ?'} scrollId={'#about'} />
@@ -57,9 +57,9 @@ export default function Home() {
         </header>
         <div className={styles.about__responsive__wrapper}>
           <BannerAbout />
-          <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, photographe professionnel à Rouen. Passionné depuis plusieurs années par la photographie, et plus particulièrement la photographie animalière et automobile, j'ai décidé de vous proposer mes services pour immortaliser vos moments les plus précieux.<br /><br />
+          <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, <strong>photographe à rouen</strong>. Passionné depuis plusieurs années par la photographie, et plus particulièrement la photographie animalière et automobile, j'ai décidé de vous proposer mes services pour immortaliser vos moments les plus précieux.<br /><br />
           Grâce à mon expérience et ma passion, je m'engage à capturer l'essence de chaque instant, révélant la beauté et l'émotion de vos compagnons à quatre pattes et de vos voitures. <br /><br />
-          Au-delà de la simple capture d'images, je cherche à créer des œuvres d'art qui vous transportent et vous émerveillent à chaque regard. Confiez-moi vos précieux moments, et ensemble, donnons vie à vos histoires à travers mes photographies.</p>
+          Au-delà de la simple capture d'images, je m'efforce de créer des œuvres qui vous captivent et reflètent mon style photographique. Confiez-moi vos précieux moments, et ensemble, donnons vie à vos histoires à travers mes photographies.</p>
         </div>
       </section>
 
@@ -67,6 +67,7 @@ export default function Home() {
       <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
         <header className={styles.sections__headers}>
           <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez votre shooting</h2>
+          <p>Contactez-moi dès maintenant par email ou via le formulaire ci-dessous pour discuter de votre projet de shooting. Décrivez vos besoins et vos attentes, et recevez un devis sur mesure adapté à vos besoins.</p>
           <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
         </header>
         <Form />

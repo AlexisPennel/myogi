@@ -45,6 +45,10 @@
     transition: all 300ms ease-in-out ;
 }
 
+.links__container li {
+    max-width: 85%;
+}
+
 .links__container :active {
     transform: scale(0.95);
 }
