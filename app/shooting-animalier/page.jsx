@@ -10,8 +10,8 @@ import ProcessCards from '../components/ProcessCards/ProcessCards';
 import AnimPageGalery from '../components/AnimPageGalery/AnimPageGalery';
 
 export const metadata = {
-    title: 'Shooting animalier à Rouen',
-    description: "Photographe spécialisé dans la photographie de chiens à Rouen, créons des souvenirs avec votre compagnon à quatre pattes ",
+    title: 'Photographe animalier normandie - Réservez votre shooting',
+    description: "Photographe animalier en Normandie, basé à Rouen. Je capture les meilleurs moments de vos animaux de compagnie. Réservez votre séance dès maintenant !",
     author: 'Romain Martin',
     creator: 'Romain Martin',
 };
@@ -24,7 +24,7 @@ const page = () => {
                 <Image src={bannerAnimalier} width={2940} height={3840} sizes="(min-width: 1200px) 40vw, 100vw" priority className={styles2.hero__section__banner} alt="Photo d'un Akita Inu roux" tabIndex={-1} placeholder="blur" noindex="true" draggable="false"/>
                 <div className={styles.hero__section__contentWrapper}>
                     <h1 className={styles.contentWrapper__title} tabIndex={0} id="pageTitle">Shooting <br /><span>Animalier</span></h1>
-                    <p className={styles.contentWrapper__description} tabIndex={0}>Immergez-vous dans des séances photo mémorables pour capturer la beauté de vos animaux. Chaque cliché révèle leur caractère unique et met en lumière les moments de complicité et de naturel, immortalisant ainsi des souvenirs inoubliables.</p>
+                    <p className={styles.contentWrapper__description} tabIndex={0}>Plongez dans des séances photo inoubliables avec votre <strong>photographe animalier en Normandie</strong>. Chaque cliché révèle la personnalité unique de vos animaux, immortalisant des moments de complicité et d'authenticité. Offrez-vous des souvenirs inoubliables dès aujourd'hui.</p>
                     <div className={styles.contentWrapper__buttonsContainer}>
                         <Button type={'primary'} size={'large'} content={'Le déroulement '} scrollId={'#deroulement'} />
                         <Button type={'secondary'} size={'large'} content={'Réservation'} scrollId={'#contact'} />
@@ -56,7 +56,8 @@ const page = () => {
             {/* contact */}
             <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
                 <header className={styles.sections__headers}>
-                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez votre shooting</h2>
+                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Envie d'un shooting animalier ?</h2>
+                    <p>Contactez-moi dès maintenant par email ou via le formulaire ci-dessous pour discuter de votre projet de shooting. Décrivez vos besoins et vos attentes, et recevez un devis sur mesure adapté à vos besoins.</p>
                     <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
                 </header>
                 <Form />

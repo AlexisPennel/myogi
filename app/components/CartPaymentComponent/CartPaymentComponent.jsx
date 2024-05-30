@@ -34,7 +34,7 @@ const CartPaymentComponent = ({ id }) => {
 
     // PayPal **************************
     const initialOptions = {
-        "client-id": "AWBFG4YHRN_bcYF8ElpLoHJT9G2CPLqG3myAS59A3_F7T2ryo9DQm6EnbcdNtLThODh4hFIvSXH7UMFM",
+        "client-id": "AfvOG-rvkBuoqL3-UXCzxoBKZMBgztSZlt6fp9XANfcao4j0OyO1AtZxNmsGHk_gMm9_Zg8U6J1CYcEG",
         currency: "EUR",
         intent: "capture",
     };
@@ -80,7 +80,6 @@ const CartPaymentComponent = ({ id }) => {
                     <p className={styles.price__totalText}>TOTAL</p>
                     <p className={styles.price__total}>{total}€</p>
                 </div>
-                <p className={styles.payment__helpMessage}>En cas de difficultés lors du téléchargement, veuillez <Link href={"mailto:myogi.photo@gmail.com"}>me contacter</Link> et vos photos seront envoyées par e-mail.</p>
                 <div className={styles2.paypal__button__container}>
                     <PayPalScriptProvider options={initialOptions}>
                         <PayPalButtons
@@ -128,6 +127,7 @@ const CartPaymentComponent = ({ id }) => {
                         />
                     </PayPalScriptProvider>
                 </div>
+                <p className={styles.payment__helpMessage}>Si vous rencontrez un problème lors de votre achat, veuillez me contacter à l'adresse suivante : <Link href={"mailto:myogi.photo@gmail.com"}>myogi.photo@gmail.com</Link></p>
                 <div className={styles2.line}></div>
                 <div className={styles.buttons__container}>
                     <motion.button onClick={() => { router.push('/panier') }} className={styles2.backButton}

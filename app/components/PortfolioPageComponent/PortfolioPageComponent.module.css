@@ -34,17 +34,6 @@
     background-color: var(--primary-800);
 }
 
-/* Help message ************************************/
-
-.helpMessage__container {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.helpMessage__container p {
-    font-size: 0.93rem;
-}
 
 /* render Images small **************************/
 
@@ -198,16 +187,6 @@
         padding: 10px 32px;
     }
 
-    /* Help message ************************************/
-
-    .helpMessage__container img {
-        width: 18px;
-        height: 18px;
-    }
-
-    .helpMessage__container p {
-        font-size: 1rem;
-    }
 }
 
 @media only screen and (min-width : 1200px) {

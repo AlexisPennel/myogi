@@ -9,7 +9,7 @@ import ProcessCards from '../components/ProcessCards/ProcessCards';
 import AutoPageGalery from '../components/AutoPageGalery/AutoPageGalery';
 
 export const metadata = {
-    title: 'Shooting automobile à Rouen',
+    title: 'Photographe automobile - reservez votre shooting automobile',
     description: "Photographe automobile à Rouen, je capture l'élégance de votre voiture. Réservez votre shooting professionnel dès maintenant !",
     author: 'Romain Martin',
     creator: 'Romain Martin',
@@ -42,7 +42,7 @@ const page = () => {
             <section className={styles.sections32__container} id="galerie" aria-labelledby="galerieTitle" tabIndex={0}>
                 <header className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
                     <h2 className={styles.sections__titles} id="galerieTitle" tabIndex={0}>Aperçu du résultat</h2>
-                    <p tabIndex={0}>Plongez dans un aperçu de mes dernières réalisations en photographie automobile. Chaque cliché choisi démontre mon dévouement à saisir l'élégance et la puissance de chaque véhicule, offrant ainsi une expérience visuelle captivante.</p>
+                    <p tabIndex={0}>Découvrez mes dernières œuvres en tant que photographe automobile. Chaque photo témoigne de mon engagement à capturer l'élégance et la puissance de chaque voiture, pour une expérience visuelle captivante.</p>
                 </header>
                 <AutoPageGalery />
                 <div className={styles.see__morePhotos}>
@@ -54,7 +54,8 @@ const page = () => {
             {/* contact */}
             <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
                 <header className={styles.sections__headers}>
-                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez votre shooting</h2>
+                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Envie d'un shooting automobile ?</h2>
+                    <p>Contactez-moi dès maintenant par email ou via le formulaire ci-dessous pour discuter de votre projet de shooting. Décrivez vos besoins et vos attentes, et recevez un devis sur mesure adapté à vos besoins.</p>
                     <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
                 </header>
                 <Form />
