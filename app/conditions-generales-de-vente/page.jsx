@@ -4,11 +4,10 @@ import Link from 'next/link';
 import Button from '../components/Button/Button';
 
 export const metadata = {
-    title: 'Conditions générales de vente',
-    description: "Conditions générales de vente de Romain Martin, photographe à Rouen",
+    title: 'Conditions Générales de Vente - Myogi Photographie',
+    description: "Consultez mes Conditions Générales de Vente pour connaître mes termes de service, politiques de retour, et autres informations importantes pour vos achats.",
     author: 'Romain Martin',
     creator: 'Romain Martin',
-    robots: 'noindex'
 };
 
 

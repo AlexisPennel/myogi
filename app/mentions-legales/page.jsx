@@ -4,11 +4,10 @@ import Link from 'next/link';
 import Button from '../components/Button/Button';
 
 export const metadata = {
-    title: 'Mentions légales',
-    description: "Mentions légales du site de Romain Martin, photographe à Rouen",
+    title: 'Mentions Légales - Myogi Photographie',
+    description: "Trouvez toutes les informations légales concernant le site de Myogi Photographie, y compris les informations sur l'éditeur, l'hébergement et les conditions d'utilisation.",
     author: 'Romain Martin',
     creator: 'Romain Martin',
-    robots: 'noindex'
 };
 
 const page = () => {
