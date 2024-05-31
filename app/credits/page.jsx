@@ -11,11 +11,10 @@ import Image from 'next/image';
 import Button from '../components/Button/Button';
 
 export const metadata = {
-    title: 'Crédits',
-    description: "Crédits des photos du site de Myogi",
+    title: 'Crédits Photos - Myogi Photographie',
+    description: "Découvrez les crédits des photos utilisées sur le site de myogiphotographie.fr, y compris les sources et les contributions des photographes.",
     author: 'Romain Martin',
     creator: 'Romain Martin',
-    robots: 'noindex'
   };
 
 const page = () => {
