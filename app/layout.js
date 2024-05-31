@@ -39,8 +39,8 @@ export const metadata = {
   manifest: 'favicon/site.webmanifest',
   openGraph: {
     title: 'Photographe à Rouen | Animalier et Automobile',
-    description: 'Spécialiste de la photographie animalière et automobile.',
-    url: "https://myogiphotographie.vercel.app/",
+    description: 'Photographe à Rouen, spécialiste de la photographie animalière et automobile.',
+    url: "https://www.myogiphotographie.fr/",
     image:"https://github.com/AlexisPennel/myogi/blob/main/opengraph-image.jpg"
   }
 }
