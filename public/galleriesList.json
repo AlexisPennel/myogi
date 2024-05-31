@@ -15,36 +15,28 @@
       }
     ]
   },
-  "seat-club-normandie-06-05-2024": {
+  "seat-club-30-05-24": {
     "aa-123-aa": {
       "images": [
         {
-          "path": "/galeries/seat-club-normandie-06-05-2024/aa-123-aa/1-10.jpg",
-          "price": 10
+          "path": "/galeries/seat-club-30-05-24/aa-123-aa/1-20.jpg",
+          "price": 20
         },
         {
-          "path": "/galeries/seat-club-normandie-06-05-2024/aa-123-aa/2-0.jpg",
+          "path": "/galeries/seat-club-30-05-24/aa-123-aa/2-0.jpg",
           "price": 0
         },
         {
-          "path": "/galeries/seat-club-normandie-06-05-2024/aa-123-aa/3-10.jpg",
-          "price": 10
-        },
-        {
-          "path": "/galeries/seat-club-normandie-06-05-2024/aa-123-aa/4-10.jpg",
+          "path": "/galeries/seat-club-30-05-24/aa-123-aa/3-10.jpg",
           "price": 10
         }
       ]
     },
-    "cupra-formentor": {
+    "ford-mustang": {
       "images": [
         {
-          "path": "/galeries/seat-club-normandie-06-05-2024/cupra-formentor/1-0.jpg",
-          "price": 0
-        },
-        {
-          "path": "/galeries/seat-club-normandie-06-05-2024/cupra-formentor/1-20.jpg",
-          "price": 20
+          "path": "/galeries/seat-club-30-05-24/ford-mustang/1-10.jpg",
+          "price": 10
         }
       ]
     }

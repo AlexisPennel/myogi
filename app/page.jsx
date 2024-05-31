@@ -4,7 +4,7 @@ import bannerHome from '../public/images/bannerHome-min.webp';
 import Button from "./components/Button/Button";
 import ServicesCards from "./components/ServicesCards/ServicesCards";
 import PortfolioHome from "./components/PortfolioHome/PortfolioHome";
-import BannerAbout from "./components/BannerAbout/BannerAbout";
+import aboutBanner from '../public/images/bannerAbout.webp';
 import Link from "next/link";
 import Form from "./components/Form/Form";
 
@@ -52,11 +52,11 @@ export default function Home() {
 
       {/* About */}
       <section className={styles.sections32__container} id="about" aria-labelledby="aboutTitle" tabIndex={0}>
-        <header className={styles.sections__headers}>
+        <header  className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
           <h2 className={styles.sections__titles} id="aboutTitle" tabIndex={0}>Qui suis-je ?</h2>
         </header>
         <div className={styles.about__responsive__wrapper}>
-          <BannerAbout />
+          <Image src={aboutBanner} width={1080} height={1080} alt="Photo personnelle du photographe Romain Martin" className={styles.about__banner} tabIndex={0} noindex="true" draggable="false" placeholder="blur" />
           <p className={styles.about__bio} tabIndex={0}>Je suis Romain Martin, <strong>photographe à rouen</strong>. Passionné depuis plusieurs années par la photographie, et plus particulièrement la photographie animalière et automobile, j'ai décidé de vous proposer mes services pour immortaliser vos moments les plus précieux.<br /><br />
           Grâce à mon expérience et ma passion, je m'engage à capturer l'essence de chaque instant, révélant la beauté et l'émotion de vos compagnons à quatre pattes et de vos voitures. <br /><br />
           Au-delà de la simple capture d'images, je m'efforce de créer des œuvres qui vous captivent et reflètent mon style photographique. Confiez-moi vos précieux moments, et ensemble, donnons vie à vos histoires à travers mes photographies.</p>

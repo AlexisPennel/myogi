@@ -86,7 +86,7 @@
 
     .responsive__wrapper {
         flex-direction: row;
-        gap: 128px;
+        gap: 80px;
         height: fit-content;
     }
 
@@ -131,6 +131,10 @@
 
     .logoAndSocial__wrapper {
         padding: 0px 0px 0px 60px;
+    }
+
+    .responsive__wrapper {
+        gap: 128px;
     }
 
 }

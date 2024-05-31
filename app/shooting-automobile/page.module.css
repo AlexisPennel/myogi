@@ -151,7 +151,7 @@
 
     .hero__section__contentWrapper {
         padding-left: 30px;
-        gap: 64px;
+        gap: 32px;
         max-width: 75vw;
         margin-top: -6vh;
     }
@@ -217,7 +217,7 @@
         left: 0;
         padding-left: 60px;
         top: 180px;
-        max-width: 45vw;
+        max-width: 50vw;
         gap: 48px;
         transform: translateX(-200px);
         animation: contentWrapperEntrance 0.3s 0.3s ease-in forwards
@@ -254,7 +254,7 @@
         left: 0;
         padding-left: 105px;
         top: 260px;
-        max-width: 40vw;
+        max-width: 50vw;
         gap: 64px;
         transform: translateX(-200px);
         animation: contentWrapperEntrance 0.3s 0.3s ease-in forwards
