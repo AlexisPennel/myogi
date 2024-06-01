@@ -34,7 +34,7 @@ const CartPaymentComponent = ({ id }) => {
 
     // PayPal **************************
     const initialOptions = {
-        "client-id": "AfvOG-rvkBuoqL3-UXCzxoBKZMBgztSZlt6fp9XANfcao4j0OyO1AtZxNmsGHk_gMm9_Zg8U6J1CYcEG",
+        "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
         currency: "EUR",
         intent: "capture",
     };
