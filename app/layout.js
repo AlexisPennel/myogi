@@ -41,7 +41,7 @@ export const metadata = {
     title: 'Photographe à Rouen | Animalier et Automobile',
     description: 'Photographe à Rouen, spécialiste de la photographie animalière et automobile.',
     url: "https://www.myogiphotographie.fr/",
-    image:"https://github.com/AlexisPennel/myogi/blob/main/opengraph-image.jpg"
+    image:"https://github.com/AlexisPennel/myogi/blob/main/app/opengraph-image.jpg"
   }
 }
 
