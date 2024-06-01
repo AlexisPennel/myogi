@@ -8,24 +8,39 @@
 
 
 <url>
-  <loc>https://myogiphotographie.vercel.app/</loc>
-  <lastmod>2024-05-09T01:32:24+00:00</lastmod>
+  <loc>https://www.myogiphotographie.fr/</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://myogiphotographie.vercel.app/shooting-automobile</loc>
-  <lastmod>2024-05-09T01:32:24+00:00</lastmod>
+  <loc>https://www.myogiphotographie.fr/shooting-automobile</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.myogiphotographie.fr/shooting-animalier</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.myogiphotographie.fr/portfolio</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://myogiphotographie.vercel.app/shooting-animalier</loc>
-  <lastmod>2024-05-09T01:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://www.myogiphotographie.fr/mentions-legales</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
+  <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://myogiphotographie.vercel.app/portfolio</loc>
-  <lastmod>2024-05-09T01:32:24+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://www.myogiphotographie.fr/conditions-generales-de-vente</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://www.myogiphotographie.fr/credits</loc>
+  <lastmod>2024-06-01T00:18:04+00:00</lastmod>
+  <priority>0.40</priority>
 </url>
 
 
