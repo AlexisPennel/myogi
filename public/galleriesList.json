@@ -40,5 +40,13 @@
         }
       ]
     }
+  },
+  "test-paypal-01-06-24": {
+    "images": [
+      {
+        "path": "/galeries/test-paypal-01-06-24/1-1.jpg",
+        "price": 1
+      }
+    ]
   }
 }
