@@ -29,8 +29,8 @@
 .photos__container {
     position: relative;
     height: fit-content;
-    min-height: 300px;
-    min-width: 100%;
+    min-height: 100px;
+    min-width: 400px;
     width: fit-content;
 }
 
