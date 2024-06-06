@@ -20,7 +20,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     const [isLoading, setIsLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
     let pressTimer;
-    
+
     useEffect(() => {
         if (photos) {
             const freePhotosCount = photos.filter(photo => photo.price === 0).length;
@@ -37,8 +37,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         // Démarre le chronomètre pour détecter l'appui long
         pressTimer = setTimeout(() => {
             // Action à exécuter lorsqu'un appui long est détecté
-            console.log("Long press detected!");
-        }, 500); // Délai en millisecondes
+            alert("Merci de ne pas rester appuyé sur l'image.");
+        }, 500);
     };
 
     const handleTouchEnd = () => {
