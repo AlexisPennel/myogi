@@ -12,15 +12,23 @@ import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 import { useRouter } from 'next/navigation';
 
+// Fonction pour détecter si l'utilisateur utilise un navigateur intégré
+const isInAppBrowser = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /Instagram|FBAN|FBAV|Twitter/i.test(userAgent);
+};
+
 const GaleryPagesPhotos = ({ photos, params }) => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
     const [photosList, setPhotosList] = useState([]);
     const [freePhotos, setFreePhotos] = useState(0);
+    const [isInApp, setIsInApp] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
     useEffect(() => {
+        setIsInApp(isInAppBrowser());
         if (photos) {
             const freePhotosCount = photos.filter(photo => photo.price === 0).length;
             setFreePhotos(freePhotosCount);
@@ -69,12 +77,24 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         return cart.some((element) => element.path === photo.path);
     };
 
+    const openInBrowser = () => {
+        const url = window.location.href;
+        window.open(url, '_blank');
+    };
+
+
     if (isLoading) {
         return <Loader />
     }
 
     return (
         <section className={styles.photosSection__container} id='photosSection'>
+            {isInApp && (
+                <div className={styles.notification}>
+                    <p className={styles.notification__text}>Pour télécharger des photos, veuillez ouvrir cette page dans votre navigateur web.</p>
+                    <button onClick={openInBrowser} className={styles.openInBrowserButton}>Ouvrir dans le navigateur</button>
+                </div>
+            )}
             <header className={styles.photosSection__header}>
                 <h2>Les photos du shooting</h2>
             </header>
