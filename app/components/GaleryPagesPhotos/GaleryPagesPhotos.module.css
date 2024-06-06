@@ -30,8 +30,11 @@
     position: relative;
     height: fit-content;
     min-height: 100px;
-    min-width: 100px;
+    min-width: 250px;
+    width: 100%;
     width: fit-content;
+    background-image: url('../../../public/images/Frame31.png');
+    background-size: cover;
 }
 
 .photos {

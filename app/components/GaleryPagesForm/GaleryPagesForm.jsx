@@ -101,12 +101,14 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
                                 src={dir.images[0].path}
                                 width={480}
                                 height={480}
+                                sizes='20vw'
                                 alt='photo'
                                 className={styles.elements__images} draggable="false"
+                                onContextMenu={(event) => event.preventDefault()}
                                 noindex="true"
                                 placeholder='blur'
                                 blurDataURL={blurDataUrl}
-                                quality={50}
+                                quality={30}
                                 loading='lazy'
                                 onClick={() => {router.push(`/galeries/${slug}/${dir.id}`)}} />
                         </motion.li>
