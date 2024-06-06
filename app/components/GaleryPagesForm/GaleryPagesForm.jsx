@@ -106,6 +106,8 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
                                 noindex="true"
                                 placeholder='blur'
                                 blurDataURL={blurDataUrl}
+                                quality={50}
+                                loading='lazy'
                                 onClick={() => {router.push(`/galeries/${slug}/${dir.id}`)}} />
                         </motion.li>
                     ))}
