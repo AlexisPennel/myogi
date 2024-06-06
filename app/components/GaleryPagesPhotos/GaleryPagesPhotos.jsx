@@ -91,7 +91,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         <section className={styles.photosSection__container} id='photosSection'>
             {isInApp && (
                 <div className={styles.notification}>
-                    <p className={styles.notification__text}>Pour télécharger des photos, veuillez ouvrir cette page dans votre navigateur web.</p>
+                    <p className={styles.notification__text}>Pour télécharger des photos, veuillez ouvrir cette page dans votre navigateur web. <br />
+                    Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
                 </div>
             )}
             <header className={styles.photosSection__header}>
