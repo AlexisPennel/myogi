@@ -32,7 +32,6 @@
     min-height: 100px;
     min-width: 100%;
     width: 100%;
-    width: fit-content;
     background-image: url('../../../public/images/Frame31.png');
     background-size: cover;
 }
