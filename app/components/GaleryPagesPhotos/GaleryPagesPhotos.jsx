@@ -30,6 +30,21 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         }
     }, [photos]);
 
+    const handleTouchStart = (event) => {
+        // Empêche l'ouverture du menu contextuel sur iOS
+        event.preventDefault();
+
+        // Démarre le chronomètre pour détecter l'appui long
+        pressTimer = setTimeout(() => {
+            // Action à exécuter lorsqu'un appui long est détecté
+            console.log("Long press detected!");
+        }, 500); // Délai en millisecondes
+    };
+
+    const handleTouchEnd = () => {
+        // Réinitialise le chronomètre si le doigt est levé avant la fin du délai
+        clearTimeout(pressTimer);
+    };
 
     const handleAddToCartClick = (event, photo) => {
         event.preventDefault();
@@ -82,49 +97,60 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>Contactez-moi.</Link></p>
             }
             <ul className={styles.photos__list}>
-                {photosList.map((photo, index) => (
-                    <li className={styles.photos__container} key={index} onContextMenu={(event) => event.preventDefault()}>
-                        <span className={styles.photos__price}>{photo.price}€</span>
-                        <Image
-                            src={photo.path}
-                            className={styles.photos}
-                            width={1920}
-                            height={1080}
-                            sizes='100vw'
-                            alt='photos'
-                            draggable="false"
-                            noindex="true"
-                            placeholder='blur'
-                            blurDataURL={blurDataUrl} />
-                        {photo.price === 0 ? (
-                            <motion.button
-                                className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => handleDownload(photo)}
-                            >
-                                <Image
-                                    src={downloadIcon}
-                                    width={30}
-                                    height={30}
-                                    alt='Icone télécharger' />
-                            </motion.button>
-                        ) : (
-                            <motion.button
-                                className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={(event) => handleAddToCartClick(event, photo)}
-                            >
-                                <Image
-                                    src={isPhotoInCart(photo) ? checkIcon : addToCartIcon}
-                                    width={30}
-                                    height={30}
-                                    alt={isPhotoInCart(photo) ? 'Icone vérifié' : 'Icone ajouter au panier'} />
-                            </motion.button>
-                        )}
-                    </li>
-                ))}
+            {isLoading ? ( // Afficher le loader si isLoading est vrai
+                    <Loader />
+                ) : (
+                    photosList.map((photo, index) => (
+                        <li className={styles.photos__container} key={index} onContextMenu={(event) => event.preventDefault()}>
+                            <span className={styles.photos__price}>{photo.price}€</span>
+                            <Image
+                                src={photo.path}
+                                className={styles.photos}
+                                width={720}
+                                height={720}
+                                quality={60}
+                                sizes='80vw'
+                                alt='photos'
+                                draggable="false"
+                                loading='lazy'
+                                noindex="true"
+                                placeholder='blur'
+                                blurDataURL={blurDataUrl}
+                                onContextMenu={(event) => event.preventDefault()}
+                                onTouchStart={handleTouchStart}
+                                onTouchEnd={handleTouchEnd} 
+                                onLoad={() => setIsLoading(false)}/>
+                            {photo.price !== 0 && ( // Ajout de la condition pour exclure les photos gratuites
+                                <motion.button
+                                    className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={(event) => handleAddToCartClick(event, photo)}
+                                >
+                                    <Image
+                                        src={isPhotoInCart(photo) ? checkIcon : addToCartIcon}
+                                        width={30}
+                                        height={30}
+                                        alt={isPhotoInCart(photo) ? 'Icone vérifié' : 'Icone ajouter au panier'} />
+                                </motion.button>
+                            )}
+                            {photo.price === 0 && ( // Ajout du bouton de téléchargement pour les photos gratuites
+                                <motion.button
+                                    className={styles.photos__addToCart}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => handleDownload(photo)}
+                                >
+                                    <Image
+                                        src={downloadIcon}
+                                        width={30}
+                                        height={30}
+                                        alt='Icone télécharger' />
+                                </motion.button>
+                            )}
+                        </li>
+                    ))
+                )}
             </ul>
             <motion.button
                 className={styles.cartButton__page}
