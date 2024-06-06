@@ -19,7 +19,6 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     const [freePhotos, setFreePhotos] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
-    let pressTimer;
 
     useEffect(() => {
         if (photos) {
@@ -30,21 +29,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         }
     }, [photos]);
 
-    const handleTouchStart = (event) => {
-        // Empêche l'ouverture du menu contextuel sur iOS
-        event.preventDefault();
-
-        // Démarre le chronomètre pour détecter l'appui long
-        pressTimer = setTimeout(() => {
-            // Action à exécuter lorsqu'un appui long est détecté
-            alert("Merci de ne pas rester appuyé sur l'image.");
-        }, 500);
-    };
-
-    const handleTouchEnd = () => {
-        // Réinitialise le chronomètre si le doigt est levé avant la fin du délai
-        clearTimeout(pressTimer);
-    };
+    
 
     const handleAddToCartClick = (event, photo) => {
         event.preventDefault();
@@ -101,8 +86,11 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                     <Loader />
                 ) : (
                     photosList.map((photo, index) => (
-                        <li className={styles.photos__container} key={index} onContextMenu={(event) => event.preventDefault()}>
+                        <li className={styles.photos__container} key={index} 
+                        onContextMenu={(event) => event.preventDefault()}
+                        >
                             <span className={styles.photos__price}>{photo.price}€</span>
+                            <div className={styles.photomask}></div>
                             <Image
                                 src={photo.path}
                                 className={styles.photos}
@@ -117,8 +105,6 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                                 placeholder='blur'
                                 blurDataURL={blurDataUrl}
                                 onContextMenu={(event) => event.preventDefault()}
-                                onTouchStart={handleTouchStart}
-                                onTouchEnd={handleTouchEnd} 
                                 onLoad={() => setIsLoading(false)}/>
                             {photo.price !== 0 && ( // Ajout de la condition pour exclure les photos gratuites
                                 <motion.button
