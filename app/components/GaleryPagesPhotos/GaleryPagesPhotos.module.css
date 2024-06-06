@@ -154,6 +154,42 @@
     align-items: center;
 }
 
+.notification {
+    position: fixed;
+    width: 100%;
+    max-width: 280px;
+    top: 50vh;
+    left: 50%;
+    z-index: 1000;
+    transform: translateX(-50%);
+    padding: 16px;
+    border-radius: 10px;
+    background-color: var(--neutrals-600);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.notification__text {
+    font-size: 1rem;
+    font-family: var(--font-lato);
+}
+
+.openInBrowserButton {
+    color: var(--neutrals-200);
+    background-color: var(--primary-800);
+    width: fit-content;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: var(--font-lato);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 @media only screen and (min-width : 768px) {
     .photosSection__container {
         padding: 0px 30px;

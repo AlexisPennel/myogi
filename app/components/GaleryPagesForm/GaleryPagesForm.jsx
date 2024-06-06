@@ -101,7 +101,7 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
                                 src={dir.images[0].path}
                                 width={480}
                                 height={480}
-                                sizes='20vw'
+                                sizes='40vw'
                                 alt='photo'
                                 className={styles.elements__images} draggable="false"
                                 onContextMenu={(event) => event.preventDefault()}
