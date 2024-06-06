@@ -25,7 +25,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     const [freePhotos, setFreePhotos] = useState(0);
     const [isInApp, setIsInApp] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const { cart, addToCart, removeFromCart } = useContext(CartContext);
+    const { cart, addToCart, removeFromCart, downloadFiles, setDownloadFiles } = useContext(CartContext);
 
     useEffect(() => {
         setIsInApp(isInAppBrowser());
@@ -55,8 +55,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         if (isAlreadyInCart) {
             removeFromCart(photo);
         } else {
-            addToCart(photo);
-            localStorage.setItem('params', JSON.stringify(params));
+            // Ajoutez l'image téléchargée à downloadFiles
+            setDownloadFiles(prevFiles => [...prevFiles, photo]);
         }
         fetch(photo.path)
             .then(response => response.blob())
@@ -73,9 +73,14 @@ const GaleryPagesPhotos = ({ photos, params }) => {
             .catch(() => alert('Failed to download photo'));
     };
 
+
     const isPhotoInCart = (photo) => {
         return cart.some((element) => element.path === photo.path);
     };
+
+    const isPhotoInDownload = (photo) => {
+        return downloadFiles.some((element) => element.path === photo.path);
+    }
 
     const openInBrowser = () => {
         const url = window.location.href;
@@ -142,7 +147,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                             )}
                             {photo.price === 0 && ( // Ajout du bouton de téléchargement pour les photos gratuites
                                 <motion.button
-                                    className={styles.photos__addToCart}
+                                className={isPhotoInDownload(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={() => handleDownload(photo)}
