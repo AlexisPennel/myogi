@@ -18,9 +18,9 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     const [photosList, setPhotosList] = useState([]);
     const [freePhotos, setFreePhotos] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
-
     const { cart, addToCart, removeFromCart } = useContext(CartContext);
-
+    let pressTimer;
+    
     useEffect(() => {
         if (photos) {
             const freePhotosCount = photos.filter(photo => photo.price === 0).length;
