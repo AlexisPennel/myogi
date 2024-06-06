@@ -124,6 +124,9 @@
     height: 150px;
     object-fit: cover;
     background-color: var(--neutrals-800);
+    user-select: none;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 @media only screen and (min-width : 768px) {
