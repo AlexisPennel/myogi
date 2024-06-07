@@ -103,9 +103,12 @@ const GaleryPagesPhotos = ({ photos, params }) => {
             <header className={styles.photosSection__header}>
                 <h2>Les photos du shooting</h2>
             </header>
-            {freePhotos !== 0 &&
-                <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>contactez-moi.</Link><br /><br />Retrouvez vos photos télécharger sur la page <Link href={"/telechargement"}>Téléchargement.</Link> </p>
-            }
+            <div className={styles.helpMessages__container}>
+                {freePhotos !== 0 &&
+                    <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>contactez-moi.</Link></p>
+                }
+                <p className={styles.freePhoto__message}>Retrouvez vos photos téléchargées sur la page <Link href={"/telechargement"}>Téléchargement.</Link></p>
+            </div>
             <ul className={styles.photos__list}>
                 {isLoading ? ( // Afficher le loader si isLoading est vrai
                     <Loader />

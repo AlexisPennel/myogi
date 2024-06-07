@@ -5,6 +5,12 @@
     padding: 0px 16px;
     margin: 0px 0px 200px 0px;
 }
+/* Help Messages container  **********************************/
+.helpMessages__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 .freePhoto__message {
     text-align: center;
@@ -19,6 +25,7 @@
     color: var(--primary-600);
 }
 
+/* Liste des photos  *********************************/
 .photos__list {
     list-style: none;
     display: flex;
@@ -34,12 +41,6 @@
     width: 100%;
     background-image: url('../../../public/images/Frame31.png');
     background-size: cover;
-}
-
-.photomask {
-    width: 100%;
-    height: 100%;
-    background-color: blue;
 }
 
 .photos {

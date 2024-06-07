@@ -5,6 +5,10 @@
     transform: translateY(-50px);
     opacity: 0.3;
     animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
+    pointer-events: none;
+    user-select: none;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 @keyframes PhotoEntrance {
@@ -18,7 +22,7 @@
     .hero__section__banner {
         object-position: center;
     }
-} 
+}
 
 
 @media only screen and (min-width : 1200px) {
@@ -36,5 +40,5 @@
 @media only screen and (min-width : 1700px) {
     .hero__section__banner {
         width: 40vw;
-      }
+    }
 }

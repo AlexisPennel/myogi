@@ -17,6 +17,9 @@
     height: auto;
     object-fit: cover;
     background-color: var(--neutrals-600);
+    user-select: none;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 .buttons {
