@@ -43,6 +43,10 @@
     opacity: 0.3;
     animation: PhotoEntrance 0.3s 0.3s ease-in forwards;
     background-color: var(--neutrals-700);
+    pointer-events: none;
+    user-select: none;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 

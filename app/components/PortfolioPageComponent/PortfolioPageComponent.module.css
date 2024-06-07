@@ -103,6 +103,9 @@
     object-fit: cover;
     background-color: black;
     pointer-events: none;
+    user-select: none;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
 }
 
 .loadingMessage {
