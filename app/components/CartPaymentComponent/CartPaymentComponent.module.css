@@ -26,3 +26,10 @@
     padding: 8px;
     border-radius: 5px;
 }
+
+.downloadNotif {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
