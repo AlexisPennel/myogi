@@ -59,7 +59,7 @@ const DownloadComponent = ({ params }) => {
                             noindex="true"
                             placeholder='blur'
                             blurDataURL={blurDataUrl} 
-                            quality={50}/>
+                            quality={30}/>
                         <motion.div
                             className={styles.items__download__container}
                             onClick={() => handleDownload(photo.path)}

@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { validate as isValidUuid } from 'uuid';
 import { useRouter } from 'next/navigation';
 import { CartContext } from '@/app/CartContext';
+import Button from '../Button/Button';
 
 const CartPaymentComponent = ({ id }) => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
@@ -17,6 +18,7 @@ const CartPaymentComponent = ({ id }) => {
     const { cart, setCart, setDownloadFiles } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [pageLoading, setPageLoading] = useState(true);
+    const [downloadNotif, setDownloadNotif] = useState(false);
 
     // Pat pal ******************************
     const [paymentIsLoading, setPaymentIsLoading] = useState(false);
@@ -51,7 +53,15 @@ const CartPaymentComponent = ({ id }) => {
     return (
         <section className={styles.container}>
             {cart.length === 0 &&
+                <>
                 <p>Votre panier est vide</p>
+                </>
+                }
+            {downloadNotif && 
+                <div className={styles2.downloadNotif}>
+                    <p>Merci pour votre achat !</p>
+                    <Button type={'primary'} link={'/telechargement'} size={'large'} content={'Télécharger mes photos'} />
+                </div>
             }
             <ul className={styles.cartItems__list}>
                 {cart.map((photo, index) => (
@@ -113,6 +123,8 @@ const CartPaymentComponent = ({ id }) => {
                                 return actions.order.capture().then((details) => {
                                     setPaymentIsLoading(true);
                                     if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
+                                        setPaymentIsLoading(false);
+                                        setDownloadNotif(true);
                                         setDownloadFiles(cart);
                                         setCart([]);
                                         setTimeout(() => {
