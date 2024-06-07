@@ -25,6 +25,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     const [freePhotos, setFreePhotos] = useState(0);
     const [isInApp, setIsInApp] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [downloadingPhotos, setDownloadingPhotos] = useState([]);
     const { cart, addToCart, removeFromCart, downloadFiles, setDownloadFiles } = useContext(CartContext);
 
     useEffect(() => {
@@ -37,7 +38,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         }
     }, [photos]);
 
-    
+
 
     const handleAddToCartClick = (event, photo) => {
         event.preventDefault();
@@ -51,13 +52,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
     };
 
     const handleDownload = (photo) => {
-        const isAlreadyInCart = cart.some((element) => element.path === photo.path);
-        if (isAlreadyInCart) {
-            removeFromCart(photo);
-        } else {
-            // Ajoutez l'image téléchargée à downloadFiles
-            setDownloadFiles(prevFiles => [...prevFiles, photo]);
-        }
+        setDownloadingPhotos((prev) => [...prev, photo.path]);
         fetch(photo.path)
             .then(response => response.blob())
             .then(blob => {
@@ -69,8 +64,13 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 document.body.appendChild(a);
                 a.click();
                 window.URL.revokeObjectURL(url);
+                setDownloadFiles(prevFiles => [...prevFiles, photo]);
+                setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
             })
-            .catch(() => alert('Failed to download photo'));
+            .catch(() => {
+                alert('Failed to download photo');
+                setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+            });
     };
 
 
@@ -97,22 +97,22 @@ const GaleryPagesPhotos = ({ photos, params }) => {
             {isInApp && (
                 <div className={styles.notification}>
                     <p className={styles.notification__text}>Pour télécharger des photos, veuillez ouvrir cette page dans votre navigateur web. <br />
-                    Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
+                        Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
                 </div>
             )}
             <header className={styles.photosSection__header}>
                 <h2>Les photos du shooting</h2>
             </header>
             {freePhotos !== 0 &&
-                <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>Contactez-moi.</Link></p>
+                <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>contactez-moi.</Link><br /><br />Retrouvez vos photos télécharger sur la page <Link href={"/telechargement"}>Téléchargement.</Link> </p>
             }
             <ul className={styles.photos__list}>
-            {isLoading ? ( // Afficher le loader si isLoading est vrai
+                {isLoading ? ( // Afficher le loader si isLoading est vrai
                     <Loader />
                 ) : (
                     photosList.map((photo, index) => (
-                        <li className={styles.photos__container} key={index} 
-                        onContextMenu={(event) => event.preventDefault()}
+                        <li className={styles.photos__container} key={index}
+                            onContextMenu={(event) => event.preventDefault()}
                         >
                             <span className={styles.photos__price}>{photo.price}€</span>
                             <div className={styles.photomask}></div>
@@ -130,7 +130,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                                 placeholder='blur'
                                 blurDataURL={blurDataUrl}
                                 onContextMenu={(event) => event.preventDefault()}
-                                onLoad={() => setIsLoading(false)}/>
+                                onLoad={() => setIsLoading(false)} />
                             {photo.price !== 0 && ( // Ajout de la condition pour exclure les photos gratuites
                                 <motion.button
                                     className={isPhotoInCart(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
@@ -145,18 +145,24 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                                         alt={isPhotoInCart(photo) ? 'Icone vérifié' : 'Icone ajouter au panier'} />
                                 </motion.button>
                             )}
-                            {photo.price === 0 && ( // Ajout du bouton de téléchargement pour les photos gratuites
+                            {photo.price === 0 && (
                                 <motion.button
-                                className={isPhotoInDownload(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
+                                    className={isPhotoInDownload(photo) ? `${styles.photos__inCart} ${styles.photos__addToCart}` : styles.photos__addToCart}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={() => handleDownload(photo)}
+                                    disabled={downloadingPhotos.includes(photo.path)}
                                 >
-                                    <Image
-                                        src={downloadIcon}
-                                        width={30}
-                                        height={30}
-                                        alt='Icone télécharger' />
+                                    {downloadingPhotos.includes(photo.path) ? (
+                                        <span className={styles.downloadSpinner}></span> // Afficher le spinner de chargement
+                                    ) : (
+                                        <Image
+                                            src={downloadIcon}
+                                            width={30}
+                                            height={30}
+                                            alt='Icone télécharger'
+                                        />
+                                    )}
                                 </motion.button>
                             )}
                         </li>

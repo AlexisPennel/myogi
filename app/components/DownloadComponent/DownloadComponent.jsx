@@ -15,6 +15,7 @@ const DownloadComponent = ({ params }) => {
     const { downloadFiles } = useContext(CartContext);
     const [pageLoading, setPageLoading] = useState(true);
     const [noDownloadItems, setNoDownloadItems] = useState(false);
+    const [downloadingPhotos, setDownloadingPhotos] = useState([]);
 
     useEffect(() => {
         if (downloadFiles.length > 0) {
@@ -25,14 +26,23 @@ const DownloadComponent = ({ params }) => {
         }
     }, [downloadFiles]);
 
+    useEffect(() => {
+        console.log(downloadingPhotos);
+    },[downloadingPhotos])
 
-    const handleDownload = (url) => {
+
+    const handleDownload = (photo) => {
+        console.log(photo.path)
+        setDownloadingPhotos((prev) => [...prev, photo.path]);
         const link = document.createElement('a');
-        link.href = url;
-        link.download = url; // Assignation du chemin complet en tant que nom du fichier
+        link.href = photo.path;
+        link.download = photo.path;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        setTimeout(() => {
+            setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+        }, 2000);
     };
 
     if (pageLoading) {
@@ -41,7 +51,7 @@ const DownloadComponent = ({ params }) => {
 
     return (
         <ul className={styles.items__list}>
-            {noDownloadItems && 
+            {noDownloadItems &&
                 <div className={styles.warning__message}>
                     <p>Aucune photo à télécharger.</p>
                     <Button content={"Retour page d'accueil"} link={'/'} type={'primary'} />
@@ -58,15 +68,24 @@ const DownloadComponent = ({ params }) => {
                             draggable="false"
                             noindex="true"
                             placeholder='blur'
-                            blurDataURL={blurDataUrl} 
-                            quality={30}/>
+                            blurDataURL={blurDataUrl}
+                            quality={30} />
                         <motion.div
                             className={styles.items__download__container}
-                            onClick={() => handleDownload(photo.path)}
-                            whileTap={{ scale: 0.9 }} // Effet d'interaction sur le bouton
+                            onClick={() => handleDownload(photo)}
+                            whileTap={{ scale: 0.9 }}
+                            disabled={downloadingPhotos.includes(photo.path)}
                         >
-                            <Image src={downloadIcon} width={30} height={30} alt='icone téléchargement' />
-                            <p>Télécharger</p>
+                            {downloadingPhotos.includes(photo.path) ? (
+                                <span className={styles.downloadSpinner}></span>
+                            ) : (
+                                <Image
+                                    src={downloadIcon}
+                                    width={30}
+                                    height={30}
+                                    alt='Icone télécharger'
+                                />
+                            )}
                         </motion.div>
                     </div>
                     <div className={styles.line}></div>
