@@ -4,6 +4,7 @@ import styles from './DownloadComponent.module.css';
 import Image from 'next/image';
 import Loader from '../Loader/Loader';
 import downloadIcon from '../../../public/icons/download.svg';
+import downloadWhite from '../../../public/icons/downloadWhite.svg';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 import { useRouter } from 'next/navigation';
@@ -28,7 +29,7 @@ const DownloadComponent = ({ params }) => {
 
     useEffect(() => {
         console.log(downloadingPhotos);
-    },[downloadingPhotos])
+    }, [downloadingPhotos])
 
 
     const handleDownload = (photo) => {
@@ -43,6 +44,21 @@ const DownloadComponent = ({ params }) => {
         setTimeout(() => {
             setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
         }, 2000);
+    };
+
+    const downloadAllFiles = () => {
+        downloadFiles.forEach(photo => {
+            setDownloadingPhotos((prev) => [...prev, photo.path]);
+            const link = document.createElement('a');
+            link.href = photo.path;
+            link.download = photo.path;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            setTimeout(() => {
+                setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+            }, 2000);
+        });
     };
 
     if (pageLoading) {
@@ -91,6 +107,18 @@ const DownloadComponent = ({ params }) => {
                     <div className={styles.line}></div>
                 </li>
             ))}
+            {downloadFiles.length > 0 && (
+                <motion.button
+                    className={styles.cartButton__page}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={downloadAllFiles}
+                    disabled={downloadingPhotos.length > 0} // Désactive le bouton pendant le téléchargement
+                >
+                    <Image src={downloadWhite} width={22} height={22} alt='icone panier' />
+                    Télécharger toutes les photos
+                </motion.button>
+            )}
         </ul>
     );
 };

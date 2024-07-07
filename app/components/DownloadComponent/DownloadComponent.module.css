@@ -117,6 +117,36 @@
     }
 }
 
+/* download all photos button  *******************/
+
+.cartButton__page {
+    width: 100%;
+    background-color: var(--primary-800);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--neutrals-200);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-family: var(--font-lato);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.cartButton__page__icon {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.cartButton__page__icon span {
+    font-size: 1rem;
+}
+
 @media only screen and (min-width : 768px) {
     .warning__message {
         max-width: 45vw;
@@ -130,6 +160,18 @@
     .items__download__container img {
         width: 40px;
         height: 40px;
+    }
+
+    /* dowload button */
+    .cartButton__page {
+        padding: 0px 48px;
+        height: 45px;
+        width: fit-content;
+        align-self: center;
+    }
+
+    .cartButton__page__icon span {
+        font-size: 1.125rem;
     }
 }
 

@@ -664,6 +664,54 @@
         }
       ]
     },
+    "gn-819-dk": {
+      "images": [
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/1-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/10-0.jpg",
+          "price": 0
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/11-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/2-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/3-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/4-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/5-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/6-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/7-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/8-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/9-0.jpg",
+          "price": 0
+        }
+      ]
+    },
     "gp-795-at": {
       "images": [
         {
@@ -868,5 +916,41 @@
         }
       ]
     }
+  },
+  "test": {
+    "images": [
+      {
+        "path": "/galeries/test/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/3-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/4-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/5-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/6-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/test/7-5.jpg",
+        "price": 5
+      },
+      {
+        "path": "/galeries/test/8-0.jpg",
+        "price": 0
+      }
+    ]
   }
 }

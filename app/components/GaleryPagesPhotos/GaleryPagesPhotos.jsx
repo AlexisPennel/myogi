@@ -7,6 +7,7 @@ import addToCartIcon from '../../../public/icons/addToCart.svg';
 import checkIcon from '../../../public/icons/check.svg';
 import cartIcon from '../../../public/icons/cart.svg';
 import downloadIcon from '../../../public/icons/downloadBlack.svg';
+import downloadWhite from '../../../public/icons/downloadWhite.svg';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
@@ -73,6 +74,31 @@ const GaleryPagesPhotos = ({ photos, params }) => {
             });
     };
 
+    const downloadAllFreePhotos = () => {
+        const freePhotosToDownload = photosList.filter(photo => photo.price === 0);
+        freePhotosToDownload.forEach(photo => {
+            setDownloadingPhotos((prev) => [...prev, photo.path]);
+            fetch(photo.path)
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = photo.path.split('/').pop();
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    setDownloadFiles(prevFiles => [...prevFiles, photo]);
+                    setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+                })
+                .catch(() => {
+                    alert('Failed to download photo');
+                    setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+                });
+        });
+    };
+
 
     const isPhotoInCart = (photo) => {
         return cart.some((element) => element.path === photo.path);
@@ -104,10 +130,19 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 <h2>Les photos du shooting</h2>
             </header>
             <div className={styles.helpMessages__container}>
-                {freePhotos !== 0 &&
-                    <p className={styles.freePhoto__message}>{freePhotos} photo gratuite ! Si vous souhaitez changer la photo gratuite <Link href={"mailto:myogi.photo@gmail.com"}>contactez-moi.</Link></p>
-                }
                 <p className={styles.freePhoto__message}>Retrouvez vos photos téléchargées sur la page <Link href={"/telechargement"}>Téléchargement.</Link></p>
+                {freePhotos > 0 && (
+                    <motion.button
+                        className={styles.cartButton__page}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={downloadAllFreePhotos}
+                        disabled={downloadingPhotos.length > 0} // Désactive le bouton pendant le téléchargement
+                    >
+                        <Image src={downloadWhite} width={22} height={22} alt='icone panier' />
+                        Télécharger toutes les photos
+                    </motion.button>
+                )}
             </div>
             <ul className={styles.photos__list}>
                 {isLoading ? ( // Afficher le loader si isLoading est vrai
@@ -172,15 +207,17 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                     ))
                 )}
             </ul>
-            <motion.button
-                className={styles.cartButton__page}
-                onClick={() => { router.push('/panier') }}>
-                Voir le panier
-                <div className={styles.cartButton__page__icon}>
-                    <Image src={cartIcon} width={24} height={24} alt='icone panier' />
-                    <span>{cart.length}</span>
-                </div>
-            </motion.button>
+            {cart.length > 0 &&
+                <motion.button
+                    className={styles.cartButton__page}
+                    onClick={() => { router.push('/panier') }}>
+                    <div className={styles.cartButton__page__icon}>
+                        <Image src={cartIcon} width={24} height={24} alt='icone panier' />
+                        <span>{cart.length}</span>
+                    </div>
+                    Voir le panier
+                </motion.button>
+            }
             {cart.length > 0 &&
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}

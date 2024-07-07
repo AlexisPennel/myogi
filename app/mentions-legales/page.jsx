@@ -25,7 +25,7 @@ const page = () => {
                 </header>
                 <ul className={styles.sections__list}>
                     <li>
-                        <p><strong>Adresse du site web:</strong> https://myogiphotographie.vercel.app/</p>
+                        <p><strong>Adresse du site web:</strong> https://myogiphotographie.fr</p>
                     </li>
                     <li>
                         <p><strong>Propriétaire du site:</strong> Martin Romain</p>
@@ -53,7 +53,7 @@ const page = () => {
                     <header>
                         <h3>2.1. Acceptation des conditions d'utilisation</h3>
                     </header>
-                    <p>Le site accessible via les URL suivants :  https://myogiphotographie.vercel.app/ est exploité dans le respect de la législation française. L'utilisation de ce site est régie par les présentes conditions générales (ci-après "CGU"). En utilisant ce site, vous reconnaissez avoir pris connaissance de ces conditions et les avoir acceptées. Ces conditions peuvent être modifiées à tout moment et sans préavis par Romain Martin, le propriétaire du site.</p>
+                    <p>Le site accessible via les URL suivants : https://myogiphotographie.fr est exploité dans le respect de la législation française. L'utilisation de ce site est régie par les présentes conditions générales (ci-après "CGU"). En utilisant ce site, vous reconnaissez avoir pris connaissance de ces conditions et les avoir acceptées. Ces conditions peuvent être modifiées à tout moment et sans préavis par Romain Martin, le propriétaire du site.</p>
                 </section>
                 <section className={styles.sub__sections}>
                     <header>
@@ -71,7 +71,7 @@ const page = () => {
                     <header>
                         <h3>2.4. Propriété intellectuelle</h3>
                     </header>
-                    <p>Le contenu du site https://myogiphotographie.vercel.app/, incluant, sans limitation, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. <br /><br />
+                    <p>Le contenu du site https://myogiphotographie.fr, incluant, sans limitation, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. <br /><br />
                     Conformément à la loi du 11 Mars 1957 sur les droit d’auteur, Romain MARTIN conserve les droits de toutes les images prises pendant une séance et à le droit de reproduction pour ses supports de communication. <br /><br />
                     Même après cession des fichiers numériques, les photographies restent la propriété intellectuelle du photographe et par conséquent, ne sont pas libres de droit. Le droit à l’image du client est quant à lui inaliénable. Un quelconque usage commercial n’est pas autorisé sans l’accord écrit du photographe.<br /><br />
                     Toute utilisation d’une photographie quel qu’en soit l’usage (concours, diffusion, exposition, reproduction, …) faite sans l’accord écrit de  Romain MARTIN constitue un délit de contrefaçon au sens de l’article L-335-2 de ce même code. Les peines encourues peuvent allier jusqu’à 3 ans d’emprisonnement et 300 000€ d’amende.<br /><br />
@@ -104,14 +104,14 @@ const page = () => {
                     <header>
                         <h3>3.1. Collecte des informations personnelles</h3>
                     </header>
-                    <p>Nous collectons les informations suivantes via le formulaire de contact disponible sur notre site https://myogiphotographie.vercel.app/ : (nom, Prénom, Numéro de Téléphone, Adresse électronique (email), Message)</p>
+                    <p>Nous collectons les informations suivantes via le formulaire de contact disponible sur notre site https://myogiphotographie.fr : (nom, Prénom, Numéro de Téléphone, Adresse électronique (email), Message)</p>
                     <p>Les informations personnelles que nous collectons sont recueillies au travers de formulaires et grâce à l’interactivité établie entre vous et notre site Web.</p>
                 </section>
                 <section className={styles.sub__sections}>
                     <header>
                         <h3>3.2. Utilisation des informations personnelles</h3>
                     </header>
-                    <p>Les informations personnelles collectées par le site  https://myogiphotographie.vercel.app/ sont utilisées uniquement pour le contact avec les utilisateurs qui ont soumis des demandes via le formulaire de contact. Nous nous engageons à ne pas commercialiser les informations personnelles collectées.</p>
+                    <p>Les informations personnelles collectées par le site https://myogiphotographie.fr sont utilisées uniquement pour le contact avec les utilisateurs qui ont soumis des demandes via le formulaire de contact. Nous nous engageons à ne pas commercialiser les informations personnelles collectées.</p>
                 </section>
                 <section className={styles.sub__sections}>
                     <header>

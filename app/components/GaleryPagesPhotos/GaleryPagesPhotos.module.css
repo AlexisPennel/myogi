@@ -9,7 +9,7 @@
 .helpMessages__container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 24px;
 }
 
 .freePhoto__message {
