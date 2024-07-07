@@ -1,4 +1,40 @@
 {
+  "mr-dupont-07-07-2024": {
+    "images": [
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/3-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/4-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/5-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/6-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/7-5.jpg",
+        "price": 5
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/8-0.jpg",
+        "price": 0
+      }
+    ]
+  },
   "seat-normandie-26-05-2024": {
     "bs-462-rg": {
       "images": [
@@ -916,41 +952,5 @@
         }
       ]
     }
-  },
-  "test": {
-    "images": [
-      {
-        "path": "/galeries/test/1-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/2-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/3-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/4-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/5-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/6-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/test/7-5.jpg",
-        "price": 5
-      },
-      {
-        "path": "/galeries/test/8-0.jpg",
-        "price": 0
-      }
-    ]
   }
 }

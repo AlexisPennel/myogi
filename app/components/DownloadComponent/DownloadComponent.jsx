@@ -17,6 +17,7 @@ const DownloadComponent = ({ params }) => {
     const [pageLoading, setPageLoading] = useState(true);
     const [noDownloadItems, setNoDownloadItems] = useState(false);
     const [downloadingPhotos, setDownloadingPhotos] = useState([]);
+    const [isDownloadingAll, setIsDownloadingAll] = useState(false);
 
     useEffect(() => {
         if (downloadFiles.length > 0) {
@@ -47,6 +48,7 @@ const DownloadComponent = ({ params }) => {
     };
 
     const downloadAllFiles = () => {
+        setIsDownloadingAll(true);
         downloadFiles.forEach(photo => {
             setDownloadingPhotos((prev) => [...prev, photo.path]);
             const link = document.createElement('a');
@@ -57,6 +59,7 @@ const DownloadComponent = ({ params }) => {
             document.body.removeChild(link);
             setTimeout(() => {
                 setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+                setIsDownloadingAll(false);
             }, 2000);
         });
     };
@@ -115,8 +118,14 @@ const DownloadComponent = ({ params }) => {
                     onClick={downloadAllFiles}
                     disabled={downloadingPhotos.length > 0} // Désactive le bouton pendant le téléchargement
                 >
-                    <Image src={downloadWhite} width={22} height={22} alt='icone panier' />
-                    Télécharger toutes les photos
+                    {isDownloadingAll ? (
+                        <span>Téléchargement en cours...</span>
+                    ) : (
+                        <>
+                            <Image src={downloadWhite} width={22} height={22} alt='icone panier' />
+                            Télécharger toutes les photos
+                        </>
+                    )}
                 </motion.button>
             )}
         </ul>
