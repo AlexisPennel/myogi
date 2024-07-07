@@ -1,4 +1,40 @@
 {
+  "mr-dupont-07-07-2024": {
+    "images": [
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/3-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/4-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/5-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/6-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/7-5.jpg",
+        "price": 5
+      },
+      {
+        "path": "/galeries/mr-dupont-07-07-2024/8-0.jpg",
+        "price": 0
+      }
+    ]
+  },
   "seat-normandie-26-05-2024": {
     "bs-462-rg": {
       "images": [
@@ -661,6 +697,54 @@
         {
           "path": "/galeries/seat-normandie-26-05-2024/gm-050-df/9-5.jpg",
           "price": 5
+        }
+      ]
+    },
+    "gn-819-dk": {
+      "images": [
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/1-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/10-0.jpg",
+          "price": 0
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/11-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/2-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/3-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/4-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/5-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/6-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/7-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/8-5.jpg",
+          "price": 5
+        },
+        {
+          "path": "/galeries/seat-normandie-26-05-2024/gn-819-dk/9-0.jpg",
+          "price": 0
         }
       ]
     },

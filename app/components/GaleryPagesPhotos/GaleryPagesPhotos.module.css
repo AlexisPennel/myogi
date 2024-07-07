@@ -9,7 +9,7 @@
 .helpMessages__container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 24px;
 }
 
 .freePhoto__message {
@@ -240,6 +240,7 @@
         clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
     }
 }
+      
 
 @media only screen and (min-width : 768px) {
     .photosSection__container {
