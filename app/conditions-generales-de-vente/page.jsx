@@ -17,7 +17,7 @@ const page = () => {
             <header className={styles.main__header}>
                 <h1>Conditions générales de vente</h1>
                 <p>Date d'entrée en vigueur : 1 Mai 2024</p>
-                <p>Les présentes conditions générales de vente (ci-après dénommées les "Conditions") régissent l'achat de produits photographiques (ci-après dénommés les "Produits") sur le site web <Link href={'/'}>https://myogiphotographie.vercel.app/</Link>, exploité par MARTIN Romain. En effectuant un achat sur ce site web, vous acceptez les présentes Conditions. Veuillez les lire attentivement avant de passer une commande. Adresse du siège social : Immeuble MARGUERITE, Rue Bernard de Jussieu 76410 Cléon</p>
+                <p>Les présentes conditions générales de vente (ci-après dénommées les "Conditions") régissent l'achat de produits photographiques (ci-après dénommés les "Produits") sur le site web <Link href={'/'}>https://myogiphotographie.fr</Link>, exploité par MARTIN Romain. En effectuant un achat sur ce site web, vous acceptez les présentes Conditions. Veuillez les lire attentivement avant de passer une commande. Adresse du siège social : Immeuble MARGUERITE, Rue Bernard de Jussieu 76410 Cléon</p>
                 <p>SIRET : 97941663300019</p>
             </header>
             <section tabIndex={0} aria-labelledby='section-1' className={styles.sections}>
