@@ -17,7 +17,7 @@ import downloadWhite from '../../../../public/icons/downloadWhite.svg';
 const Burger = () => {
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
-    const { cart, downloadFiles } = useContext(CartContext);
+    const { cart, downloadFiles, downloadFilesPaid } = useContext(CartContext);
     const [showCartIcon, setShowCartIcon] = useState(false);
     const [showDownloadIcon, setShowDownloadIcon] = useState(false);
 
@@ -26,7 +26,7 @@ const Burger = () => {
     }, [cart]);
 
     useEffect(() => {
-        if (downloadFiles.length > 0) {
+        if (downloadFiles.length > 0 || downloadFilesPaid.length > 0) {
             setShowDownloadIcon(true);
         }
     }, [downloadFiles])

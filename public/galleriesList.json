@@ -1,37 +1,61 @@
 {
+  "masterj-ancrebleue": {
+    "images": [
+      {
+        "path": "/galeries/masterj-ancrebleue/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/10-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/11-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/12-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/3-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/4-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/5-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/6-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/7-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/8-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/masterj-ancrebleue/9-0.jpg",
+        "price": 0
+      }
+    ]
+  },
   "mr-dupont-07-07-2024": {
     "images": [
       {
-        "path": "/galeries/mr-dupont-07-07-2024/1-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/2-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/3-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/4-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/5-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/6-0.jpg",
-        "price": 0
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/7-5.jpg",
-        "price": 5
-      },
-      {
-        "path": "/galeries/mr-dupont-07-07-2024/8-0.jpg",
-        "price": 0
+        "path": "/galeries/mr-dupont-07-07-2024/2-3.jpg",
+        "price": 3
       }
     ]
   },

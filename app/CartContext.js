@@ -23,6 +23,14 @@ const CartProvider = ({ children }) => {
         return [];
     })
 
+    const [downloadFilesPaid, setDownloadFilesPaid] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const data = localStorage.getItem('downloadItemPaid');
+            return data ? JSON.parse(data) : [];
+        }
+        return [];
+    })
+
     // Effectuer des opérations sur localStorage uniquement côté client
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -30,11 +38,17 @@ const CartProvider = ({ children }) => {
         }
     }, [cart]);
 
-   useEffect(() => {
+    useEffect(() => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('downloadItem', JSON.stringify(downloadFiles));
         }
-   })
+    }, [downloadFiles])
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('downloadItemPaid', JSON.stringify(downloadFilesPaid));
+        }
+    }, [downloadFilesPaid])
 
     const addToCart = (item) => {
         setCart(prevCart => [...prevCart, item]);
@@ -46,7 +60,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, downloadFiles, setDownloadFiles, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, downloadFiles, setDownloadFiles, downloadFilesPaid, setDownloadFilesPaid, addToCart, removeFromCart }}>
             {children}
         </CartContext.Provider>
     );

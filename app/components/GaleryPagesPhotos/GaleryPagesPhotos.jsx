@@ -20,7 +20,7 @@ const isInAppBrowser = () => {
 };
 
 const GaleryPagesPhotos = ({ photos, params }) => {
-    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
+    const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
     const [photosList, setPhotosList] = useState([]);
     const [freePhotos, setFreePhotos] = useState(0);
@@ -40,8 +40,6 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         }
     }, [photos]);
 
-
-
     const handleAddToCartClick = (event, photo) => {
         event.preventDefault();
         const isAlreadyInCart = cart.some((element) => element.path === photo.path);
@@ -53,65 +51,78 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         }
     };
 
-    const handleDownload = (photo) => {
-        setDownloadingPhotos((prev) => [...prev, photo.path]);
-        fetch(photo.path)
-            .then(response => response.blob())
-            .then(blob => {
+    const handleDownload = async (photo) => {
+        if (!downloadFiles.some((item) => item.path === photo.path)) {
+            setDownloadingPhotos((prev) => [...prev, photo.path]);
+            try {
+                const response = await fetch(photo.path);
+                const blob = await response.blob();
                 const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = photo.path.split('/').pop();
-                document.body.appendChild(a);
-                a.click();
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = photo.path.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
-                setDownloadFiles(prevFiles => [...prevFiles, photo]);
+    
+                setDownloadFiles(prevFiles => {
+                    if (!prevFiles.some((item) => item.path === photo.path)) {
+                        const newFiles = [...prevFiles, photo];
+                        if (newFiles.length > 50) {
+                            newFiles.shift(); 
+                        }
+                        return newFiles;
+                    } else {
+                        return prevFiles;
+                    }
+                });
+            } catch (error) {
+                console.error('Échec du téléchargement de la photo :', error);
+            } finally {
                 setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
-            })
-            .catch(() => {
-                alert('Failed to download photo');
-                setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
-            });
+            }
+        }
     };
+    
 
-    const downloadAllFreePhotos = () => {
+    const downloadAllFreePhotos = async () => {
         setIsDownloadingAll(true);
         const freePhotosToDownload = photosList.filter(photo => photo.price === 0);
-    
-        Promise.all(
-            freePhotosToDownload.map(photo => 
-                fetch(photo.path)
-                    .then(response => response.blob())
-                    .then(blob => {
-                        const url = window.URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.style.display = 'none';
-                        a.href = url;
-                        a.download = photo.path.split('/').pop();
-                        document.body.appendChild(a);
-                        a.click();
-                        window.URL.revokeObjectURL(url);
-                        setDownloadFiles(prevFiles => {
-                            if (!prevFiles.some(file => file.path === photo.path)) {
-                                return [...prevFiles, photo];
-                            }
-                            return prevFiles;
-                        });
-                        setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
-                    })
-                    .catch(() => {
-                        alert('Failed to download photo');
-                        setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
-                    })
-            )
-        ).finally(() => {
-            setIsDownloadingAll(false); // Terminer le téléchargement
-        });
-    };
-    
-    
 
+        for (const photo of freePhotosToDownload) {
+            setDownloadingPhotos((prev) => [...prev, photo.path]);
+            try {
+                const response = await fetch(photo.path);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = photo.path.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+
+                setDownloadFiles(prevFiles => {
+                    if (!prevFiles.some((item) => item.path === photo.path)) {
+                        const newFiles = [...prevFiles, photo];
+                        if (newFiles.length > 50) {
+                            newFiles.shift(); 
+                        }
+                        return newFiles;
+                    } else {
+                        return prevFiles;
+                    }
+                });
+            } catch (error) {
+                alert('Failed to download photo');
+            } finally {
+                setDownloadingPhotos((prev) => prev.filter((path) => path !== photo.path));
+            }
+        }
+        setIsDownloadingAll(false); // Terminer le téléchargement
+    };
 
     const isPhotoInCart = (photo) => {
         return cart.some((element) => element.path === photo.path);
@@ -125,7 +136,6 @@ const GaleryPagesPhotos = ({ photos, params }) => {
         const url = window.location.href;
         window.open(url, '_blank');
     };
-
 
     if (isLoading) {
         return <Loader />
@@ -231,8 +241,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                     className={styles.cartButton__page}
                     onClick={() => { router.push('/panier') }}
                     whileHover={{ scale: 1.02, backgroundColor:'var(--primary-700)' }}
-                        whileTap={{ scale: 0.9, backgroundColor:'var(--primary-700)'  }}
-                    >
+                    whileTap={{ scale: 0.9, backgroundColor:'var(--primary-700)'  }}
+                >
                     <div className={styles.cartButton__page__icon}>
                         <Image src={cartIcon} width={24} height={24} alt='icone panier' />
                         <span>{cart.length}</span>
