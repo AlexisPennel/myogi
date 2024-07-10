@@ -14,7 +14,7 @@ import downloadWhite from '../../../public/icons/downloadWhite.svg';
 
 const Header = () => {
     const pathname = usePathname();
-    const { cart, downloadFiles } = useContext(CartContext);
+    const { cart, downloadFiles, downloadFilesPaid } = useContext(CartContext);
     const [showCartIcon, setShowCartIcon] = useState(false);
     const [showDownloadIcon, setShowDownloadIcon] = useState(false);
 
@@ -23,7 +23,7 @@ const Header = () => {
     }, [cart]);
 
     useEffect(() => {
-        if (downloadFiles.length > 0) {
+        if (downloadFiles.length > 0 || downloadFilesPaid.length > 0) {
             setShowDownloadIcon(true);
         }
     }, [downloadFiles])
