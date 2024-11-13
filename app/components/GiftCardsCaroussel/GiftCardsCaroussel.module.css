@@ -1,0 +1,65 @@
+/* Styles pour le conteneur global */
+.carouselContainer {
+    display: grid;
+    grid-template-columns: 2.15fr 1fr;
+    /* Image principale plus large */
+    gap: 16px;
+    padding: 0px 16px;
+    align-items: start;
+    max-width: 600px;
+    min-height: 380px;
+    align-self: center;
+}
+
+/* Image principale */
+.mainCard {
+    text-align: center;
+    width: 100%;
+}
+
+.mainImage {
+    border-radius: 8px;
+    background-color: var(--neutrals-600);
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/* Miniatures */
+.thumbnailContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: start;
+}
+
+.thumbnail {
+    cursor: pointer;
+    text-align: center;
+}
+
+.thumbnailImage {
+    border-radius: 4px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background-color: var(--neutrals-600);
+}
+
+
+@media only screen and (min-width : 768px) {
+    .carouselContainer {
+        padding: 0px 30px;
+        max-width: 600px;
+        grid-template-columns: 2.08fr 1fr;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    .carouselContainer {
+        padding: 0px 60px;
+        max-width: 600px;
+        min-width: none;
+        grid-template-columns: 2.1fr 1fr;
+    }
+}

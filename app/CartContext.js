@@ -31,6 +31,13 @@ const CartProvider = ({ children }) => {
         return [];
     })
 
+    const [giftCards, setGiftCards] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const data = localStorage.getItem('giftCards');
+            return data ? JSON.parse(data) : [];
+        }
+    })
+
     // Effectuer des opérations sur localStorage uniquement côté client
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -60,7 +67,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, downloadFiles, setDownloadFiles, downloadFilesPaid, setDownloadFilesPaid, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cart, setCart, downloadFiles, setDownloadFiles, downloadFilesPaid, setDownloadFilesPaid, addToCart, removeFromCart, giftCards, setGiftCards }}>
             {children}
         </CartContext.Provider>
     );

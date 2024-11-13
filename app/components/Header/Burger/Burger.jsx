@@ -90,6 +90,9 @@ const Burger = () => {
                                 <li onKeyDown={(e) => { handleKeyPressLinks(e, '/shooting-animalier') }}>
                                     <Link href={'/shooting-animalier'} onClick={toggleMenu}>Shooting animalier</Link>
                                 </li>
+                                <li onKeyDown={(e) => { handleKeyPressLinks(e, '/cartes-cadeaux') }}>
+                                    <Link href={'/cartes-cadeaux'} onClick={toggleMenu}>Cartes cadeaux</Link>
+                                </li>
                                 <li onKeyDown={(e) => { handleKeyPressLinks(e, '/portfolio') }}>
                                     <Link href={'/portfolio'} onClick={toggleMenu}>Portfolio</Link>
                                 </li>

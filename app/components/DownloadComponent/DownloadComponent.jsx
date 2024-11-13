@@ -125,150 +125,158 @@ const DownloadComponent = ({ params }) => {
     }
 
     return (
-        <section className={styles.section}>
-            <section className={styles.buttons__section}>
-                <h2>Sélectionnez la catégorie</h2>
-                <div className={styles.buttons__section__container}>
-                    <motion.button
-                        className={catActive === 1 ? `${styles.buttons} ${styles.buttons__active}` : styles.buttons}
-                        onClick={() => setCatActive(1)}
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        {downloadFiles.length} Gratuites
-                    </motion.button>
-                    <motion.button
-                        className={catActive === 2 ? `${styles.buttons} ${styles.buttons__active}` : styles.buttons}
-                        onClick={() => setCatActive(2)}
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        {downloadFilesPaid.length} Achetées
-                    </motion.button>
-                </div>
+        <section>
+            {downloadFiles.length > 0 && 
+            <div className={styles.section}>
+                <section className={styles.buttons__section}>
+                    <h2>Photos</h2>
+                    <div className={styles.buttons__section__container}>
+                        <motion.button
+                            className={catActive === 1 ? `${styles.buttons} ${styles.buttons__active}` : styles.buttons}
+                            onClick={() => setCatActive(1)}
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {downloadFiles.length} Gratuites
+                        </motion.button>
+                        <motion.button
+                            className={catActive === 2 ? `${styles.buttons} ${styles.buttons__active}` : styles.buttons}
+                            onClick={() => setCatActive(2)}
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {downloadFilesPaid.length} Achetées
+                        </motion.button>
+                    </div>
+                </section>
+                {catActive === 1 && (
+                    <section className={styles.list__section}>
+                        <ul className={styles.items__list}>
+                            {downloadFiles.length === 0 && <p>Aucune photo à télécharger.</p>}
+                            {downloadFiles.map((photo, index) => (
+                                <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
+                                    <div className={styles.items__content}>
+                                        <Image
+                                            src={photo.path}
+                                            width={720}
+                                            height={720}
+                                            alt='photo'
+                                            className={styles.items__photo}
+                                            draggable="false"
+                                            noindex="true"
+                                            placeholder='blur'
+                                            blurDataURL={blurDataUrl}
+                                            quality={20}
+                                        />
+                                        <motion.div
+                                            className={styles.items__download__container}
+                                            onClick={() => handleDownload(photo)}
+                                            whileTap={{ scale: 0.9 }}
+                                            disabled={downloadingPhotos.includes(photo.path)}
+                                        >
+                                            {downloadingPhotos.includes(photo.path) ? (
+                                                <span className={styles.downloadSpinner}></span>
+                                            ) : (
+                                                <Image
+                                                    src={downloadIcon}
+                                                    width={30}
+                                                    height={30}
+                                                    alt='Icone télécharger'
+                                                />
+                                            )}
+                                        </motion.div>
+                                    </div>
+                                    <div className={styles.line}></div>
+                                </li>
+                            ))}
+                            {downloadFiles.length > 0 && (
+                                <motion.button
+                                    className={styles.cartButton__page}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={downloadAllFiles}
+                                    disabled={downloadingPhotos.length > 0}
+                                >
+                                    {isDownloadingAll ? (
+                                        <span className={styles.downloadSpinner}></span>
+                                    ) : (
+                                        <>
+                                            Tout télécharger
+                                            <Image src={downloadWhite} width={30} height={30} alt='Icone télécharger' />
+                                        </>
+                                    )}
+                                </motion.button>
+                            )}
+                        </ul>
+                    </section>
+                )}
+                {catActive === 2 && (
+                    <section className={styles.list__section}>
+                        <ul className={styles.items__list}>
+                            {downloadFilesPaid.length === 0 && <p>Aucune photo à télécharger.</p>}
+                            {downloadFilesPaid.map((photo, index) => (
+                                <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
+                                    <div className={styles.items__content}>
+                                        <Image
+                                            src={photo.path}
+                                            width={720}
+                                            height={720}
+                                            alt='photo'
+                                            className={styles.items__photo}
+                                            draggable="false"
+                                            noindex="true"
+                                            placeholder='blur'
+                                            blurDataURL={blurDataUrl}
+                                            quality={20}
+                                        />
+                                        <motion.div
+                                            className={styles.items__download__container}
+                                            onClick={() => handleDownload(photo)}
+                                            whileTap={{ scale: 0.9 }}
+                                            disabled={downloadingPhotos.includes(photo.path)}
+                                        >
+                                            {downloadingPhotos.includes(photo.path) ? (
+                                                <span className={styles.downloadSpinner}></span>
+                                            ) : (
+                                                <Image
+                                                    src={downloadIcon}
+                                                    width={30}
+                                                    height={30}
+                                                    alt='Icone télécharger'
+                                                />
+                                            )}
+                                        </motion.div>
+                                    </div>
+                                    <div className={styles.line}></div>
+                                </li>
+                            ))}
+                            {downloadFilesPaid.length > 0 && (
+                                <motion.button
+                                    className={styles.cartButton__page}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={downloadAllFilesPaid}
+                                    disabled={downloadingPhotos.length > 0}
+                                >
+                                    {isDownloadingAll ? (
+                                        <span className={styles.downloadSpinner}></span>
+                                    ) : (
+                                        <>
+                                            Tout télécharger
+                                            <Image src={downloadWhite} width={30} height={30} alt='Icone télécharger' />
+                                        </>
+                                    )}
+                                </motion.button>
+                            )}
+                        </ul>
+                    </section>
+                )}
+            </div> 
+            }
+            <section className={styles.section}>
+                <h2>Cartes cadeaux</h2>
+
             </section>
-            {catActive === 1 && (
-                <section className={styles.list__section}>
-                    <ul className={styles.items__list}>
-                        {downloadFiles.length === 0 && <p>Aucune photo à télécharger.</p>}
-                        {downloadFiles.map((photo, index) => (
-                            <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
-                                <div className={styles.items__content}>
-                                    <Image
-                                        src={photo.path}
-                                        width={720}
-                                        height={720}
-                                        alt='photo'
-                                        className={styles.items__photo}
-                                        draggable="false"
-                                        noindex="true"
-                                        placeholder='blur'
-                                        blurDataURL={blurDataUrl}
-                                        quality={20}
-                                    />
-                                    <motion.div
-                                        className={styles.items__download__container}
-                                        onClick={() => handleDownload(photo)}
-                                        whileTap={{ scale: 0.9 }}
-                                        disabled={downloadingPhotos.includes(photo.path)}
-                                    >
-                                        {downloadingPhotos.includes(photo.path) ? (
-                                            <span className={styles.downloadSpinner}></span>
-                                        ) : (
-                                            <Image
-                                                src={downloadIcon}
-                                                width={30}
-                                                height={30}
-                                                alt='Icone télécharger'
-                                            />
-                                        )}
-                                    </motion.div>
-                                </div>
-                                <div className={styles.line}></div>
-                            </li>
-                        ))}
-                        {downloadFiles.length > 0 && (
-                            <motion.button
-                                className={styles.cartButton__page}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={downloadAllFiles}
-                                disabled={downloadingPhotos.length > 0}
-                            >
-                                {isDownloadingAll ? (
-                                    <span className={styles.downloadSpinner}></span>
-                                ) : (
-                                    <>
-                                        Tout télécharger
-                                        <Image src={downloadWhite} width={30} height={30} alt='Icone télécharger' />
-                                    </>
-                                )}
-                            </motion.button>
-                        )}
-                    </ul>
-                </section>
-            )}
-            {catActive === 2 && (
-                <section className={styles.list__section}>
-                    <ul className={styles.items__list}>
-                        {downloadFilesPaid.length === 0 && <p>Aucune photo à télécharger.</p>}
-                        {downloadFilesPaid.map((photo, index) => (
-                            <li key={index} className={styles.items} onContextMenu={(event) => event.preventDefault()}>
-                                <div className={styles.items__content}>
-                                    <Image
-                                        src={photo.path}
-                                        width={720}
-                                        height={720}
-                                        alt='photo'
-                                        className={styles.items__photo}
-                                        draggable="false"
-                                        noindex="true"
-                                        placeholder='blur'
-                                        blurDataURL={blurDataUrl}
-                                        quality={20}
-                                    />
-                                    <motion.div
-                                        className={styles.items__download__container}
-                                        onClick={() => handleDownload(photo)}
-                                        whileTap={{ scale: 0.9 }}
-                                        disabled={downloadingPhotos.includes(photo.path)}
-                                    >
-                                        {downloadingPhotos.includes(photo.path) ? (
-                                            <span className={styles.downloadSpinner}></span>
-                                        ) : (
-                                            <Image
-                                                src={downloadIcon}
-                                                width={30}
-                                                height={30}
-                                                alt='Icone télécharger'
-                                            />
-                                        )}
-                                    </motion.div>
-                                </div>
-                                <div className={styles.line}></div>
-                            </li>
-                        ))}
-                        {downloadFilesPaid.length > 0 && (
-                            <motion.button
-                                className={styles.cartButton__page}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={downloadAllFilesPaid}
-                                disabled={downloadingPhotos.length > 0}
-                            >
-                                {isDownloadingAll ? (
-                                    <span className={styles.downloadSpinner}></span>
-                                ) : (
-                                    <>
-                                        Tout télécharger
-                                        <Image src={downloadWhite} width={30} height={30} alt='Icone télécharger' />
-                                    </>
-                                )}
-                            </motion.button>
-                        )}
-                    </ul>
-                </section>
-            )}
         </section>
     );
 };

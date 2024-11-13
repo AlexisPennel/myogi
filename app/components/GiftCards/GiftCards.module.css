@@ -1,0 +1,135 @@
+.listContainer {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    align-self: center;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+}
+
+.cards__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.cards h3 {
+    font-size: 1.25rem;
+}
+
+.cardDescription,
+.cards h3 {
+    text-align: center;
+}
+
+.cards img {
+    width: 200px;
+    height: 317px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-600);
+}
+
+
+
+/* Add to cart button */
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 32px;
+}
+
+.photos__addToCart {
+    outline: none;
+    border: none;
+    width: fit-content;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-800);
+    display: flex;
+    cursor: pointer;
+    padding: 0px 24px;
+    gap: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.photos__addToCart p {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        gap: 48px;
+    }
+
+    .cards__body {
+        max-width: 500px;
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    .cardDescription,
+    .cards h3 {
+        text-align: left;
+    }
+
+    .cards h3 {
+        font-size: 2rem;
+    }
+
+    .cards img {
+        width: 276px;
+        height: 435px;
+    }
+
+    .bodyContainer {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .bodyContainer p {
+        text-align: left;
+    }
+
+}
+
+@media only screen and (min-width : 1700px) {
+
+    .listContainer {
+        gap: 120px;
+    }
+
+
+    .cards img {
+        width: 328px;
+        height: 517px;
+    }
+}
