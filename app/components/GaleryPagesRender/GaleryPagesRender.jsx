@@ -9,10 +9,12 @@ import Loader from '../Loader/Loader';
 import Link from 'next/link';
 import GaleryPagesForm from '../GaleryPagesForm/GaleryPagesForm';
 import GaleryPagesPhotos from '../GaleryPagesPhotos/GaleryPagesPhotos';
+import { useParams } from 'next/navigation';
 
 
-const GaleryPagesRender = ({ params }) => {
-    const slug = params.slug;
+const GaleryPagesRender = () => {
+    const getParams = useParams();
+    const slug = getParams.slug;
     const [pageTitle, setPageTitle] = useState();
     const [pageDate, setPageDate] = useState();
     const [pageLoading, setPageLoading] = useState(true);
@@ -21,7 +23,7 @@ const GaleryPagesRender = ({ params }) => {
     const [subDirectories, setSubDirectories] = useState([]);
 
     useEffect(() => {
-        if (params) {
+        if (slug) {
             const parts = slug.split('-');
             const dateParts = parts.splice(-3);
             const title = parts.join('-');
@@ -29,7 +31,7 @@ const GaleryPagesRender = ({ params }) => {
             setPageTitle(title);
             setPageDate(date);
         }
-    }, [params]);
+    }, [slug]);
 
     useEffect(() => {
         document.addEventListener("contextmenu", (e) => e.preventDefault(), false);

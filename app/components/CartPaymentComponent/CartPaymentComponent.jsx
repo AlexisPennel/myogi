@@ -16,7 +16,7 @@ import { v4 as uuidv4 } from 'uuid';
 const CartPaymentComponent = ({ id }) => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const router = useRouter();
-    const { cart, setCart, downloadFilesPaid, setDownloadFilesPaid, giftCards, setGiftCards } = useContext(CartContext);
+    const { cart, setCart, downloadFilesPaid, setDownloadFilesPaid } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [pageLoading, setPageLoading] = useState(true);
     const [downloadNotif, setDownloadNotif] = useState(false);
@@ -123,24 +123,14 @@ const CartPaymentComponent = ({ id }) => {
                             onApprove={(data, actions) => {
                                 return actions.order.capture().then((details) => {
                                     setPaymentIsLoading(true);
-                                    console.log(details);
                                     if (details.purchase_units[0].payments.captures[0].status === "COMPLETED") {
-                                        if (details.purchase_units[0].description === "Shooting Automobile" || details.purchase_units[0].description === "Shooting Animalier" || details.purchase_units[0].description === "Shooting personnalisé") {
-                                            console.log('carte cadeau');
-                                            setPaymentIsLoading(false);
-                                            setGiftCards([...giftCards, ...cart])
-                                            setCart([]);
-                                            setTimeout(() => {
-                                                router.push(`/cartes-cadeaux/${details.id}`);
-                                            }, 2000);
-                                        }
                                         setPaymentIsLoading(false);
-                                        // setDownloadNotif(true);
-                                        // setDownloadFilesPaid([...downloadFilesPaid, ...cart]);
-                                        // setCart([]);
-                                        // setTimeout(() => {
-                                        //     router.push('/telechargement');
-                                        // }, 2000);
+                                        setDownloadNotif(true);
+                                        setDownloadFilesPaid([...downloadFilesPaid, ...cart]);
+                                        setCart([]);
+                                        setTimeout(() => {
+                                            router.push('/telechargement');
+                                        }, 2000);
                                     }
                                 });
                             }}

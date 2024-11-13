@@ -7,12 +7,9 @@ import downloadIcon from '../../../public/icons/download.svg';
 import downloadWhite from '../../../public/icons/downloadWhite.svg';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
-import { useRouter } from 'next/navigation';
-import Button from '../Button/Button';
 import data from '../../../public/galleriesList.json';
 
-const DownloadComponent = ({ params }) => {
-    const router = useRouter();
+const DownloadComponent = () => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
     const { downloadFiles, setDownloadFiles, downloadFilesPaid, setDownloadFilesPaid } = useContext(CartContext);
     const [pageLoading, setPageLoading] = useState(true);
@@ -126,7 +123,6 @@ const DownloadComponent = ({ params }) => {
 
     return (
         <section>
-            {downloadFiles.length > 0 && 
             <div className={styles.section}>
                 <section className={styles.buttons__section}>
                     <h2>Photos</h2>
@@ -272,11 +268,6 @@ const DownloadComponent = ({ params }) => {
                     </section>
                 )}
             </div> 
-            }
-            <section className={styles.section}>
-                <h2>Cartes cadeaux</h2>
-
-            </section>
         </section>
     );
 };

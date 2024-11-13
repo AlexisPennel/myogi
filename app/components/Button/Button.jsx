@@ -6,7 +6,7 @@ import styles from './Button.module.css';
 import Image from 'next/image';
 
 
-const Button = ({ type, size, content, link, scrollId, icon, action }) => {
+const Button = ({ type, size, content, link, scrollId, icon, action, iconAlt }) => {
 
     const handleClick = () => {
         if (scrollId && !link) {
@@ -78,6 +78,9 @@ const Button = ({ type, size, content, link, scrollId, icon, action }) => {
                     whileTap={{ scale: 0.95 }}
                     whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
                     className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
+                    {icon && iconAlt &&
+                        <Image src={icon} width={20} height={20} alt={iconAlt} />
+                    }
                     <p>
                         {content}
                     </p>

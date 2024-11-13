@@ -6,8 +6,10 @@ import Button from '../Button/Button';
 import Image from 'next/image';
 import Loader from '../Loader/Loader';
 import GaleryPagesPhotos from '../GaleryPagesPhotos/GaleryPagesPhotos';
+import { useParams } from 'next/navigation';
 
-const GaleryPagesPhotoRender = ({ params }) => {
+const GaleryPagesPhotoRender = () => {
+    const params = useParams();
     const slug = params.slug;
     const [pageTitle, setPageTitle] = useState();
     const [pageId, setPageId] = useState();

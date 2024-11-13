@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Loader from '../Loader/Loader';
 import Image from 'next/image';
+import Button from '../Button/Button';
+import load from '../../../public/icons/load.svg';
 
 
 const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
@@ -14,6 +16,7 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
     const [formError, setFormError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [directoriesFiles, setdirectoriesFiles] = useState(null);
+    const [visibleCount, setVisibleCount] = useState(6);
 
     useEffect(() => {
         if (photosFiles) {
@@ -54,6 +57,12 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
         }
     }, [subDir]);
 
+     // Fonction pour afficher plus d'éléments
+     const handleShowMore = () => {
+        setVisibleCount(prevCount => prevCount + 6); 
+    };
+
+
     if (isLoading) {
         return <Loader />
     }
@@ -87,34 +96,42 @@ const GaleryPagesForm = ({ slug, subDir, photosFiles }) => {
                 </form>
             </section>
             <section className={styles.sections}>
-                <header>
-                    <h3>Recherche par aperçu</h3>
-                    <p>Cliquez sur votre photo pour accéder à votre dossier.</p>
-                </header>
-                <ul className={styles.files__list}>
-                    {directoriesFiles.map((dir, index) => (
-                        <motion.li key={index} className={styles.list__elements}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.95 }}
-                            onContextMenu={(event) => event.preventDefault()}>
-                            <Image
-                                src={dir.images[0].path}
-                                width={480}
-                                height={480}
-                                sizes='40vw'
-                                alt='photo'
-                                className={styles.elements__images} draggable="false"
-                                onContextMenu={(event) => event.preventDefault()}
-                                noindex="true"
-                                placeholder='blur'
-                                blurDataURL={blurDataUrl}
-                                quality={30}
-                                loading='lazy'
-                                onClick={() => {router.push(`/galeries/${slug}/${dir.id}`)}} />
-                        </motion.li>
-                    ))}
-                </ul>
-            </section>
+            <header>
+                <h3>Recherche par aperçu</h3>
+                <p>Cliquez sur votre photo pour accéder à votre dossier.</p>
+            </header>
+            <ul className={styles.files__list}>
+                {directoriesFiles.slice(0, visibleCount).map((dir, index) => ( // Limiter les éléments affichés
+                    <motion.li key={index} className={styles.list__elements}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.95 }}
+                        onContextMenu={(event) => event.preventDefault()}>
+                        <Image
+                            src={dir.images[0].path}
+                            width={480}
+                            height={480}
+                            sizes='20vw'
+                            alt='photo'
+                            className={styles.elements__images}
+                            draggable="false"
+                            onContextMenu={(event) => event.preventDefault()}
+                            noindex="true"
+                            placeholder='blur'
+                            blurDataURL={blurDataUrl}
+                            quality={30}
+                            loading='lazy'
+                            onClick={() => { router.push(`/galeries/${slug}/${dir.id}`) }}
+                        />
+                    </motion.li>
+                ))}
+            </ul>
+            {visibleCount < directoriesFiles.length && ( 
+                <Button type={'primary'} content={'Charger plus de photos'} action={handleShowMore} icon={load} iconAlt={'Icone charger plus de photos'}/>
+                // <button onClick={handleShowMore} className={styles.showMoreButton}>
+                //     Afficher plus de photos
+                // </button>
+            )}
+        </section>
         </section>
     );
 };
