@@ -158,6 +158,7 @@ const PaymentComponent = () => {
 
                         <Button content={'Télécharger la carte cadeau'} type={'action'} action={() => { generatePDF(orderId) }} />
                     }
+                        <Button content={'Télécharger la carte cadeau'} type={'action'} action={() => { generatePDF(orderId) }} />
                     <div className={styles2.buttons__container}>
                         {!generateButton &&
                             < div className={styles2.paypal__button__container}>
