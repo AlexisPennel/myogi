@@ -13,6 +13,11 @@ import autoBanner from '../../../../public/images/cartes/autoBanner-min.webp';
 import persoBanner from '../../../../public/images/cartes/persoBanner-min.webp';
 import animalBanner from '../../../../public/images/cartes/animalBanner-min.webp';
 
+// Fonction pour détecter si l'utilisateur utilise un navigateur intégré
+const isInAppBrowser = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /Instagram|FBAN|FBAV|Twitter/i.test(userAgent);
+};
 
 const PaymentComponent = () => {
     const getParams = useParams();
@@ -23,6 +28,8 @@ const PaymentComponent = () => {
     const [paymentIsLoading, setPaymentIsLoading] = useState(false);
     const [generateButton, setGenerateButton] = useState(false);
     const [orderId, setOrderId] = useState(null);
+    const [isInApp, setIsInApp] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
 
     const elementsList = [
         {
@@ -58,6 +65,10 @@ const PaymentComponent = () => {
     ];
 
     useEffect(() => {
+        setIsInApp(isInAppBrowser());
+    }, [])
+
+    useEffect(() => {
         const product = elementsList.find((element) => element.slug === slug);
         if (product) {
             setProduct(product);
@@ -83,6 +94,7 @@ const PaymentComponent = () => {
 
     // Fonction pour générer et télécharger le PDF
     const generatePDF = async (orderId) => {
+        setIsDownloading(true);
         // Création du document PDF avec une page de format A4
         const pdfDoc = await PDFDocument.create();
         const page = pdfDoc.addPage([595.28, 841.89]); // Dimensions A4 en points (595.28 x 841.89)
@@ -120,6 +132,7 @@ const PaymentComponent = () => {
         link.href = URL.createObjectURL(blob);
         link.download = `Carte-cadeau-${product.slug}.pdf`;
         link.click();
+        setIsDownloading(false);
     };
 
     if (pageLoading || paymentIsLoading) {
@@ -127,7 +140,13 @@ const PaymentComponent = () => {
     }
     return (
         <>
-            <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
+            <section className={styles2.hero__section} tabIndex={0} aria-labelledby="pageTitle">
+                {isInApp && (
+                    <div className={styles2.notification}>
+                        <p className={styles2.notification__text}>Pour acheter votre carte cadeau, veuillez ouvrir cette page dans votre navigateur web. <br /><br />
+                            Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
+                    </div>
+                )}
                 <Image
                     src={productBanner}
                     width={1080}
@@ -151,8 +170,8 @@ const PaymentComponent = () => {
                         <header className={styles2.product__header}>
                             <h2 className={styles2.product__description}>{product.name}</h2>
                             <div className={styles2.priceContainer}>
-                            <p className={styles2.price}>{product.price}€</p>
-                            <p className={styles2.normalPrice}>{product.normalPrice}€</p>
+                                <p className={styles2.price}>{product.price}€</p>
+                                <p className={styles2.normalPrice}>{product.normalPrice}€</p>
                             </div>
                         </header>
                         <p className={styles2.offer}>Offre de lancement – Jusqu'au 01/12/2024</p>
@@ -162,10 +181,15 @@ const PaymentComponent = () => {
                             Si vous rencontrez un problème, n'hésitez pas à me contacter et la carte cadeau vous sera envoyée par email dans les plus brefs délais.</p>
                     </div>
                     {generateButton &&
-
-                        <Button content={'Télécharger la carte cadeau'} type={'action'} action={() => { generatePDF(orderId) }} />
+                        <>
+                            <p>Merci pour votre achat !</p>
+                            {isDownloading ?
+                                <Loader />
+                                :
+                                <Button content={'Télécharger la carte cadeau'} type={'action'} action={() => { generatePDF(orderId) }} />
+                            }
+                        </>
                     }
-                        <Button content={'Télécharger la carte cadeau'} type={'action'} action={() => { generatePDF(orderId) }} />
                     <div className={styles2.buttons__container}>
                         {!generateButton &&
                             < div className={styles2.paypal__button__container}>
