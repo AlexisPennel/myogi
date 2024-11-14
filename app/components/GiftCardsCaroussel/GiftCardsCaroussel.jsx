@@ -10,7 +10,7 @@ const GiftCardsCaroussel = () => {
         {
             id: 1,
             name: "Shooting Automobile",
-            slug: 'shooting-automobile',
+            slug: 'cartes-cadeaux/shooting-automobile',
             path: '/images/cartes/auto.png',
             description: "Offrez un shooting photo automobile sur mesure.",
             price: 89,
@@ -20,7 +20,7 @@ const GiftCardsCaroussel = () => {
         {
             id: 2,
             name: "Shooting Animalier",
-            slug: 'shooting-animalier',
+            slug: '/cartes-cadeaux/shooting-animalier',
             path: '/images/cartes/animalier.png',
             description: "Offrez un shooting photo animalier unique.",
             price: 99,
@@ -30,7 +30,7 @@ const GiftCardsCaroussel = () => {
         {
             id: 3,
             name: "Shooting personnalisé",
-            slug: 'shooting-personnalise',
+            slug: 'cartes-cadeaux/shooting-personnalise',
             description: "Offrez un shooting photo sur mesure, adapté à vos envies.",
             price: 89,
             normalPrice: 120,

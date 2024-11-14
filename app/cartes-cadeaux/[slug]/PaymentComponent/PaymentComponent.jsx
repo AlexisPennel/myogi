@@ -140,18 +140,12 @@ const PaymentComponent = () => {
     }
     return (
         <>
-            <section className={styles2.hero__section} tabIndex={0} aria-labelledby="pageTitle">
-                {isInApp && (
-                    <div className={styles2.notification}>
-                        <p className={styles2.notification__text}>Pour acheter votre carte cadeau, veuillez ouvrir cette page dans votre navigateur web. <br /><br />
-                            Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
-                    </div>
-                )}
+            <section className={styles.hero__section} tabIndex={0} aria-labelledby="pageTitle">
                 <Image
                     src={productBanner}
                     width={1080}
                     height={1620}
-                    sizes="(min-width: 1200px) 40vw, 100vw"
+                    sizes="(min-width: 1200px) 50vw, 100vw"
                     priority
                     className={styles.hero__section__banner}
                     alt={`Photo de la carte cadeau ${product.name}`}
@@ -164,6 +158,12 @@ const PaymentComponent = () => {
                 </div>
             </section>
             <section className={styles2.section__container}>
+                {isInApp && (
+                    <div className={styles2.notification}>
+                        <p className={styles2.notification__text}>Pour acheter votre carte cadeau, veuillez ouvrir cette page dans votre navigateur web. <br /><br />
+                            Appuyez sur les trois points verticaux en haut à droite de l'écran, puis sélectionnez "Ouvrir dans le navigateur"</p>
+                    </div>
+                )}
                 <Image src={product.path} width={1312} height={2068} sizes="(max-width: 768px) 60vw, (max-width: 1400px) 40vw, (max-width:2000px) 30vw" alt='Photo carte cadeau Myogi' className={styles2.cardImage} />
                 <div className={styles2.product__body}>
                     <div className={styles2.product__container}>
