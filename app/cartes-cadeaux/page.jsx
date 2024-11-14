@@ -42,8 +42,8 @@ const page = () => {
             {/* contact */}
             <section className={`${styles.sections32__container} ${styles.section__contact}`} id="contact" aria-labelledby="contactTitle" tabIndex={0}>
                 <header className={styles.sections__headers}>
-                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réserverz un créneau pour votre carte cadeau</h2>
-                    <p>Complétez ce formulaire avec votre numéro de carte cadeau et une date pour réserver votre shooting photo. N'hésitez pas à me détailler votre projet photo !</p>
+                    <h2 className={styles.sections__titles} id="contactTitle" tabIndex={0}>Réservez un créneau pour votre carte cadeau</h2>
+                    <p>Complétez ce formulaire avec votre numéro de carte cadeau et la date souhaitée pour réserver votre shooting photo. N'hésitez pas à me donner des détails sur votre projet photo !</p>
                     <Link href={"mailto:myogi.photo@gmail.com"} className={styles.contact__email} tabIndex={0}>myogi.photo@gmail.com</Link>
                 </header>
                 <Form />
