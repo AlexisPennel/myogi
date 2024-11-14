@@ -54,7 +54,7 @@ const GiftCardsCaroussel = () => {
                                 width={1312}
                                 height={2068}
                                 className={styles.mainImage}
-                                sizes="(max-width: 768px) 30vw, (max-width: 1400px) 15vw, (max-width:2000px) 20vw"
+                                sizes="(max-width: 768px) 30vw, (max-width: 1400px) 30vw, (max-width:2000px) 30vw"
                             />
                         </Link>
                     </motion.div>
@@ -78,6 +78,7 @@ const GiftCardsCaroussel = () => {
                                 width={1312}
                                 height={2068}
                                 className={styles.thumbnailImage}
+                                sizes="(max-width: 768px) 30vw, (max-width: 1400px) 30vw, (max-width:2000px) 30vw"
                             />
                         </motion.div>
                     ))}
