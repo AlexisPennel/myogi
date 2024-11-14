@@ -46,6 +46,7 @@ export default function Home() {
       <section className={styles.sections48__container} aria-labelledby="CartesCadeaux" tabIndex={0}>
         <header className={`${styles.sections__headers} ${styles.sections__headers__center}`}>
           <h2 className={styles.sections__titles} id="CartesCadeaux" tabIndex={0}>Offrez une carte cadeau à vos proches</h2>
+          <p className={styles.offer}>Offre de lancement – Jusqu'au 01/12/2024</p>
           <p tabIndex={0}>Offrez une carte cadeau pour un shooting photo animalier, automobile, ou personnalisé à Rouen et partout en Normandie ! Faites plaisir à vos proches passionnés d’animaux, de voitures, ou de projets sur mesure avec une séance photo professionnelle.</p>
         </header>
         <GiftCardsCaroussel />

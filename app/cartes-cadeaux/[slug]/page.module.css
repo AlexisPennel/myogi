@@ -33,11 +33,17 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    margin-bottom: 24px;
+    /* margin-bottom: 16px; */
 }
 
 .product__header h2 {
     font-size: 1.5rem;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .price {
@@ -47,6 +53,16 @@
     font-family: var(--font-source);
 }
 
+.normalPrice {
+    text-decoration: line-through;
+}
+
+.offer {
+    padding: 5px 10px;
+    background-color: var(--neutrals-600);
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
 
 .infos {
     font-style: italic;

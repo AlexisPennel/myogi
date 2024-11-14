@@ -41,12 +41,40 @@
     cursor: pointer;
 }
 
+.card__header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .price {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary-600);
 }
 
+.cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.offer {
+    padding: 5px 10px;
+    background-color: var(--neutrals-600);
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+
+.normalPrice {
+    text-decoration: line-through;
+}
 
 
 /* Add to cart button */

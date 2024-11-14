@@ -10,27 +10,37 @@ const GiftCards = () => {
 
     const elementsList = [
         {
-            name: "Shooting Animalier",
-            slug: 'shooting-animalier',
-            path: '/images/cartes/animalier.png',
-            price: 150,
-            descriptionLarge: "Offrez un shooting photo animalier à un proche pour immortaliser les moments complices avec son chien. Cette séance permettra de capturer les regards, les gestes et les moments de tendresse partagés, créant ainsi des souvenirs uniques à offrir ou à s'offrir.",
-        },
-        {
+            id: 1,
             name: "Shooting Automobile",
             slug: 'shooting-automobile',
             path: '/images/cartes/auto.png',
-            price: 120,
-            descriptionLarge: "Que ce soit pour une voiture de collection ou un modèle récent, cette séance permettra de capturer les détails et la beauté de votre véhicule, créant des souvenirs uniques à offrir ou à s'offrir.",
+            description: "Offrez un shooting photo automobile sur mesure.",
+            price: 89,
+            normalPrice: 120,
+            descriptionLarge: "Offrez un shooting photo automobile sur mesure. Que ce soit pour une voiture de collection ou un modèle récent, cette séance permettra de capturer les détails et la beauté de votre véhicule, créant des souvenirs uniques à offrir ou à s'offrir.",
         },
         {
+            id: 2,
+            name: "Shooting Animalier",
+            slug: 'shooting-animalier',
+            path: '/images/cartes/animalier.png',
+            description: "Offrez un shooting photo animalier unique.",
+            price: 99,
+            normalPrice: 150,
+            descriptionLarge: "Offrez un shooting photo animalier à un proche pour immortaliser les moments complices avec son chien. Cette séance permettra de capturer les regards, les gestes et les moments de tendresse partagés, créant ainsi des souvenirs uniques et inoubliables à offrir ou à s'offrir.",
+        },
+        {
+            id: 3,
             name: "Shooting personnalisé",
             slug: 'shooting-personnalise',
-            price: 120,
+            description: "Offrez un shooting photo sur mesure, adapté à vos envies.",
+            price: 89,
+            normalPrice: 120,
             path: '/images/cartes/perso.png',
-            descriptionLarge: "Offrez un shooting photo sur mesure, adapté à vos envies. Que ce soit pour une occasion spéciale ou simplement pour capturer des instants uniques.",
+            descriptionLarge: "Offrez un shooting photo sur mesure, adapté à vos envies. Que ce soit pour une occasion spéciale ou simplement pour capturer des instants uniques, cette séance personnalisée saura répondre à vos attentes et créer des souvenirs mémorables.",
         },
     ];
+
 
 
     return (
@@ -43,15 +53,24 @@ const GiftCards = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        whileHover={{scale:1.06, rotate:-1}}
-                        transition={{delay:0.2}}
+                        whileHover={{ scale: 1.06, rotate: -1 }}
+                        transition={{ delay: 0.2 }}
                         onClick={() => router.push(`/cartes-cadeaux/${element.slug}`)}
-                        viewport={{once:true}}
+                        viewport={{ once: true }}
                     >
-                        <Image src={element.path} width={1312} height={2068} alt={`Carte cadeau ${element.name}`} sizes="(max-width: 768px) 40vw, (max-width: 1400px) 20vw, (max-width:2000px) 30vw"/>
+                        <Image src={element.path} width={1312} height={2068} alt={`Carte cadeau ${element.name}`} sizes="(max-width: 768px) 40vw, (max-width: 1400px) 20vw, (max-width:2000px) 30vw" />
                     </motion.div>
                     <div className={styles.cards__body}>
-                        <h3>{element.name}</h3>
+                        <header className={styles.card__header}>
+                            <h3>{element.name}</h3>
+                            <div className={styles.priceContainer}>
+                                <p className={styles.price}>{element.price}€</p>
+                                <p className={styles.normalPrice}>{element.normalPrice}€</p>
+                            </div>
+                        </header>
+                        <div className={styles.cardHeader}>
+                            <p className={styles.offer}>Offre de lancement – Jusqu'au 01/12/2024</p>
+                        </div>
                         <p className={styles.cardDescription}>{element.descriptionLarge}</p>
                         <motion.button
                             className={styles.photos__addToCart}
