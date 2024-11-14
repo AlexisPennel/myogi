@@ -42,7 +42,7 @@
     font-size: 1.25rem;
     text-align: center;
     font-weight: 400;
-    transition: all 300ms ease-in-out ;
+    transition: all 300ms ease-in-out;
 }
 
 .links__container li {
@@ -82,7 +82,8 @@
     height: fit-content;
 }
 
-.menu__container button:focus-visible, .contactButton:focus-visible {
+.menu__container button:focus-visible,
+.contactButton:focus-visible {
     border: 2px solid #ffffff;
 }
 

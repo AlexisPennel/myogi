@@ -32,18 +32,6 @@ const CartComponent = () => {
         setPageLoading(false);
     }, [cart]);
 
-
-    // Ajouter des photos 
-    const addPhotosToCart = () => {
-        if (galleryParams) {
-            if (galleryParams.id) {
-                router.push(`/galeries/${galleryParams.slug}/${galleryParams.id}`)
-            } else {
-                router.push(`/galeries/${galleryParams.slug}`)
-            }
-        }
-    }
-
     const handlePaymentButton = (e) => {
         e.preventDefault();
         const transactionId = uuidv4(); // Génère un ID unique
@@ -95,14 +83,17 @@ const CartComponent = () => {
                                             quality={50}
                                             placeholder='blur'
                                             blurDataURL={blurDataUrl} />
-                                        <motion.div className={styles.trash__container}
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            onClick={() => { removeFromCart(photo); }}
-                                        >
-                                            <Image src={trash} width={16} height={16} alt='icone poubelle' />
-                                            <p>Retirer</p>
-                                        </motion.div>
+                                        <div className={styles.trashAndName}>
+                                            <p className={styles.name}>{photo.name? photo.name : ''}</p>
+                                            <motion.div className={styles.trash__container}
+                                                whileHover={{ scale: 1.05 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                onClick={() => { removeFromCart(photo); }}
+                                            >
+                                                <Image src={trash} width={16} height={16} alt='icone poubelle' />
+                                                <p>Retirer</p>
+                                            </motion.div>
+                                        </div>
                                     </div>
                                     <span className={styles.cartItems__price}>{photo.price}€</span>
                                 </div>
@@ -110,33 +101,26 @@ const CartComponent = () => {
                             </li>
                         ))}
                     </ul>
-                    <motion.button
-                        className={styles.add__photos}
-                        onClick={addPhotosToCart}
-                        whileHover={{ scale: 1.05, color: "var(--neutrals-200)", border: "2px solid var(--neutrals-200)" }}
-                        whileTap={{ scale: 0.95 }}>
-                        Ajouter des photos
-                    </motion.button>
                     <div className={styles.payment__container}>
                         <div className={styles.price}>
                             <p className={styles.price__totalText}>TOTAL</p>
                             <p className={styles.price__total}>{total}€</p>
                         </div>
                         <div className={styles.buttons__container}>
-                        <motion.button
-                            className={styles.payment__button}
-                            onClick={(e) => { handlePaymentButton(e) }}
-                            whileHover={{ scale: 1.03, opacity: 0.9 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Finalisez votre commande
-                            <Image src={arrowRight} width={24} height={24} alt='icone fleche vers la droite' />
-                        </motion.button>
-                        <motion.button className={styles.conditions__button}>
-                            <Link href='/conditions-generales-de-vente'>
-                            Conditions générales de vente
-                            </Link>
-                        </motion.button>
+                            <motion.button
+                                className={styles.payment__button}
+                                onClick={(e) => { handlePaymentButton(e) }}
+                                whileHover={{ scale: 1.03, opacity: 0.9 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Finalisez votre commande
+                                <Image src={arrowRight} width={24} height={24} alt='icone fleche vers la droite' />
+                            </motion.button>
+                            <motion.button className={styles.conditions__button}>
+                                <Link href='/conditions-generales-de-vente'>
+                                    Conditions générales de vente
+                                </Link>
+                            </motion.button>
                         </div>
                     </div>
                 </>

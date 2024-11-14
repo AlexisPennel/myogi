@@ -129,6 +129,21 @@
     -webkit-user-select: none !important;
 }
 
+/* show more button */
+.showMoreButton {
+    height: 40px;
+    width: fit-content;
+    padding: 0px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-800);
+    color: var(--neutrals-200);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media only screen and (min-width : 768px) {
 
     /* Section principale ****************************/
@@ -185,4 +200,4 @@
     .main__section {
         padding: 0px 105px 200px 105px;
     }
-} 
+}

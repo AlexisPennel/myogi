@@ -12,6 +12,11 @@
     border-radius: 3px;
 }
 
+.button__container,
+.button__container__secondary {
+    color: var(--neutrals-100);
+}
+
 .button__container a,
 .button__container p,
 .button__container__secondary a,

@@ -44,6 +44,18 @@
     background-color: var(--neutrals-800);
 }
 
+.trashAndName {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name {
+    font-size: 1.125rem;
+    color: var(--primary-600);
+    font-weight: 800;
+}
+
 .cartItems__price {
     color: var(--neutrals-200);
     font-family: var(--font-lato);
@@ -184,7 +196,7 @@
     .cartItems__price {
         font-size: 1.125rem;
     }
-    
+
 }
 
 @media only screen and (min-width : 1200px) {

@@ -44,6 +44,9 @@ const Footer = () => {
                             <Link href={'/shooting-animalier'} className={styles.links}>Shooting animalier</Link>
                         </li>
                         <li>
+                            <Link href={'/cartes-cadeaux'} className={styles.links}>Cartes cadeaux</Link>
+                        </li>
+                        <li>
                             <Link href={'/portfolio'} className={styles.links}>Portfolio</Link>
                         </li>
                         <li>

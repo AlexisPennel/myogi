@@ -1,0 +1,200 @@
+.listContainer {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    align-self: center;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+}
+
+.cards__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.cards h3 {
+    font-size: 1.25rem;
+}
+
+.cardDescription,
+.cards h3 {
+    text-align: center;
+}
+
+.cards img {
+    width: 200px;
+    height: 317px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-600);
+}
+
+.card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.header__nameAndPrice {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.offer {
+    padding: 5px 10px;
+    background-color: var(--neutrals-600);
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.normalPrice {
+    text-decoration: line-through;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--neutrals-700);
+    margin: 8px 0px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    list-style-type: "✓";
+    align-items: left;
+}
+
+.details li::marker {
+    color: var(--primary-800);
+    font-size: 1.25rem;
+}
+
+.details li p {
+    padding-left: 8px;
+}
+
+
+/* Add to cart button */
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 32px;
+}
+
+.photos__addToCart {
+    outline: none;
+    border: none;
+    width: fit-content;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-800);
+    display: flex;
+    cursor: pointer;
+    padding: 0px 24px;
+    gap: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.photos__addToCart p {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        gap: 56px;
+    }
+
+    .card__header {
+        align-items: flex-start;
+    }
+
+    .cards__body {
+        max-width: 550px;
+        gap: 24px;
+        align-items: flex-start;
+    }
+
+    .cardDescription,
+    .cards h3 {
+        text-align: left;
+    }
+
+    .cards h3 {
+        font-size: 2rem;
+    }
+
+    .cards img {
+        width: 310px;
+        height: 488px;
+    }
+
+    .bodyContainer {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .bodyContainer p {
+        text-align: left;
+    }
+
+    .divider {
+        margin: 4px 0px;
+    }
+
+    .details {
+        align-items: flex-start;
+    }
+
+}
+
+@media only screen and (min-width : 1700px) {
+
+    .listContainer {
+        gap: 120px;
+    }
+
+
+    .cards img {
+        width: 328px;
+        height: 517px;
+    }
+}

@@ -31,6 +31,7 @@ const CartProvider = ({ children }) => {
         return [];
     })
 
+
     // Effectuer des opérations sur localStorage uniquement côté client
     useEffect(() => {
         if (typeof window !== 'undefined') {

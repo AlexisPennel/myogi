@@ -10,10 +10,10 @@ export const metadata = {
 };
 
 
-const page = async ({ params }) => {
+const page = async () => {
     return (
         <>
-            <GaleryPagesRender params={params}/>
+            <GaleryPagesRender/>
         </>
     );
 }; 

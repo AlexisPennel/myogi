@@ -82,6 +82,11 @@ const Header = () => {
                     </motion.li>
                     <motion.li
                         whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95, y: 1 }}>
+                        <Link href={'/cartes-cadeaux'} className={pathname === '/cartes-cadeaux' ? styles.link__active : styles.link} tabIndex={0}>Cartes cadeaux</Link>
+                    </motion.li>
+                    <motion.li
+                        whileHover={{ scale: 1.05, y: -1 }}
                         whileTap={{ scale: 0.95, y: 1 }}
                         tabIndex={-1}>
                         <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link} tabIndex={0}>Portfolio</Link>

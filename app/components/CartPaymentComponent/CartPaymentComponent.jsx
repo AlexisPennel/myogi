@@ -11,6 +11,7 @@ import { validate as isValidUuid } from 'uuid';
 import { useRouter } from 'next/navigation';
 import { CartContext } from '@/app/CartContext';
 import Button from '../Button/Button';
+import { v4 as uuidv4 } from 'uuid';
 
 const CartPaymentComponent = ({ id }) => {
     const blurDataUrl = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0iYiI+PGZlR2F1c2NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiI+PC9mZUdhdXNzaWFuQmx1cj48L3JlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0icmdiYSgwLDAsMCwwLjUpIiBmaWx0ZXI9InVybCgjYikiIC8+PC9zdmc+";
@@ -54,10 +55,10 @@ const CartPaymentComponent = ({ id }) => {
         <section className={styles.container}>
             {cart.length === 0 &&
                 <>
-                <p>Votre panier est vide</p>
+                    <p>Votre panier est vide</p>
                 </>
-                }
-            {downloadNotif && 
+            }
+            {downloadNotif &&
                 <div className={styles2.downloadNotif}>
                     <p>Merci pour votre achat !</p>
                     <Button type={'primary'} link={'/telechargement'} size={'large'} content={'Télécharger mes photos'} />
@@ -104,7 +105,7 @@ const CartPaymentComponent = ({ id }) => {
                                             },
                                         },
                                         items: cart.map((photo, index) => ({
-                                            name: photo.path, // Nom de la photo, adapté si nécessaire
+                                            name: photo.name ? photo.name : photo.path, // Nom de la photo, adapté si nécessaire
                                             unit_amount: {
                                                 currency_code: "EUR",
                                                 value: photo.price, // Prix unitaire de la photo
