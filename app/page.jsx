@@ -52,7 +52,7 @@ export default function Home() {
         <GiftCardsCaroussel />
         <p className={styles.giftCardCTA}>Achetez facilement votre carte cadeau en ligne et partagez-la avec vos proches pour une expérience unique dans la région normande.</p>
         <div className={styles.portfolio__button__container}>
-          <Button type={'primary'} size={'large'} content={'Acheter une carte cadeau'} link={'/cartes-cadeaux'} />
+          <Button type={'primary'} size={'large'} content={'Découvrir les cartes cadeaux'} link={'/cartes-cadeaux'} />
         </div>
       </section>
 

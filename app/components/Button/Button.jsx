@@ -35,19 +35,18 @@ const Button = ({ type, size, content, link, scrollId, icon, action, iconAlt }) 
                     onClick={scrollId && handleClick}
                     onKeyDown={scrollId && handleKeyDown}
                     whileTap={{ scale: 0.95 }}
-                    whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}
-                    className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
+                    whileHover={{ boxShadow: "var(--button-boxShadow)", y: -2 }}>
                     {link ?
-                        <Link href={link}>
+                        <Link href={link} className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
+                            {icon &&
+                                <Image src={icon} width={24} height={24} alt='icone' />
+                            }
                             {content}
                         </Link>
                         :
-                        <p>
+                        <p className={size === 'large' ? styles.button__container : `${styles.button__container} ${styles.button__container__small}`}>
                             {content}
                         </p>
-                    }
-                    {icon &&
-                        <Image src={icon} width={24} height={24} alt='icone' />
                     }
                 </motion.div>
             }

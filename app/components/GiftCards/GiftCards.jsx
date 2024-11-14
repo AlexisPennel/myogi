@@ -58,20 +58,28 @@ const GiftCards = () => {
                         onClick={() => router.push(`/cartes-cadeaux/${element.slug}`)}
                         viewport={{ once: true }}
                     >
-                        <Image src={element.path} width={1312} height={2068} alt={`Carte cadeau ${element.name}`} sizes="(max-width: 768px) 40vw, (max-width: 1400px) 20vw, (max-width:2000px) 30vw" />
+                        <Image src={element.path} width={1312} height={2068} alt={`Carte cadeau ${element.name}`} sizes="(max-width: 768px) 40vw, (max-width: 1400px) 30vw, (max-width:2000px) 30vw" />
                     </motion.div>
                     <div className={styles.cards__body}>
                         <header className={styles.card__header}>
+                            <div className={styles.header__nameAndPrice}>
                             <h3>{element.name}</h3>
                             <div className={styles.priceContainer}>
                                 <p className={styles.price}>{element.price}€</p>
                                 <p className={styles.normalPrice}>{element.normalPrice}€</p>
                             </div>
+                            </div>
+                                <p className={styles.offer}>Offre de lancement - jusqu'au 01/12/2024</p>
+                        <div className={styles.divider}></div>
                         </header>
-                        <div className={styles.cardHeader}>
-                            <p className={styles.offer}>Offre de lancement – Jusqu'au 01/12/2024</p>
-                        </div>
                         <p className={styles.cardDescription}>{element.descriptionLarge}</p>
+                        <div className={styles.divider}></div>
+                        <ul className={styles.details}>
+                            <li><p>Shooting sur mesure selon vos besoins.</p></li>
+                            <li><p>Carte cadeau sans date d'expiration.</p></li>
+                            <li><p>Réservez votre date de shooting sur le site ou par message.</p></li>
+                        </ul>
+                        <div className={styles.divider}></div>
                         <motion.button
                             className={styles.photos__addToCart}
                             whileHover={{ scale: 1.05 }}

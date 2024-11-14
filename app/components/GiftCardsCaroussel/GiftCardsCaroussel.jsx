@@ -9,24 +9,33 @@ const GiftCardsCaroussel = () => {
     const cards = [
         {
             id: 1,
-            name: "Shooting Animalier",
-            image: '/images/cartes/animalier.png',
-            slug: '/cartes-cadeaux/shooting-animalier',
-            price: "150€",
+            name: "Shooting Automobile",
+            slug: 'shooting-automobile',
+            path: '/images/cartes/auto.png',
+            description: "Offrez un shooting photo automobile sur mesure.",
+            price: 89,
+            normalPrice: 120,
+            descriptionLarge: "Offrez un shooting photo automobile sur mesure. Que ce soit pour une voiture de collection ou un modèle récent, cette séance permettra de capturer les détails et la beauté de votre véhicule, créant des souvenirs uniques à offrir ou à s'offrir.",
         },
         {
             id: 2,
-            name: "Shooting Automobile",
-            image: '/images/cartes/auto.png',
-            slug: '/cartes-cadeaux/shooting-automobile',
-            price: "120€",
+            name: "Shooting Animalier",
+            slug: 'shooting-animalier',
+            path: '/images/cartes/animalier.png',
+            description: "Offrez un shooting photo animalier unique.",
+            price: 99,
+            normalPrice: 150,
+            descriptionLarge: "Offrez un shooting photo animalier à un proche pour immortaliser les moments complices avec son chien. Cette séance permettra de capturer les regards, les gestes et les moments de tendresse partagés, créant ainsi des souvenirs uniques et inoubliables à offrir ou à s'offrir.",
         },
         {
             id: 3,
-            name: "Shooting Personnalisé",
-            image: '/images/cartes/perso.png',
-            slug: '/cartes-cadeaux/shooting-personnalise',
-            price: "120€",
+            name: "Shooting personnalisé",
+            slug: 'shooting-personnalise',
+            description: "Offrez un shooting photo sur mesure, adapté à vos envies.",
+            price: 89,
+            normalPrice: 120,
+            path: '/images/cartes/perso.png',
+            descriptionLarge: "Offrez un shooting photo sur mesure, adapté à vos envies. Que ce soit pour une occasion spéciale ou simplement pour capturer des instants uniques, cette séance personnalisée saura répondre à vos attentes et créer des souvenirs mémorables.",
         },
     ];
     const [selectedCard, setSelectedCard] = useState(cards[0]);
@@ -42,14 +51,14 @@ const GiftCardsCaroussel = () => {
                 <AnimatePresence mode='wait'>
                     <motion.div
                         key={selectedCard.id}
-                        initial={{opacity:0, scale:0.8}}
-                        animate={{opacity:1, scale:1}}
-                        exit={{opacity:0, scale:0.8}}
-                        transition={{duration:0.2}}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
                     >
                         <Link href={`${selectedCard.slug}`} className={styles.mainCard}>
                             <Image
-                                src={selectedCard.image}
+                                src={selectedCard.path}
                                 alt={selectedCard.name}
                                 width={1312}
                                 height={2068}
@@ -57,6 +66,10 @@ const GiftCardsCaroussel = () => {
                                 sizes="(max-width: 768px) 30vw, (max-width: 1400px) 30vw, (max-width:2000px) 30vw"
                             />
                         </Link>
+                        <div className={styles.priceContainer}>
+                            <p className={styles.price}>{selectedCard.price}€</p>
+                            <p className={styles.normalPrice}>{selectedCard.normalPrice}€</p>
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
@@ -73,7 +86,7 @@ const GiftCardsCaroussel = () => {
                             whileTap={{ scale: 0.95 }}
                         >
                             <Image
-                                src={card.image}
+                                src={card.path}
                                 alt={card.name}
                                 width={1312}
                                 height={2068}
