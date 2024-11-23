@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CartContext } from '@/app/CartContext';
 import { useRouter } from 'next/navigation';
+import logo from '../../../public/Logo.svg';
 
 // Fonction pour détecter si l'utilisateur utilise un navigateur intégré
 const isInAppBrowser = () => {
@@ -183,6 +184,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                         >
                             <span className={styles.photos__price}>{photo.price}€</span>
                             <div className={styles.photomask}></div>
+                            <Image src={logo} width={148} height={38} alt='Logo de Myogi.jpg' className={styles.logoWaterMark} />
                             <Image
                                 src={photo.path}
                                 className={styles.photos}

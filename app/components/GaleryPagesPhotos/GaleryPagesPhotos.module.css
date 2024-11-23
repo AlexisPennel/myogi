@@ -5,6 +5,7 @@
     padding: 0px 16px;
     margin: 0px 0px 200px 0px;
 }
+
 /* Help Messages container  **********************************/
 .helpMessages__container {
     display: flex;
@@ -51,6 +52,14 @@
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
 }
+
+.logoWaterMark {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 .photos__price {
     padding: 4px 8px;
@@ -240,7 +249,7 @@
         clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
     }
 }
-      
+
 
 @media only screen and (min-width : 768px) {
     .photosSection__container {
