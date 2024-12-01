@@ -15,7 +15,7 @@ const GiftCards = () => {
             slug: 'shooting-automobile',
             path: '/images/cartes/auto.png',
             description: "Offrez un shooting photo automobile sur mesure.",
-            price: 89,
+            price: 120,
             normalPrice: 120,
             descriptionLarge: "Offrez un shooting photo automobile sur mesure. Que ce soit pour une voiture de collection ou un modèle récent, cette séance permettra de capturer les détails et la beauté de votre véhicule, créant des souvenirs uniques à offrir ou à s'offrir.",
         },
@@ -25,7 +25,7 @@ const GiftCards = () => {
             slug: 'shooting-animalier',
             path: '/images/cartes/animalier.png',
             description: "Offrez un shooting photo animalier unique.",
-            price: 99,
+            price: 150,
             normalPrice: 150,
             descriptionLarge: "Offrez un shooting photo animalier à un proche pour immortaliser les moments complices avec son chien. Cette séance permettra de capturer les regards, les gestes et les moments de tendresse partagés, créant ainsi des souvenirs uniques et inoubliables à offrir ou à s'offrir.",
         },
@@ -34,7 +34,7 @@ const GiftCards = () => {
             name: "Shooting personnalisé",
             slug: 'shooting-personnalise',
             description: "Offrez un shooting photo sur mesure, adapté à vos envies.",
-            price: 89,
+            price: 120,
             normalPrice: 120,
             path: '/images/cartes/perso.png',
             descriptionLarge: "Offrez un shooting photo sur mesure, adapté à vos envies. Que ce soit pour une occasion spéciale ou simplement pour capturer des instants uniques, cette séance personnalisée saura répondre à vos attentes et créer des souvenirs mémorables.",
@@ -66,10 +66,10 @@ const GiftCards = () => {
                             <h3>{element.name}</h3>
                             <div className={styles.priceContainer}>
                                 <p className={styles.price}>{element.price}€</p>
-                                <p className={styles.normalPrice}>{element.normalPrice}€</p>
+                                {/* <p className={styles.normalPrice}>{element.normalPrice}€</p> */}
                             </div>
                             </div>
-                                <p className={styles.offer}>Offre de lancement - jusqu'au 01/12/2024</p>
+                                {/* <p className={styles.offer}>Offre de lancement - jusqu'au 01/12/2024</p> */}
                         <div className={styles.divider}></div>
                         </header>
                         <p className={styles.cardDescription}>{element.descriptionLarge}</p>
