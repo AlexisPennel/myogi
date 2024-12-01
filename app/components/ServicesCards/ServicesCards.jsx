@@ -25,8 +25,8 @@ const ServicesCards = () => {
     });
 
     // Translations
-    const translateXOne = useTransform(scrollYProgressOne, [0, 1], ["100px", "0px"]);
-    const translateXTwo = useTransform(scrollYProgressTwo, [0, 1], ["-100px", "0px"]);
+    const translateXOne = useTransform(scrollYProgressOne, [0, 1], ["80px", "0px"]);
+    const translateXTwo = useTransform(scrollYProgressTwo, [0, 1], ["80px", "0px"]);
 
     // Opacities
     const opacityOne = useTransform(scrollYProgressOne, [0, 1], [0, 1]);

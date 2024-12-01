@@ -38,7 +38,7 @@ const PaymentComponent = () => {
             slug: 'shooting-automobile',
             path: '/images/cartes/auto.png',
             description: "Offrez un shooting photo automobile sur mesure.",
-            price: 89,
+            price: 120,
             normalPrice: 120,
             descriptionLarge: "Offrez un shooting photo automobile sur mesure. Que ce soit pour une voiture de collection ou un modèle récent, cette séance permettra de capturer les détails et la beauté de votre véhicule, créant des souvenirs uniques à offrir ou à s'offrir.",
         },
@@ -48,7 +48,7 @@ const PaymentComponent = () => {
             slug: 'shooting-animalier',
             path: '/images/cartes/animalier.png',
             description: "Offrez un shooting photo animalier unique.",
-            price: 99,
+            price: 150,
             normalPrice: 150,
             descriptionLarge: "Offrez un shooting photo animalier à un proche pour immortaliser les moments complices avec son chien. Cette séance permettra de capturer les regards, les gestes et les moments de tendresse partagés, créant ainsi des souvenirs uniques et inoubliables à offrir ou à s'offrir.",
         },
@@ -57,7 +57,7 @@ const PaymentComponent = () => {
             name: "Shooting personnalisé",
             slug: 'shooting-personnalise',
             description: "Offrez un shooting photo sur mesure, adapté à vos envies.",
-            price: 89,
+            price: 120,
             normalPrice: 120,
             path: '/images/cartes/perso.png',
             descriptionLarge: "Offrez un shooting photo sur mesure, adapté à vos envies. Que ce soit pour une occasion spéciale ou simplement pour capturer des instants uniques, cette séance personnalisée saura répondre à vos attentes et créer des souvenirs mémorables.",
@@ -171,10 +171,10 @@ const PaymentComponent = () => {
                             <h2 className={styles2.product__description}>{product.name}</h2>
                             <div className={styles2.priceContainer}>
                                 <p className={styles2.price}>{product.price}€</p>
-                                <p className={styles2.normalPrice}>{product.normalPrice}€</p>
+                                {/* <p className={styles2.normalPrice}>{product.normalPrice}€</p> */}
                             </div>
                         </header>
-                        <p className={styles2.offer}>Offre de lancement – Jusqu'au 01/12/2024</p>
+                        {/* <p className={styles2.offer}>Offre de lancement – Jusqu'au 01/12/2024</p> */}
                         <p>Payez votre carte cadeau en ligne et recevez-la instantanément en format PDF imprimable, prête à offrir !</p>
                         <div className={styles2.divider}></div>
                         <p className={styles2.infos}>Le téléchargement de votre carte cadeau se lancera automatiquement une fois le paiement confirmé.
