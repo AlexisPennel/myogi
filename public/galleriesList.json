@@ -175,6 +175,22 @@
       }
     ]
   },
+  "appy": {
+    "images": [
+      {
+        "path": "/galeries/appy/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/appy/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/appy/3-0.jpg",
+        "price": 0
+      }
+    ]
+  },
   "halloween-seat-club-normandie": {
     "aclub": {
       "images": [
@@ -1185,6 +1201,22 @@
       }
     ]
   },
+  "lucy": {
+    "images": [
+      {
+        "path": "/galeries/lucy/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/lucy/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/lucy/3-0.jpg",
+        "price": 0
+      }
+    ]
+  },
   "masterj-ancrebleue": {
     "images": [
       {
@@ -1242,6 +1274,22 @@
       {
         "path": "/galeries/mr-dupont-07-07-2024/2-3.jpg",
         "price": 3
+      }
+    ]
+  },
+  "nachos": {
+    "images": [
+      {
+        "path": "/galeries/nachos/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/nachos/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/nachos/3-0.jpg",
+        "price": 0
       }
     ]
   },
@@ -1321,6 +1369,30 @@
       },
       {
         "path": "/galeries/pepper-early/9-0.jpg",
+        "price": 0
+      }
+    ]
+  },
+  "sara": {
+    "images": [
+      {
+        "path": "/galeries/sara/1-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/sara/2-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/sara/3-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/sara/4-0.jpg",
+        "price": 0
+      },
+      {
+        "path": "/galeries/sara/5-0.jpg",
         "price": 0
       }
     ]
