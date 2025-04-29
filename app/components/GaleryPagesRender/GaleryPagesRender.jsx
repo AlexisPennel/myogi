@@ -12,7 +12,7 @@ import GaleryPagesPhotos from '../GaleryPagesPhotos/GaleryPagesPhotos';
 import { useParams } from 'next/navigation';
 
 
-const GaleryPagesRender = () => {
+const GaleryPagesRender =  () => {
     const getParams = useParams();
     const slug = getParams.slug;
     const [pageTitle, setPageTitle] = useState();
@@ -89,7 +89,7 @@ const GaleryPagesRender = () => {
                     }
                     {galleryPhotos.length > 0  &&
                         <div>
-                            <GaleryPagesPhotos photos={galleryPhotos} params={params}/>
+                            <GaleryPagesPhotos photos={galleryPhotos} params={slug}/>
                         </div>
                     }
                 </>

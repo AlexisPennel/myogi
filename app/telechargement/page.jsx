@@ -25,7 +25,7 @@ const page = ({ params }) => {
                     <p className={styles2.merci__text}>Merci pour votre achat !</p>
                     <div className={styles2.warning__message}>
                         <Image src={warning} width={60} height={60} alt='Icone Attention' />
-                        <p className={styles2.warning__message__content}> Attention ! Vos photos et/ou vos cartes cadeauxseront téléchargeables jusqu'à votre prochain achat et seulement sur cet appareil.<br /><Link href={"mailto:myogi.photo@gmail.com"}>Contactez-moi</Link> pour les recevoir par email.</p>
+                        <p className={styles2.warning__message__content}> Attention ! Vos photos et/ou vos cartes cadeaux seront téléchargeables jusqu'à votre prochain achat et seulement sur cet appareil.<br /><Link href={"mailto:myogi.photo@gmail.com"}>Contactez-moi</Link> pour les recevoir par email.</p>
                     </div>
                 </div>
             </section>
