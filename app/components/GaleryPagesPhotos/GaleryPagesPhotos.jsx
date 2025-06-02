@@ -66,12 +66,12 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 link.click();
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
-    
+
                 setDownloadFiles(prevFiles => {
                     if (!prevFiles.some((item) => item.path === photo.path)) {
                         const newFiles = [...prevFiles, photo];
                         if (newFiles.length > 50) {
-                            newFiles.shift(); 
+                            newFiles.shift();
                         }
                         return newFiles;
                     } else {
@@ -85,7 +85,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
             }
         }
     };
-    
+
 
     const downloadAllFreePhotos = async () => {
         setIsDownloadingAll(true);
@@ -109,7 +109,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                     if (!prevFiles.some((item) => item.path === photo.path)) {
                         const newFiles = [...prevFiles, photo];
                         if (newFiles.length > 50) {
-                            newFiles.shift(); 
+                            newFiles.shift();
                         }
                         return newFiles;
                     } else {
@@ -158,8 +158,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 {freePhotos > 0 && (
                     <motion.button
                         className={styles.cartButton__page}
-                        whileHover={{ scale: 1.02, backgroundColor:'var(--primary-700)' }}
-                        whileTap={{ scale: 0.9, backgroundColor:'var(--primary-700)'  }}
+                        whileHover={{ scale: 1.02, backgroundColor: 'var(--primary-700)' }}
+                        whileTap={{ scale: 0.9, backgroundColor: 'var(--primary-700)' }}
                         onClick={downloadAllFreePhotos}
                         disabled={downloadingPhotos.length > 0} // Désactive le bouton pendant le téléchargement
                     >
@@ -168,7 +168,7 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                         ) : (
                             <>
                                 <Image src={downloadWhite} width={22} height={22} alt='icone panier' />
-                                Télécharger toutes les photos
+                                Télécharger les photos gratuites
                             </>
                         )}
                     </motion.button>
@@ -242,8 +242,8 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                 <motion.button
                     className={styles.cartButton__page}
                     onClick={() => { router.push('/panier') }}
-                    whileHover={{ scale: 1.02, backgroundColor:'var(--primary-700)' }}
-                    whileTap={{ scale: 0.9, backgroundColor:'var(--primary-700)'  }}
+                    whileHover={{ scale: 1.02, backgroundColor: 'var(--primary-700)' }}
+                    whileTap={{ scale: 0.9, backgroundColor: 'var(--primary-700)' }}
                 >
                     <div className={styles.cartButton__page__icon}>
                         <Image src={cartIcon} width={24} height={24} alt='icone panier' />

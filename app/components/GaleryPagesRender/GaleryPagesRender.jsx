@@ -12,7 +12,7 @@ import GaleryPagesPhotos from '../GaleryPagesPhotos/GaleryPagesPhotos';
 import { useParams } from 'next/navigation';
 
 
-const GaleryPagesRender =  () => {
+const GaleryPagesRender = () => {
     const getParams = useParams();
     const slug = getParams.slug;
     const [pageTitle, setPageTitle] = useState();
@@ -53,7 +53,7 @@ const GaleryPagesRender =  () => {
                 setGalleryPhotos(gallery.images || []);
                 setSubDirectories(Object.keys(gallery).filter(key => key !== 'images'));
             } else {
-                console.log(`Aucune galerie trouvée avec le slug : ${slug}`);
+                // console.log(`Aucune galerie trouvée avec le slug : ${slug}`);
                 setGalleryPhotos(false);
             }
         }
@@ -61,7 +61,6 @@ const GaleryPagesRender =  () => {
 
 
     useEffect(() => {
-        console.log(galleryPhotos)
         if (galleryPhotos !== null) {
             setPageLoading(false);
         }
@@ -87,9 +86,9 @@ const GaleryPagesRender =  () => {
                     {subDirectories.length > 0 &&
                         <GaleryPagesForm slug={slug} subDir={subDirectories} photosFiles={jsonList} />
                     }
-                    {galleryPhotos.length > 0  &&
+                    {galleryPhotos.length > 0 &&
                         <div>
-                            <GaleryPagesPhotos photos={galleryPhotos} params={slug}/>
+                            <GaleryPagesPhotos photos={galleryPhotos} params={slug} />
                         </div>
                     }
                 </>
