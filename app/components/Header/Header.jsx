@@ -64,37 +64,37 @@ const Header = () => {
                 </ul>
                 <ul className={styles.nav__list__desktop}>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98,  color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link} tabIndex={0}>Accueil</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98,  color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link} tabIndex={0}>Shooting automobile</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
+                        whileHover={{ scale: 0.98,  color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}>
                         <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link} tabIndex={0}>Shooting animalier</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
+                        whileHover={{ scale: 0.98,  color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}>
                         <Link href={'/cartes-cadeaux'} className={pathname === '/cartes-cadeaux' ? styles.link__active : styles.link} tabIndex={0}>Cartes cadeaux</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98,  color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link} tabIndex={0}>Portfolio</Link>
                     </motion.li>
                     {showCartIcon &&
                         <motion.li
-                            whileHover={{ scale: 1.05, y: -1 }}
-                            whileTap={{ scale: 0.95, y: 1 }}
+                            whileHover={{ scale: 0.98 }}
+                            whileTap={{ scale: 0.98 }}
                             tabIndex={-1}>
                             <Link href={'/panier'} className={styles.cart__icon} tabIndex={0}>
                                 <Image src={cartIcon} width={30} height={30} alt='Icône de la page panier' />
@@ -104,8 +104,8 @@ const Header = () => {
                     }
                     {showDownloadIcon &&
                         <motion.li
-                            whileHover={{ scale: 1.05, y: -1 }}
-                            whileTap={{ scale: 0.95, y: 1 }}
+                            whileHover={{ scale: 0.98 }}
+                            whileTap={{ scale: 0.98 }}
                             tabIndex={-1}>
                             <Link href={'/telechargement'} tabIndex={0}>
                                 <Image src={downloadWhite} width={30} height={30} alt='Icône page téléchargement' />
@@ -113,8 +113,8 @@ const Header = () => {
                         </motion.li>
                     }
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98, color: 'var(--primary-600)' }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} tabIndex={0} />
                     </motion.li>
@@ -151,32 +151,32 @@ const Header = () => {
             <nav className={styles.desktop__links}>
                 <ul className={styles.desktop__links__list}>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/'} className={pathname === '/' ? styles.link__active : styles.link} tabIndex={0}>Accueil</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/shooting-automobile'} className={pathname === '/shooting-automobile' ? styles.link__active : styles.link} tabIndex={0}>Shooting automobile</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}>
+                        whileHover={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.98 }}>
                         <Link href={'/shooting-animalier'} className={pathname === '/shooting-animalier' ? styles.link__active : styles.link} tabIndex={0}>Shooting animalier</Link>
                     </motion.li>
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Link href={'/portfolio'} className={pathname === '/portfolio' ? styles.link__active : styles.link} tabIndex={0}>Portfolio</Link>
                     </motion.li>
                     {showCartIcon &&
                         <motion.li
-                            whileHover={{ scale: 1.05, y: -1 }}
-                            whileTap={{ scale: 0.95, y: 1 }}
+                            whileHover={{ scale: 0.98 }}
+                            whileTap={{ scale: 0.98 }}
                             tabIndex={-1}>
                             <Link href={'/panier'} className={styles.cart__icon} tabIndex={0}>
                                 <Image src={cartIcon} width={30} height={30} alt='Icône de la page panier' />
@@ -186,8 +186,8 @@ const Header = () => {
                     }
                     {showDownloadIcon &&
                         <motion.li
-                            whileHover={{ scale: 1.05, y: -1 }}
-                            whileTap={{ scale: 0.95, y: 1 }}
+                            whileHover={{ scale: 0.98 }}
+                            whileTap={{ scale: 0.98 }}
                             tabIndex={-1}>
                             <Link href={'/telechargement'} tabIndex={0}>
                                 <Image src={downloadWhite} width={30} height={30} alt='Icône page téléchargement' />
@@ -195,8 +195,8 @@ const Header = () => {
                         </motion.li>
                     }
                     <motion.li
-                        whileHover={{ scale: 1.05, y: -1 }}
-                        whileTap={{ scale: 0.95, y: 1 }}
+                        whileHover={{ scale: 0.98 }}
+                        whileTap={{ scale: 0.98 }}
                         tabIndex={-1}>
                         <Button type={'primary'} content={'Me contacter'} scrollId={'#contact'} tabIndex={0}/>
                     </motion.li>

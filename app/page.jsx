@@ -50,9 +50,12 @@ export default function Home() {
           <p tabIndex={0}>Offrez une carte cadeau pour un shooting photo animalier, automobile, ou personnalisé à Rouen et partout en Normandie ! Faites plaisir à vos proches passionnés d’animaux, de voitures, ou de projets sur mesure avec une séance photo professionnelle.</p>
         </header>
         <GiftCardsCaroussel />
+        <div className={styles.giftCardCTA__container}>
         <p className={styles.giftCardCTA}>Achetez facilement votre carte cadeau en ligne et partagez-la avec vos proches pour une expérience unique dans la région normande.</p>
         <div className={styles.portfolio__button__container}>
           <Button type={'primary'} size={'large'} content={'Découvrir les cartes cadeaux'} link={'/cartes-cadeaux'} />
+        </div>
+
         </div>
       </section>
 

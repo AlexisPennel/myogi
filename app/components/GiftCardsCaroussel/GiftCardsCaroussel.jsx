@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styles from './GiftCardsCaroussel.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../Button/Button';
 
 const GiftCardsCaroussel = () => {
     const cards = [
@@ -69,7 +70,9 @@ const GiftCardsCaroussel = () => {
                         <div className={styles.priceContainer}>
                             <p className={styles.price}>{selectedCard.price}€</p>
                             {/* <p className={styles.normalPrice}>{selectedCard.normalPrice}€</p> */}
+                            <Button type={'primary'}  content={'Acheter maintenant'}  link={`${selectedCard.slug}`} />
                         </div>
+                        
                     </motion.div>
                 </AnimatePresence>
             </div>

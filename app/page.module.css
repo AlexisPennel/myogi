@@ -82,6 +82,14 @@
   margin-bottom: 24px;
 }
 
+.giftCardCTA__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+}
+
 .giftCardCTA {
   text-align: center;
   max-width: 80vw;
@@ -262,7 +270,7 @@
 
   /* Gift cards */
   .giftCardCTA {
-    max-width: 35vw;
+    max-width: 40vw;
   }
 
   /* About  */
