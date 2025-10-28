@@ -70,9 +70,8 @@ const GiftCardsCaroussel = () => {
                         <div className={styles.priceContainer}>
                             <p className={styles.price}>{selectedCard.price}€</p>
                             {/* <p className={styles.normalPrice}>{selectedCard.normalPrice}€</p> */}
-                            <Button type={'primary'}  content={'Acheter maintenant'}  link={`${selectedCard.slug}`} />
                         </div>
-                        
+
                     </motion.div>
                 </AnimatePresence>
             </div>

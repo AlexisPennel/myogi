@@ -101,6 +101,13 @@
     padding-left: 8px;
 }
 
+.detailsSubtitle {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--neutrals-400);
+    font-family: var(--font-lato);
+}
+
 
 /* Add to cart button */
 .buttonsContainer {

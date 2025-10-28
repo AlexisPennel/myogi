@@ -7,9 +7,6 @@ import PortfolioHome from "./components/PortfolioHome/PortfolioHome";
 import aboutBanner from '../public/images/bannerAbout.webp';
 import Link from "next/link";
 import Form from "./components/Form/Form";
-import giftCard1 from '../public/images/cartes/animalier.png';
-import giftCard2 from '../public/images/cartes/auto.png';
-import giftCard3 from '../public/images/cartes/perso.png';
 import GiftCardsCaroussel from "./components/GiftCardsCaroussel/GiftCardsCaroussel";
 
 export const metadata = {
@@ -51,11 +48,8 @@ export default function Home() {
         </header>
         <GiftCardsCaroussel />
         <div className={styles.giftCardCTA__container}>
-        <p className={styles.giftCardCTA}>Achetez facilement votre carte cadeau en ligne et partagez-la avec vos proches pour une expérience unique dans la région normande.</p>
-        <div className={styles.portfolio__button__container}>
+          <p className={styles.giftCardCTA}>Achetez facilement votre carte cadeau en ligne et partagez-la avec vos proches pour une expérience unique dans la région normande !</p>
           <Button type={'primary'} size={'large'} content={'Découvrir les cartes cadeaux'} link={'/cartes-cadeaux'} />
-        </div>
-
         </div>
       </section>
 
