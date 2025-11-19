@@ -188,10 +188,9 @@ const GaleryPagesPhotos = ({ photos, params }) => {
                             <Image
                                 src={photo.path}
                                 className={styles.photos}
-                                width={720}
-                                height={720}
-                                quality={60}
-                                sizes='80vw'
+                                width={1000}
+                                height={1000}
+                                unoptimized
                                 alt='photos'
                                 draggable="false"
                                 loading='lazy'
